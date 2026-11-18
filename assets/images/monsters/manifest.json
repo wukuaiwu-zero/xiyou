@@ -1,0 +1,2201 @@
+{
+  "title": "《西游破劫录》九九八十一难全怪物像素素材清单",
+  "totalTribulations": 81,
+  "totalArchetypes": 54,
+  "atlasPath": "assets/images/monsters_81_atlas.png",
+  "atlasCellSize": {
+    "width": 96,
+    "height": 84,
+    "cols": 9,
+    "rows": 9
+  },
+  "monsters": [
+    {
+      "no": 1,
+      "id": "trib_01",
+      "chapter": 1,
+      "tribName": "金蝉遭贬",
+      "monsterName": "贬谪金甲天将",
+      "rank": "elite",
+      "archetype": "celestial_guard",
+      "weapon": "斩仙台金戈",
+      "lore": "金蝉子轻慢佛法遭贬东土，灵山金甲神将镇守初劫试炼。",
+      "size": {
+        "width": 54,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_01_f0.png",
+        "f1": "assets/images/monsters/trib_01_f1.png"
+      },
+      "atlasCell": {
+        "col": 0,
+        "row": 0,
+        "x": 0,
+        "y": 0,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 2,
+      "id": "trib_02",
+      "chapter": 1,
+      "tribName": "出胎几杀",
+      "monsterName": "水贼刘洪",
+      "rank": "mob",
+      "archetype": "bandit_raider",
+      "weapon": "雁翎分水刀",
+      "lore": "洪江渡口劫船害命之凶徒，冒任江州州主。",
+      "size": {
+        "width": 54,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_02_f0.png",
+        "f1": "assets/images/monsters/trib_02_f1.png"
+      },
+      "atlasCell": {
+        "col": 1,
+        "row": 0,
+        "x": 96,
+        "y": 0,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 3,
+      "id": "trib_03",
+      "chapter": 1,
+      "tribName": "满月抛江",
+      "monsterName": "洪江狂澜凶鳞",
+      "rank": "mob",
+      "archetype": "river_scale_fiend",
+      "weapon": "分水骨叉",
+      "lore": "江流儿木板漂江时潜伏大江深处的狂暴水妖。",
+      "size": {
+        "width": 54,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_03_f0.png",
+        "f1": "assets/images/monsters/trib_03_f1.png"
+      },
+      "atlasCell": {
+        "col": 2,
+        "row": 0,
+        "x": 192,
+        "y": 0,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 4,
+      "id": "trib_04",
+      "chapter": 1,
+      "tribName": "寻亲报冤",
+      "monsterName": "李彪恶衙卫",
+      "rank": "mob",
+      "archetype": "bandit_raider",
+      "weapon": "鬼头环首刀",
+      "lore": "与刘洪同流合污的悍匪恶吏，刀法狠辣。",
+      "size": {
+        "width": 54,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_04_f0.png",
+        "f1": "assets/images/monsters/trib_04_f1.png"
+      },
+      "atlasCell": {
+        "col": 3,
+        "row": 0,
+        "x": 288,
+        "y": 0,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 5,
+      "id": "trib_05",
+      "chapter": 1,
+      "tribName": "出城逢虎",
+      "monsterName": "寅将军 · 双叉虎王",
+      "rank": "boss",
+      "archetype": "yin_general",
+      "weapon": "百炼虎牙大刀",
+      "lore": "双叉岭成精斑斓猛虎，唐王御弟西行出长安所遇第一尊妖王。",
+      "size": {
+        "width": 69,
+        "height": 42
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_05_f0.png",
+        "f1": "assets/images/monsters/trib_05_f1.png"
+      },
+      "atlasCell": {
+        "col": 4,
+        "row": 0,
+        "x": 384,
+        "y": 0,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 6,
+      "id": "trib_06",
+      "chapter": 1,
+      "tribName": "落坑折从",
+      "monsterName": "熊山君 · 特处士",
+      "rank": "elite",
+      "archetype": "shield_bear",
+      "weapon": "玄铁开山盾",
+      "lore": "双叉岭黑熊精熊山君与野牛精特处士，铜皮铁骨正面格挡。",
+      "size": {
+        "width": 51,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_06_f0.png",
+        "f1": "assets/images/monsters/trib_06_f1.png"
+      },
+      "atlasCell": {
+        "col": 5,
+        "row": 0,
+        "x": 480,
+        "y": 0,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 7,
+      "id": "trib_07",
+      "chapter": 1,
+      "tribName": "双叉岭上",
+      "monsterName": "双叉山魈猎手",
+      "rank": "mob",
+      "archetype": "goblin_archer",
+      "weapon": "火羽猎弓",
+      "lore": "盘踞双叉岭丛林间的狼虫山魈弓手。",
+      "size": {
+        "width": 54,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_07_f0.png",
+        "f1": "assets/images/monsters/trib_07_f1.png"
+      },
+      "atlasCell": {
+        "col": 6,
+        "row": 0,
+        "x": 576,
+        "y": 0,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 8,
+      "id": "trib_08",
+      "chapter": 1,
+      "tribName": "两界山头",
+      "monsterName": "两界山狂虎卫",
+      "rank": "mob",
+      "archetype": "tiger_blade",
+      "weapon": "裂风双刃",
+      "lore": "五行山（两界山）山麓横行的凶猛虎妖。",
+      "size": {
+        "width": 54,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_08_f0.png",
+        "f1": "assets/images/monsters/trib_08_f1.png"
+      },
+      "atlasCell": {
+        "col": 7,
+        "row": 0,
+        "x": 672,
+        "y": 0,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 9,
+      "id": "trib_09",
+      "chapter": 1,
+      "tribName": "陡涧换马",
+      "monsterName": "鹰愁涧金鳞水怪",
+      "rank": "elite",
+      "archetype": "river_scale_fiend",
+      "weapon": "寒渊三叉戟",
+      "lore": "蛇盘山鹰愁涧潜蛟水灵，惊扰白马之涧底霸主。",
+      "size": {
+        "width": 54,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_09_f0.png",
+        "f1": "assets/images/monsters/trib_09_f1.png"
+      },
+      "atlasCell": {
+        "col": 8,
+        "row": 0,
+        "x": 768,
+        "y": 0,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 10,
+      "id": "trib_10",
+      "chapter": 2,
+      "tribName": "夜被火烧",
+      "monsterName": "观音院广谋火僧",
+      "rank": "mob",
+      "archetype": "fire_monk",
+      "weapon": "引火松明炬",
+      "lore": "贪图锦襕袈裟献计纵火焚烧禅院之恶僧妖灵。",
+      "size": {
+        "width": 54,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_10_f0.png",
+        "f1": "assets/images/monsters/trib_10_f1.png"
+      },
+      "atlasCell": {
+        "col": 0,
+        "row": 1,
+        "x": 0,
+        "y": 84,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 11,
+      "id": "trib_11",
+      "chapter": 2,
+      "tribName": "失却袈裟",
+      "monsterName": "黑风大王 · 熊罴精",
+      "rank": "boss",
+      "archetype": "black_bear_king",
+      "weapon": "黑缨点钢枪",
+      "lore": "黑风山黑风洞主，趁火盗走锦襕袈裟欲办佛衣会，武艺堪敌大圣。",
+      "size": {
+        "width": 66,
+        "height": 45
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_11_f0.png",
+        "f1": "assets/images/monsters/trib_11_f1.png"
+      },
+      "atlasCell": {
+        "col": 1,
+        "row": 1,
+        "x": 96,
+        "y": 84,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 12,
+      "id": "trib_12",
+      "chapter": 2,
+      "tribName": "收降八戒",
+      "monsterName": "云栈猪刚鬣魔影",
+      "rank": "elite",
+      "archetype": "wild_boar_brute",
+      "weapon": "九齿沁金耙影",
+      "lore": "福陵山云栈洞未皈依前的狂暴猪妖残存魔念。",
+      "size": {
+        "width": 57,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_12_f0.png",
+        "f1": "assets/images/monsters/trib_12_f1.png"
+      },
+      "atlasCell": {
+        "col": 2,
+        "row": 1,
+        "x": 192,
+        "y": 84,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 13,
+      "id": "trib_13",
+      "chapter": 2,
+      "tribName": "黄风怪阻",
+      "monsterName": "黄风大圣 · 貂鼠精",
+      "rank": "boss",
+      "archetype": "yellow_wind_sage",
+      "weapon": "三股钢叉·三昧神风",
+      "lore": "灵山脚下得道金毛貂鼠，一口三昧神风吹得天地无光。",
+      "size": {
+        "width": 66,
+        "height": 42
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_13_f0.png",
+        "f1": "assets/images/monsters/trib_13_f1.png"
+      },
+      "atlasCell": {
+        "col": 3,
+        "row": 1,
+        "x": 288,
+        "y": 84,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 14,
+      "id": "trib_14",
+      "chapter": 2,
+      "tribName": "请求灵吉",
+      "monsterName": "黄风岭虎先锋",
+      "rank": "elite",
+      "archetype": "tiger_blade",
+      "weapon": "双口赤铜刀",
+      "lore": "黄风大王麾下头号猛将，曾用金蝉脱壳虎皮计摄走唐僧。",
+      "size": {
+        "width": 54,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_14_f0.png",
+        "f1": "assets/images/monsters/trib_14_f1.png"
+      },
+      "atlasCell": {
+        "col": 4,
+        "row": 1,
+        "x": 384,
+        "y": 84,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 15,
+      "id": "trib_15",
+      "chapter": 2,
+      "tribName": "流沙难渡",
+      "monsterName": "流沙河卷帘魔影",
+      "rank": "boss",
+      "archetype": "liusha_demon",
+      "weapon": "降妖玄水杖",
+      "lore": "八百里流沙河鹅毛不浮，深渊水煞凝结之狂澜妖尊。",
+      "size": {
+        "width": 63,
+        "height": 39
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_15_f0.png",
+        "f1": "assets/images/monsters/trib_15_f1.png"
+      },
+      "atlasCell": {
+        "col": 5,
+        "row": 1,
+        "x": 480,
+        "y": 84,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 16,
+      "id": "trib_16",
+      "chapter": 2,
+      "tribName": "收得沙僧",
+      "monsterName": "弱水漩涡水鬼",
+      "rank": "mob",
+      "archetype": "shrimp_soldier",
+      "weapon": "骨刺水叉",
+      "lore": "游弋在流沙河底兴风作浪的凶恶水卒。",
+      "size": {
+        "width": 54,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_16_f0.png",
+        "f1": "assets/images/monsters/trib_16_f1.png"
+      },
+      "atlasCell": {
+        "col": 6,
+        "row": 1,
+        "x": 576,
+        "y": 84,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 17,
+      "id": "trib_17",
+      "chapter": 2,
+      "tribName": "四圣显化",
+      "monsterName": "锦绣庄绣球幻灵",
+      "rank": "mob",
+      "archetype": "apricot_fairy",
+      "weapon": "珍珠彩绸刃",
+      "lore": "四圣试禅心化作富贵庄院中考验道心的幻象仙傀。",
+      "size": {
+        "width": 54,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_17_f0.png",
+        "f1": "assets/images/monsters/trib_17_f1.png"
+      },
+      "atlasCell": {
+        "col": 7,
+        "row": 1,
+        "x": 672,
+        "y": 84,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 18,
+      "id": "trib_18",
+      "chapter": 2,
+      "tribName": "五庄观中",
+      "monsterName": "万寿山护丹道童",
+      "rank": "elite",
+      "archetype": "taoist_acolyte",
+      "weapon": "阴阳拂尘剑",
+      "lore": "五庄观人参果园中守护先天灵根的道门剑傀。",
+      "size": {
+        "width": 54,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_18_f0.png",
+        "f1": "assets/images/monsters/trib_18_f1.png"
+      },
+      "atlasCell": {
+        "col": 8,
+        "row": 1,
+        "x": 768,
+        "y": 84,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 19,
+      "id": "trib_19",
+      "chapter": 3,
+      "tribName": "难活人参",
+      "monsterName": "乾坤袖镇观道尊傀",
+      "rank": "boss",
+      "archetype": "wuzhuang_immortal",
+      "weapon": "七星紫金拂尘",
+      "lore": "人参果树震怒所化乾坤道法化身，袖里乾坤吸摄万物。",
+      "size": {
+        "width": 63,
+        "height": 42
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_19_f0.png",
+        "f1": "assets/images/monsters/trib_19_f1.png"
+      },
+      "atlasCell": {
+        "col": 0,
+        "row": 2,
+        "x": 0,
+        "y": 168,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 20,
+      "id": "trib_20",
+      "chapter": 3,
+      "tribName": "贬退心猿",
+      "monsterName": "白骨夫人 · 尸魔",
+      "rank": "boss",
+      "archetype": "white_bone_lady",
+      "weapon": "幽冥白骨爪",
+      "lore": "白虎岭千年粉骷髅，三变幻形离间师徒，诡谲莫测。",
+      "size": {
+        "width": 60,
+        "height": 39
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_20_f0.png",
+        "f1": "assets/images/monsters/trib_20_f1.png"
+      },
+      "atlasCell": {
+        "col": 1,
+        "row": 2,
+        "x": 96,
+        "y": 168,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 21,
+      "id": "trib_21",
+      "chapter": 3,
+      "tribName": "黑松林失散",
+      "monsterName": "黑松林枯木妖卒",
+      "rank": "mob",
+      "archetype": "thorn_treant",
+      "weapon": "黑松毒刺",
+      "lore": "碗子山黑松林中缠绕迷途行者的树魔。",
+      "size": {
+        "width": 54,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_21_f0.png",
+        "f1": "assets/images/monsters/trib_21_f1.png"
+      },
+      "atlasCell": {
+        "col": 2,
+        "row": 2,
+        "x": 192,
+        "y": 168,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 22,
+      "id": "trib_22",
+      "chapter": 3,
+      "tribName": "宝象国捎书",
+      "monsterName": "波月洞巡山狼卒",
+      "rank": "mob",
+      "archetype": "wolf_scout",
+      "weapon": "弯月猎刀",
+      "lore": "碗子山波月洞黄袍怪麾下把守要道的妖兵。",
+      "size": {
+        "width": 54,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_22_f0.png",
+        "f1": "assets/images/monsters/trib_22_f1.png"
+      },
+      "atlasCell": {
+        "col": 3,
+        "row": 2,
+        "x": 288,
+        "y": 168,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 23,
+      "id": "trib_23",
+      "chapter": 3,
+      "tribName": "金銮殿变虎",
+      "monsterName": "黄袍怪 · 奎木狼",
+      "rank": "boss",
+      "archetype": "yellow_robe_demon",
+      "weapon": "蘸钢大刀·舍利内丹",
+      "lore": "二十八宿奎木狼私下凡尘，金銮殿施咒将圣僧化作斑斓猛虎。",
+      "size": {
+        "width": 66,
+        "height": 42
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_23_f0.png",
+        "f1": "assets/images/monsters/trib_23_f1.png"
+      },
+      "atlasCell": {
+        "col": 4,
+        "row": 2,
+        "x": 384,
+        "y": 168,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 24,
+      "id": "trib_24",
+      "chapter": 3,
+      "tribName": "平顶山逢魔",
+      "monsterName": "金角大王",
+      "rank": "boss",
+      "archetype": "gold_silver_horn",
+      "weapon": "紫金红葫芦·七星剑",
+      "lore": "太上老君看金炉童子下界，手执紫金红葫芦唤名即吸，更可移三山压顶！",
+      "size": {
+        "width": 66,
+        "height": 42
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_24_f0.png",
+        "f1": "assets/images/monsters/trib_24_f1.png"
+      },
+      "atlasCell": {
+        "col": 5,
+        "row": 2,
+        "x": 480,
+        "y": 168,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 25,
+      "id": "trib_25",
+      "chapter": 3,
+      "tribName": "莲花洞高悬",
+      "monsterName": "银角大王",
+      "rank": "boss",
+      "archetype": "gold_silver_horn",
+      "weapon": "羊脂玉净瓶·幌金绳",
+      "lore": "莲花洞二大王，手持羊脂玉净瓶、芭蕉扇与幌金绳五大秘宝。",
+      "size": {
+        "width": 66,
+        "height": 42
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_25_f0.png",
+        "f1": "assets/images/monsters/trib_25_f1.png"
+      },
+      "atlasCell": {
+        "col": 6,
+        "row": 2,
+        "x": 576,
+        "y": 168,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 26,
+      "id": "trib_26",
+      "chapter": 3,
+      "tribName": "乌鸡国救主",
+      "monsterName": "乌鸡国青毛狮子王",
+      "rank": "boss",
+      "archetype": "yin_general",
+      "weapon": "冷艳锯两刃刀",
+      "lore": "文殊菩萨座下青毛狮子，推真王落井、篡位三年反调风调雨顺。",
+      "size": {
+        "width": 69,
+        "height": 42
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_26_f0.png",
+        "f1": "assets/images/monsters/trib_26_f1.png"
+      },
+      "atlasCell": {
+        "col": 7,
+        "row": 2,
+        "x": 672,
+        "y": 168,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 27,
+      "id": "trib_27",
+      "chapter": 3,
+      "tribName": "被魔化身",
+      "monsterName": "压龙洞九尾狐姥",
+      "rank": "elite",
+      "archetype": "nine_tail_vixen",
+      "weapon": "幌金狐火珠",
+      "lore": "压龙山压龙洞九尾狐老奶奶，金角银角之干娘。",
+      "size": {
+        "width": 54,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_27_f0.png",
+        "f1": "assets/images/monsters/trib_27_f1.png"
+      },
+      "atlasCell": {
+        "col": 8,
+        "row": 2,
+        "x": 768,
+        "y": 168,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 28,
+      "id": "trib_28",
+      "chapter": 4,
+      "tribName": "号山逢怪",
+      "monsterName": "圣婴大王 · 红孩儿",
+      "rank": "boss",
+      "archetype": "red_boy",
+      "weapon": "丈八火尖枪·三昧真火",
+      "lore": "牛魔王与铁扇公主之子，火焰山苦修三百年三昧真火，连大圣亦遭火败。",
+      "size": {
+        "width": 66,
+        "height": 39
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_28_f0.png",
+        "f1": "assets/images/monsters/trib_28_f1.png"
+      },
+      "atlasCell": {
+        "col": 0,
+        "row": 3,
+        "x": 0,
+        "y": 252,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 29,
+      "id": "trib_29",
+      "chapter": 4,
+      "tribName": "风摄圣僧",
+      "monsterName": "火云洞急如火健将",
+      "rank": "mob",
+      "archetype": "flame_imp",
+      "weapon": "赤焰风火轮",
+      "lore": "红孩儿麾下云里雾、雾里云、急如火、快如风等六健将精锐。",
+      "size": {
+        "width": 42,
+        "height": 27
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_29_f0.png",
+        "f1": "assets/images/monsters/trib_29_f1.png"
+      },
+      "atlasCell": {
+        "col": 1,
+        "row": 3,
+        "x": 96,
+        "y": 252,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 30,
+      "id": "trib_30",
+      "chapter": 4,
+      "tribName": "心猿遭害",
+      "monsterName": "三昧炎烟火魔",
+      "rank": "elite",
+      "archetype": "flame_imp",
+      "weapon": "焚心真火球",
+      "lore": "枯松涧火云洞喷涌而出的紫赤毒烟真火魔灵。",
+      "size": {
+        "width": 42,
+        "height": 27
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_30_f0.png",
+        "f1": "assets/images/monsters/trib_30_f1.png"
+      },
+      "atlasCell": {
+        "col": 2,
+        "row": 3,
+        "x": 192,
+        "y": 252,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 31,
+      "id": "trib_31",
+      "chapter": 4,
+      "tribName": "请圣降妖",
+      "monsterName": "莲台三十六天罡刀灵",
+      "rank": "mob",
+      "archetype": "celestial_guard",
+      "weapon": "天罡化刃",
+      "lore": "观音菩萨借李靖天罡刀化作千叶莲台收伏圣婴之护法灵兵。",
+      "size": {
+        "width": 54,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_31_f0.png",
+        "f1": "assets/images/monsters/trib_31_f1.png"
+      },
+      "atlasCell": {
+        "col": 3,
+        "row": 3,
+        "x": 288,
+        "y": 252,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 32,
+      "id": "trib_32",
+      "chapter": 4,
+      "tribName": "黑水河遇怪",
+      "monsterName": "黑水河鼍龙怪",
+      "rank": "boss",
+      "archetype": "tuolong_dragon",
+      "weapon": "九节竹节钢鞭",
+      "lore": "泾河龙王第九子鼍洁，霸占黑水河神府兴起黑浪摄走唐僧八戒。",
+      "size": {
+        "width": 66,
+        "height": 39
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_32_f0.png",
+        "f1": "assets/images/monsters/trib_32_f1.png"
+      },
+      "atlasCell": {
+        "col": 4,
+        "row": 3,
+        "x": 384,
+        "y": 252,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 33,
+      "id": "trib_33",
+      "chapter": 4,
+      "tribName": "搬运车迟",
+      "monsterName": "三清观监工恶道",
+      "rank": "mob",
+      "archetype": "taoist_acolyte",
+      "weapon": "五雷引魂幡",
+      "lore": "车迟国驱役五百僧人拉车修观的霸道道众。",
+      "size": {
+        "width": 54,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_33_f0.png",
+        "f1": "assets/images/monsters/trib_33_f1.png"
+      },
+      "atlasCell": {
+        "col": 5,
+        "row": 3,
+        "x": 480,
+        "y": 252,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 34,
+      "id": "trib_34",
+      "chapter": 4,
+      "tribName": "大赌输赢",
+      "monsterName": "车迟国 · 虎力大仙",
+      "rank": "boss",
+      "archetype": "chechi_immortal",
+      "weapon": "五雷杏黄法剑",
+      "lore": "车迟国第一大国师，精通五雷祈雨、云梯显圣与砍头复生奇术。",
+      "size": {
+        "width": 66,
+        "height": 42
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_34_f0.png",
+        "f1": "assets/images/monsters/trib_34_f1.png"
+      },
+      "atlasCell": {
+        "col": 6,
+        "row": 3,
+        "x": 576,
+        "y": 252,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 35,
+      "id": "trib_35",
+      "chapter": 4,
+      "tribName": "祛道兴僧",
+      "monsterName": "鹿力大仙 · 羊力大仙",
+      "rank": "elite",
+      "archetype": "chechi_immortal",
+      "weapon": "冷龙冰火骨杖",
+      "lore": "白鹿精与羚羊精所化二、三国师，善剖腹剜心与滚油锅冷龙秘法。",
+      "size": {
+        "width": 66,
+        "height": 42
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_35_f0.png",
+        "f1": "assets/images/monsters/trib_35_f1.png"
+      },
+      "atlasCell": {
+        "col": 7,
+        "row": 3,
+        "x": 672,
+        "y": 252,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 36,
+      "id": "trib_36",
+      "chapter": 4,
+      "tribName": "路逢大水",
+      "monsterName": "灵感大王 · 通天金鱼精",
+      "rank": "boss",
+      "archetype": "inspiration_king",
+      "weapon": "九瓣赤铜锤",
+      "lore": "观音莲花池金鱼走脱通天河，岁祭童男童女，一夜冰封八百里大河。",
+      "size": {
+        "width": 66,
+        "height": 39
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_36_f0.png",
+        "f1": "assets/images/monsters/trib_36_f1.png"
+      },
+      "atlasCell": {
+        "col": 8,
+        "row": 3,
+        "x": 768,
+        "y": 252,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 37,
+      "id": "trib_37",
+      "chapter": 5,
+      "tribName": "身落天河",
+      "monsterName": "通天河斑衣鳜婆",
+      "rank": "elite",
+      "archetype": "fish_assassin",
+      "weapon": "寒冰分水刺",
+      "lore": "灵感大王座下首席女军师，献计冰冻通天河诱陷唐僧。",
+      "size": {
+        "width": 57,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_37_f0.png",
+        "f1": "assets/images/monsters/trib_37_f1.png"
+      },
+      "atlasCell": {
+        "col": 0,
+        "row": 4,
+        "x": 0,
+        "y": 336,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 38,
+      "id": "trib_38",
+      "chapter": 5,
+      "tribName": "鱼篮现身",
+      "monsterName": "通天河玄冰蟹将",
+      "rank": "mob",
+      "archetype": "crab_guardian",
+      "weapon": "寒铁巨螯盾",
+      "lore": "把守通天河水鼋之第的披甲巨蟹卫士。",
+      "size": {
+        "width": 54,
+        "height": 30
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_38_f0.png",
+        "f1": "assets/images/monsters/trib_38_f1.png"
+      },
+      "atlasCell": {
+        "col": 1,
+        "row": 4,
+        "x": 96,
+        "y": 336,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 39,
+      "id": "trib_39",
+      "chapter": 5,
+      "tribName": "金兜山遇怪",
+      "monsterName": "独角兕大王 · 青牛精",
+      "rank": "boss",
+      "archetype": "single_horn_rhino",
+      "weapon": "太上金刚琢·点钢枪",
+      "lore": "太上老君坐骑板角青牛，手执金刚琢套尽漫天神佛兵刃水火！",
+      "size": {
+        "width": 66,
+        "height": 42
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_39_f0.png",
+        "f1": "assets/images/monsters/trib_39_f1.png"
+      },
+      "atlasCell": {
+        "col": 2,
+        "row": 4,
+        "x": 192,
+        "y": 336,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 40,
+      "id": "trib_40",
+      "chapter": 5,
+      "tribName": "普天神难伏",
+      "monsterName": "金兜洞持戟铁牛卫",
+      "rank": "mob",
+      "archetype": "bull_guard",
+      "weapon": "开山重铁盾",
+      "lore": "金兜山金兜洞披挂重甲的独角牛妖精兵。",
+      "size": {
+        "width": 48,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_40_f0.png",
+        "f1": "assets/images/monsters/trib_40_f1.png"
+      },
+      "atlasCell": {
+        "col": 3,
+        "row": 4,
+        "x": 288,
+        "y": 336,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 41,
+      "id": "trib_41",
+      "chapter": 5,
+      "tribName": "问佛根源",
+      "monsterName": "金沙幻灵罗汉影",
+      "rank": "mob",
+      "archetype": "celestial_guard",
+      "weapon": "十八粒金丹砂",
+      "lore": "降龙伏虎罗汉撒金丹砂助战时激荡的金光战灵。",
+      "size": {
+        "width": 54,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_41_f0.png",
+        "f1": "assets/images/monsters/trib_41_f1.png"
+      },
+      "atlasCell": {
+        "col": 4,
+        "row": 4,
+        "x": 384,
+        "y": 336,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 42,
+      "id": "trib_42",
+      "chapter": 5,
+      "tribName": "吃水遭毒",
+      "monsterName": "聚仙庵如意真仙",
+      "rank": "elite",
+      "archetype": "chechi_immortal",
+      "weapon": "如意金钩刃",
+      "lore": "牛魔王之弟、红孩儿叔父，霸占解阳山落胎泉索要花红表礼。",
+      "size": {
+        "width": 66,
+        "height": 42
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_42_f0.png",
+        "f1": "assets/images/monsters/trib_42_f1.png"
+      },
+      "atlasCell": {
+        "col": 5,
+        "row": 4,
+        "x": 480,
+        "y": 336,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 43,
+      "id": "trib_43",
+      "chapter": 5,
+      "tribName": "西梁国留婚",
+      "monsterName": "西梁女国金钗卫",
+      "rank": "mob",
+      "archetype": "apricot_fairy",
+      "weapon": "飞凤连环刺",
+      "lore": "西梁女国王城守护御苑之飒爽女武官。",
+      "size": {
+        "width": 54,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_43_f0.png",
+        "f1": "assets/images/monsters/trib_43_f1.png"
+      },
+      "atlasCell": {
+        "col": 6,
+        "row": 4,
+        "x": 576,
+        "y": 336,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 44,
+      "id": "trib_44",
+      "chapter": 5,
+      "tribName": "琵琶洞受苦",
+      "monsterName": "琵琶洞毒敌蝎子精",
+      "rank": "boss",
+      "archetype": "scorpion_queen",
+      "weapon": "倒马毒桩·三股钢叉",
+      "lore": "雷音寺听经蜇伤如来左指之琵琶蝎女，尾上倒马毒桩连金刚不坏亦剧痛难当！",
+      "size": {
+        "width": 66,
+        "height": 39
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_44_f0.png",
+        "f1": "assets/images/monsters/trib_44_f1.png"
+      },
+      "atlasCell": {
+        "col": 7,
+        "row": 4,
+        "x": 672,
+        "y": 336,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 45,
+      "id": "trib_45",
+      "chapter": 5,
+      "tribName": "再贬心猿",
+      "monsterName": "杨家庄剪径草寇",
+      "rank": "mob",
+      "archetype": "bandit_raider",
+      "weapon": "雁翅朴刀",
+      "lore": "拦路劫掠招致师徒生隙、再度贬走心猿之凶悍强盗。",
+      "size": {
+        "width": 54,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_45_f0.png",
+        "f1": "assets/images/monsters/trib_45_f1.png"
+      },
+      "atlasCell": {
+        "col": 8,
+        "row": 4,
+        "x": 768,
+        "y": 336,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 46,
+      "id": "trib_46",
+      "chapter": 6,
+      "tribName": "难辨猕猴",
+      "monsterName": "六耳猕猴 · 假悟空",
+      "rank": "boss",
+      "archetype": "six_eared_macaque",
+      "weapon": "随心铁杆兵",
+      "lore": "混世四猴之一，善聆音察理、知前后万物，与齐天大圣神通一般无二！",
+      "size": {
+        "width": 66,
+        "height": 42
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_46_f0.png",
+        "f1": "assets/images/monsters/trib_46_f1.png"
+      },
+      "atlasCell": {
+        "col": 0,
+        "row": 5,
+        "x": 0,
+        "y": 420,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 47,
+      "id": "trib_47",
+      "chapter": 6,
+      "tribName": "路阻火焰山",
+      "monsterName": "八百里火焰山炎灵",
+      "rank": "mob",
+      "archetype": "flame_imp",
+      "weapon": "熔岩爆炎珠",
+      "lore": "八卦炉落砖化作八百里火焰山中肆虐不息的火精。",
+      "size": {
+        "width": 42,
+        "height": 27
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_47_f0.png",
+        "f1": "assets/images/monsters/trib_47_f1.png"
+      },
+      "atlasCell": {
+        "col": 1,
+        "row": 5,
+        "x": 96,
+        "y": 420,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 48,
+      "id": "trib_48",
+      "chapter": 6,
+      "tribName": "求取芭蕉扇",
+      "monsterName": "铁扇公主 · 罗刹女",
+      "rank": "boss",
+      "archetype": "iron_fan_princess",
+      "weapon": "太阴芭蕉宝扇·青锋双剑",
+      "lore": "翠云山芭蕉洞主，手执混沌开辟灵宝芭蕉扇，一扇风生八万四千里！",
+      "size": {
+        "width": 66,
+        "height": 39
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_48_f0.png",
+        "f1": "assets/images/monsters/trib_48_f1.png"
+      },
+      "atlasCell": {
+        "col": 2,
+        "row": 5,
+        "x": 192,
+        "y": 420,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 49,
+      "id": "trib_49",
+      "chapter": 6,
+      "tribName": "收缚魔王",
+      "monsterName": "平天大圣 · 牛魔王",
+      "rank": "boss",
+      "archetype": "bull_demon_king",
+      "weapon": "混铁棍·法天象地",
+      "lore": "七大圣之首大力牛魔王，白牛法相顶天立地，力抗漫天佛兵天将！",
+      "size": {
+        "width": 69,
+        "height": 48
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_49_f0.png",
+        "f1": "assets/images/monsters/trib_49_f1.png"
+      },
+      "atlasCell": {
+        "col": 3,
+        "row": 5,
+        "x": 288,
+        "y": 420,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 50,
+      "id": "trib_50",
+      "chapter": 6,
+      "tribName": "赛城扫塔",
+      "monsterName": "奔波儿灞 · 灞波儿奔",
+      "rank": "elite",
+      "archetype": "fish_assassin",
+      "weapon": "分水鲇须双刺",
+      "lore": "碧波潭鲇鱼怪与黑鱼精，巡守金光寺宝塔时被悟空捉住盘问出佛宝下落。",
+      "size": {
+        "width": 57,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_50_f0.png",
+        "f1": "assets/images/monsters/trib_50_f1.png"
+      },
+      "atlasCell": {
+        "col": 4,
+        "row": 5,
+        "x": 384,
+        "y": 420,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 51,
+      "id": "trib_51",
+      "chapter": 6,
+      "tribName": "取宝救僧",
+      "monsterName": "九头虫 · 九头驸马",
+      "rank": "boss",
+      "archetype": "nine_headed_bug",
+      "weapon": "月牙铲·九首血翼",
+      "lore": "乱石山碧波潭万圣龙王赘婿，现本相九头血翼奇禽，盗取佛宝舍利。",
+      "size": {
+        "width": 66,
+        "height": 39
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_51_f0.png",
+        "f1": "assets/images/monsters/trib_51_f1.png"
+      },
+      "atlasCell": {
+        "col": 5,
+        "row": 5,
+        "x": 480,
+        "y": 420,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 52,
+      "id": "trib_52",
+      "chapter": 6,
+      "tribName": "棘林吟咏",
+      "monsterName": "荆棘岭十八公 · 杏仙",
+      "rank": "elite",
+      "archetype": "thorn_treant",
+      "weapon": "盘根古松杖",
+      "lore": "木仙庵松柏桧竹四老树精与杏花仙子，月夜吟诗留客。",
+      "size": {
+        "width": 54,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_52_f0.png",
+        "f1": "assets/images/monsters/trib_52_f1.png"
+      },
+      "atlasCell": {
+        "col": 6,
+        "row": 5,
+        "x": 576,
+        "y": 420,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 53,
+      "id": "trib_53",
+      "chapter": 6,
+      "tribName": "小雷音遇难",
+      "monsterName": "黄眉大王 · 小雷音老佛",
+      "rank": "boss",
+      "archetype": "yellow_brow_king",
+      "weapon": "金铙·后天人种袋·短软狼牙棒",
+      "lore": "东来佛祖司磬黄眉童儿，假设小雷音寺，金铙困大圣、人种袋收尽诸天星宿！",
+      "size": {
+        "width": 66,
+        "height": 42
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_53_f0.png",
+        "f1": "assets/images/monsters/trib_53_f1.png"
+      },
+      "atlasCell": {
+        "col": 7,
+        "row": 5,
+        "x": 672,
+        "y": 420,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 54,
+      "id": "trib_54",
+      "chapter": 6,
+      "tribName": "诸天神遭困",
+      "monsterName": "小雷音执袋魔卫",
+      "rank": "mob",
+      "archetype": "bull_guard",
+      "weapon": "铜钹重锤",
+      "lore": "小雷音寺伪装罗汉金刚的凶悍魔兵。",
+      "size": {
+        "width": 48,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_54_f0.png",
+        "f1": "assets/images/monsters/trib_54_f1.png"
+      },
+      "atlasCell": {
+        "col": 8,
+        "row": 5,
+        "x": 768,
+        "y": 420,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 55,
+      "id": "trib_55",
+      "chapter": 7,
+      "tribName": "稀柿同秽阻",
+      "monsterName": "七绝山红鳞大蟒",
+      "rank": "boss",
+      "archetype": "red_python_demon",
+      "weapon": "双枪毒舌·血海缠卷",
+      "lore": "七绝山驼罗庄成精红鳞巨蟒，双目如灯笼，吞食人畜无算。",
+      "size": {
+        "width": 66,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_55_f0.png",
+        "f1": "assets/images/monsters/trib_55_f1.png"
+      },
+      "atlasCell": {
+        "col": 0,
+        "row": 6,
+        "x": 0,
+        "y": 504,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 56,
+      "id": "trib_56",
+      "chapter": 7,
+      "tribName": "朱紫国行医",
+      "monsterName": "麒麟山有来有去",
+      "rank": "mob",
+      "archetype": "lotus_imp",
+      "weapon": "传令铜牌刀",
+      "lore": "赛太岁麾下赴朱紫国下战书的伶俐传令小妖。",
+      "size": {
+        "width": 54,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_56_f0.png",
+        "f1": "assets/images/monsters/trib_56_f1.png"
+      },
+      "atlasCell": {
+        "col": 1,
+        "row": 6,
+        "x": 96,
+        "y": 504,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 57,
+      "id": "trib_57",
+      "chapter": 7,
+      "tribName": "拯救疲癃",
+      "monsterName": "赛太岁 · 金毛犼",
+      "rank": "boss",
+      "archetype": "sai_taisui",
+      "weapon": "紫阳金铃·宣花大斧",
+      "lore": "观音菩萨坐骑金毛犼，项下三枚紫金铃晃出三百丈红火、浓烟与毒沙！",
+      "size": {
+        "width": 66,
+        "height": 42
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_57_f0.png",
+        "f1": "assets/images/monsters/trib_57_f1.png"
+      },
+      "atlasCell": {
+        "col": 2,
+        "row": 6,
+        "x": 192,
+        "y": 504,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 58,
+      "id": "trib_58",
+      "chapter": 7,
+      "tribName": "降妖取后",
+      "monsterName": "獬豸洞毒沙炎妖",
+      "rank": "mob",
+      "archetype": "goblin_archer",
+      "weapon": "飞沙火铳",
+      "lore": "麒麟山獬豸洞操控飞沙毒火的妖射手。",
+      "size": {
+        "width": 54,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_58_f0.png",
+        "f1": "assets/images/monsters/trib_58_f1.png"
+      },
+      "atlasCell": {
+        "col": 3,
+        "row": 6,
+        "x": 288,
+        "y": 504,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 59,
+      "id": "trib_59",
+      "chapter": 7,
+      "tribName": "七情迷没",
+      "monsterName": "盘丝洞七蜘蛛精",
+      "rank": "boss",
+      "archetype": "spider_matriarch",
+      "weapon": "脐吐天罗情丝·双股剑",
+      "lore": "盘丝岭濯垢泉七位蜘蛛女妖，脐中喷出万道银丝结成漫天丝蓬！",
+      "size": {
+        "width": 66,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_59_f0.png",
+        "f1": "assets/images/monsters/trib_59_f1.png"
+      },
+      "atlasCell": {
+        "col": 4,
+        "row": 6,
+        "x": 384,
+        "y": 504,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 60,
+      "id": "trib_60",
+      "chapter": 7,
+      "tribName": "多目遭伤",
+      "monsterName": "百眼魔君 · 多目蜈蚣精",
+      "rank": "boss",
+      "archetype": "hundred_eyed_lord",
+      "weapon": "肋下千眼金光阵·百节剑",
+      "lore": "黄花观道士真身七尺大蜈蚣，两肋下千只金眼齐放黄雾金光困锁大圣！",
+      "size": {
+        "width": 66,
+        "height": 39
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_60_f0.png",
+        "f1": "assets/images/monsters/trib_60_f1.png"
+      },
+      "atlasCell": {
+        "col": 5,
+        "row": 6,
+        "x": 480,
+        "y": 504,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 61,
+      "id": "trib_61",
+      "chapter": 7,
+      "tribName": "路阻狮驼",
+      "monsterName": "狮驼岭巡山小钻风",
+      "rank": "elite",
+      "archetype": "lotus_imp",
+      "weapon": "巡山梆锣·腰刀",
+      "lore": "八百里狮驼岭总钻风麾下巡山小妖，一句“大王叫我来巡山”传唱千古。",
+      "size": {
+        "width": 54,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_61_f0.png",
+        "f1": "assets/images/monsters/trib_61_f1.png"
+      },
+      "atlasCell": {
+        "col": 6,
+        "row": 6,
+        "x": 576,
+        "y": 504,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 62,
+      "id": "trib_62",
+      "chapter": 7,
+      "tribName": "怪分三色",
+      "monsterName": "狮驼岭 · 青狮白象王",
+      "rank": "boss",
+      "archetype": "white_elephant_king",
+      "weapon": "吞天钢刀·卷云象鼻枪",
+      "lore": "狮驼洞大大王一口曾吞十万天兵，二大王白象长鼻一卷万钧之力！",
+      "size": {
+        "width": 66,
+        "height": 39
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_62_f0.png",
+        "f1": "assets/images/monsters/trib_62_f1.png"
+      },
+      "atlasCell": {
+        "col": 7,
+        "row": 6,
+        "x": 672,
+        "y": 504,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 63,
+      "id": "trib_63",
+      "chapter": 7,
+      "tribName": "城里遇灾",
+      "monsterName": "云程万里 · 金翅大鹏雕",
+      "rank": "boss",
+      "archetype": "golden_wing_peng",
+      "weapon": "方天画戟·阴阳二气瓶",
+      "lore": "如来佛祖娘舅金翅大鹏，扇一翅九万里追上筋斗云，独占狮驼魔国！",
+      "size": {
+        "width": 66,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_63_f0.png",
+        "f1": "assets/images/monsters/trib_63_f1.png"
+      },
+      "atlasCell": {
+        "col": 8,
+        "row": 6,
+        "x": 768,
+        "y": 504,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 64,
+      "id": "trib_64",
+      "chapter": 8,
+      "tribName": "请佛收魔",
+      "monsterName": "狮驼城狼牙魔将",
+      "rank": "mob",
+      "archetype": "lion_roar_warrior",
+      "weapon": "熟铁狼牙重棒",
+      "lore": "狮驼城四万七千群魔中纪律严明的重装妖将。",
+      "size": {
+        "width": 57,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_64_f0.png",
+        "f1": "assets/images/monsters/trib_64_f1.png"
+      },
+      "atlasCell": {
+        "col": 0,
+        "row": 7,
+        "x": 0,
+        "y": 588,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 65,
+      "id": "trib_65",
+      "chapter": 8,
+      "tribName": "比丘救子",
+      "monsterName": "比丘国 · 白鹿国丈",
+      "rank": "boss",
+      "archetype": "wuzhuang_immortal",
+      "weapon": "蟠桃龙头寿杖",
+      "lore": "南极寿星座下白鹿私逃比丘国，蛊惑国王用一千一百一十一个小儿心肝做药引。",
+      "size": {
+        "width": 63,
+        "height": 42
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_65_f0.png",
+        "f1": "assets/images/monsters/trib_65_f1.png"
+      },
+      "atlasCell": {
+        "col": 1,
+        "row": 7,
+        "x": 96,
+        "y": 588,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 66,
+      "id": "trib_66",
+      "chapter": 8,
+      "tribName": "辨认真邪",
+      "monsterName": "清华洞白面狐美后",
+      "rank": "elite",
+      "archetype": "nine_tail_vixen",
+      "weapon": "迷魂胭脂珠",
+      "lore": "比丘国倾城妖后，与白鹿国丈狼狈为奸祸乱朝纲。",
+      "size": {
+        "width": 54,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_66_f0.png",
+        "f1": "assets/images/monsters/trib_66_f1.png"
+      },
+      "atlasCell": {
+        "col": 2,
+        "row": 7,
+        "x": 192,
+        "y": 588,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 67,
+      "id": "trib_67",
+      "chapter": 8,
+      "tribName": "松林救怪",
+      "monsterName": "黑松林幻化缚树妖",
+      "rank": "mob",
+      "archetype": "rat_assassin",
+      "weapon": "蚀骨暗影刺",
+      "lore": "金鼻白毛鼠精于黑松林假扮落难女子诱骗唐僧慈悲之心。",
+      "size": {
+        "width": 54,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_67_f0.png",
+        "f1": "assets/images/monsters/trib_67_f1.png"
+      },
+      "atlasCell": {
+        "col": 3,
+        "row": 7,
+        "x": 288,
+        "y": 588,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 68,
+      "id": "trib_68",
+      "chapter": 8,
+      "tribName": "僧房卧病",
+      "monsterName": "镇海寺吸元夜鼠妖",
+      "rank": "mob",
+      "archetype": "rat_assassin",
+      "weapon": "幽夜分水刺",
+      "lore": "潜伏镇海禅林夜半残害僧侣的无底洞鼠精侍女。",
+      "size": {
+        "width": 54,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_68_f0.png",
+        "f1": "assets/images/monsters/trib_68_f1.png"
+      },
+      "atlasCell": {
+        "col": 4,
+        "row": 7,
+        "x": 384,
+        "y": 588,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 69,
+      "id": "trib_69",
+      "chapter": 8,
+      "tribName": "无底洞遭困",
+      "monsterName": "金鼻白毛老鼠精 · 地涌夫人",
+      "rank": "boss",
+      "archetype": "jade_rabbit",
+      "weapon": "绣鞋替身·双股寒光剑",
+      "lore": "灵山偷食香花宝烛之半截观音，认托塔李天王做父，陷空山无底洞深达三百里！",
+      "size": {
+        "width": 66,
+        "height": 39
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_69_f0.png",
+        "f1": "assets/images/monsters/trib_69_f1.png"
+      },
+      "atlasCell": {
+        "col": 5,
+        "row": 7,
+        "x": 480,
+        "y": 588,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 70,
+      "id": "trib_70",
+      "chapter": 8,
+      "tribName": "灭法国难行",
+      "monsterName": "灭法国禁佛剃刀卫",
+      "rank": "mob",
+      "archetype": "bandit_raider",
+      "weapon": "斩僧鬼头大刀",
+      "lore": "灭法国许愿杀满一万僧人之巡城禁卫武士。",
+      "size": {
+        "width": 54,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_70_f0.png",
+        "f1": "assets/images/monsters/trib_70_f1.png"
+      },
+      "atlasCell": {
+        "col": 6,
+        "row": 7,
+        "x": 576,
+        "y": 588,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 71,
+      "id": "trib_71",
+      "chapter": 8,
+      "tribName": "隐雾山遇魔",
+      "monsterName": "南山大王 · 艾叶花豹精",
+      "rank": "boss",
+      "archetype": "yin_general",
+      "weapon": "点钢铁杵·分瓣梅花阵",
+      "lore": "隐雾山折岳连环洞艾叶花皮豹子精，巧使分瓣梅花计调虎离山摄走唐僧。",
+      "size": {
+        "width": 69,
+        "height": 42
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_71_f0.png",
+        "f1": "assets/images/monsters/trib_71_f1.png"
+      },
+      "atlasCell": {
+        "col": 7,
+        "row": 7,
+        "x": 672,
+        "y": 588,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 72,
+      "id": "trib_72",
+      "chapter": 8,
+      "tribName": "凤仙郡求雨",
+      "monsterName": "凤仙郡赤地旱魃灵",
+      "rank": "mob",
+      "archetype": "flame_imp",
+      "weapon": "焦土赤炎弹",
+      "lore": "凤仙郡三年大旱米山面山未倒时游荡荒原的酷暑旱灵。",
+      "size": {
+        "width": 42,
+        "height": 27
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_72_f0.png",
+        "f1": "assets/images/monsters/trib_72_f1.png"
+      },
+      "atlasCell": {
+        "col": 8,
+        "row": 7,
+        "x": 768,
+        "y": 588,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 73,
+      "id": "trib_73",
+      "chapter": 9,
+      "tribName": "失落兵器",
+      "monsterName": "豹头山黄狮精",
+      "rank": "elite",
+      "archetype": "lion_roar_warrior",
+      "weapon": "四明铲",
+      "lore": "玉华州虎口洞黄狮精，偷走金箍棒、九齿钉钯与降妖宝杖欲办钉钯嘉会。",
+      "size": {
+        "width": 57,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_73_f0.png",
+        "f1": "assets/images/monsters/trib_73_f1.png"
+      },
+      "atlasCell": {
+        "col": 0,
+        "row": 8,
+        "x": 0,
+        "y": 672,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 74,
+      "id": "trib_74",
+      "chapter": 9,
+      "tribName": "会庆钉钯",
+      "monsterName": "九灵元圣 · 九头狮祖",
+      "rank": "boss",
+      "archetype": "nine_spirit_saint",
+      "weapon": "九首衔拿神通·震彻三界吼",
+      "lore": "太乙救苦天尊座下九头狮子，赤手空拳摇首一吼上通三圣下彻九泉，一口生擒众圣！",
+      "size": {
+        "width": 66,
+        "height": 42
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_74_f0.png",
+        "f1": "assets/images/monsters/trib_74_f1.png"
+      },
+      "atlasCell": {
+        "col": 1,
+        "row": 8,
+        "x": 96,
+        "y": 672,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 75,
+      "id": "trib_75",
+      "chapter": 9,
+      "tribName": "竹节山遭难",
+      "monsterName": "九曲盘桓洞狻猊狮卫",
+      "rank": "mob",
+      "archetype": "lion_roar_warrior",
+      "weapon": "赤铜开山钺",
+      "lore": "竹节山九灵元圣膝下猱狮、雪狮、狻猊、白泽、伏狸、抟象六狮群妖。",
+      "size": {
+        "width": 57,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_75_f0.png",
+        "f1": "assets/images/monsters/trib_75_f1.png"
+      },
+      "atlasCell": {
+        "col": 2,
+        "row": 8,
+        "x": 192,
+        "y": 672,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 76,
+      "id": "trib_76",
+      "chapter": 9,
+      "tribName": "玄英洞受苦",
+      "monsterName": "玄英洞 · 辟寒辟暑辟尘三犀王",
+      "rank": "boss",
+      "archetype": "single_horn_rhino",
+      "weapon": "寒冰宣花斧·玄天犀角",
+      "lore": "金平府青龙山玄英洞三尊千年犀牛精，假扮佛像偷食酥合香油，唯有四木禽星可降。",
+      "size": {
+        "width": 66,
+        "height": 42
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_76_f0.png",
+        "f1": "assets/images/monsters/trib_76_f1.png"
+      },
+      "atlasCell": {
+        "col": 3,
+        "row": 8,
+        "x": 288,
+        "y": 672,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 77,
+      "id": "trib_77",
+      "chapter": 9,
+      "tribName": "赶捉犀牛",
+      "monsterName": "青龙山铁甲犀牛卫",
+      "rank": "mob",
+      "archetype": "bull_guard",
+      "weapon": "寒铁棱盾",
+      "lore": "追逃至西海龙宫仍负隅顽抗的玄英洞重甲牛卫。",
+      "size": {
+        "width": 48,
+        "height": 36
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_77_f0.png",
+        "f1": "assets/images/monsters/trib_77_f1.png"
+      },
+      "atlasCell": {
+        "col": 4,
+        "row": 8,
+        "x": 384,
+        "y": 672,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 78,
+      "id": "trib_78",
+      "chapter": 9,
+      "tribName": "天竺招婚",
+      "monsterName": "广寒捣药 · 天竺玉兔精",
+      "rank": "boss",
+      "archetype": "jade_rabbit",
+      "weapon": "短软捣药玉杵",
+      "lore": "广寒宫嫦娥仙子捣药玉兔，摄藏天竺真公主抛绣球欲配唐僧元阳。",
+      "size": {
+        "width": 66,
+        "height": 39
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_78_f0.png",
+        "f1": "assets/images/monsters/trib_78_f1.png"
+      },
+      "atlasCell": {
+        "col": 5,
+        "row": 8,
+        "x": 480,
+        "y": 672,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 79,
+      "id": "trib_79",
+      "chapter": 9,
+      "tribName": "铜台府监禁",
+      "monsterName": "铜台府夜巡恶盗阴魂",
+      "rank": "mob",
+      "archetype": "ghost_caster",
+      "weapon": "索命勾魂锁",
+      "lore": "铜台府地灵县打劫寇洪招致唐僧师徒蒙冤入狱之凶寇怨灵。",
+      "size": {
+        "width": 48,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_79_f0.png",
+        "f1": "assets/images/monsters/trib_79_f1.png"
+      },
+      "atlasCell": {
+        "col": 6,
+        "row": 8,
+        "x": 576,
+        "y": 672,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 80,
+      "id": "trib_80",
+      "chapter": 9,
+      "tribName": "凌云渡脱胎",
+      "monsterName": "凌云渡凡胎执念尸魔",
+      "rank": "elite",
+      "archetype": "bone_reaper",
+      "weapon": "无底船断念镰",
+      "lore": "灵山脚下凌云仙渡独木桥下激湍中，褪去凡胎肉身所化最后一道心魔试炼！",
+      "size": {
+        "width": 48,
+        "height": 33
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_80_f0.png",
+        "f1": "assets/images/monsters/trib_80_f1.png"
+      },
+      "atlasCell": {
+        "col": 7,
+        "row": 8,
+        "x": 672,
+        "y": 672,
+        "w": 96,
+        "h": 84
+      }
+    },
+    {
+      "no": 81,
+      "id": "trib_81",
+      "chapter": 9,
+      "tribName": "通天河遇鼋湿经书",
+      "monsterName": "通天河 · 千年翻江老鼋",
+      "rank": "boss",
+      "archetype": "ancient_turtle",
+      "weapon": "九宫八卦巨甲·翻江海啸",
+      "lore": "取经归途忘了替老鼋问佛祖寿年，老鼋淬水一沉凑满九九八十一难功德圆满！",
+      "size": {
+        "width": 66,
+        "height": 30
+      },
+      "frames": {
+        "f0": "assets/images/monsters/trib_81_f0.png",
+        "f1": "assets/images/monsters/trib_81_f1.png"
+      },
+      "atlasCell": {
+        "col": 8,
+        "row": 8,
+        "x": 768,
+        "y": 672,
+        "w": 96,
+        "h": 84
+      }
+    }
+  ]
+}

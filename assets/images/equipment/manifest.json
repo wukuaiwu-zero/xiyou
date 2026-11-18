@@ -1,0 +1,2707 @@
+{
+  "title": "《西游破劫录》64款披挂神兵与16种怪物掉落素材高清像素清单",
+  "totalEquipments": 64,
+  "totalMaterials": 16,
+  "totalSets": 7,
+  "atlasPath": "assets/images/equip_materials_atlas.png",
+  "atlasCellSize": {
+    "width": 80,
+    "height": 80,
+    "cols": 8,
+    "rows": 10
+  },
+  "equipments": [
+    {
+      "id": "demon_sabre",
+      "name": "斩妖金背刀",
+      "slot": "weapon",
+      "slotName": "神兵",
+      "tier": 1,
+      "tierName": "一阶·凡铁",
+      "setId": null,
+      "setName": null,
+      "iconKey": "wpn_sabre",
+      "pngPath": "assets/images/equipment/wpn_sabre.png",
+      "baseStats": {
+        "atk": 7,
+        "critRate": 0.03
+      },
+      "recipe": [
+        {
+          "id": "mat_xuantie",
+          "count": 3
+        },
+        {
+          "id": "mat_hupi",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 0,
+        "row": 0,
+        "x": 0,
+        "y": 0,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "black_iron_mace",
+      "name": "乌金破甲锏",
+      "slot": "weapon",
+      "slotName": "神兵",
+      "tier": 1,
+      "tierName": "一阶·凡铁",
+      "setId": null,
+      "setName": null,
+      "iconKey": "wpn_mace",
+      "pngPath": "assets/images/equipment/wpn_mace.png",
+      "baseStats": {
+        "atk": 8,
+        "def": 5
+      },
+      "recipe": [
+        {
+          "id": "mat_xuantie",
+          "count": 4
+        },
+        {
+          "id": "mat_yaogu",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 1,
+        "row": 0,
+        "x": 80,
+        "y": 0,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "pine_staff",
+      "name": "灵山青松杖",
+      "slot": "weapon",
+      "slotName": "神兵",
+      "tier": 1,
+      "tierName": "一阶·凡铁",
+      "setId": null,
+      "setName": null,
+      "iconKey": "wpn_pine_staff",
+      "pngPath": "assets/images/equipment/wpn_pine_staff.png",
+      "baseStats": {
+        "magic": 8,
+        "maxMp": 16,
+        "mpRegen": 1
+      },
+      "recipe": [
+        {
+          "id": "mat_yaogu",
+          "count": 3
+        },
+        {
+          "id": "mat_hanlin",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 2,
+        "row": 0,
+        "x": 160,
+        "y": 0,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "bodhi_ruyi",
+      "name": "菩提玉如意",
+      "slot": "weapon",
+      "slotName": "神兵",
+      "tier": 2,
+      "tierName": "二阶·灵器",
+      "setId": null,
+      "setName": null,
+      "iconKey": "wpn_ruyi",
+      "pngPath": "assets/images/equipment/wpn_ruyi.png",
+      "baseStats": {
+        "magic": 11,
+        "maxMp": 22
+      },
+      "recipe": [
+        {
+          "id": "mat_guizhu",
+          "count": 2
+        },
+        {
+          "id": "mat_hanlin",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 3,
+        "row": 0,
+        "x": 240,
+        "y": 0,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "violet_sword",
+      "name": "紫电青霜剑",
+      "slot": "weapon",
+      "slotName": "神兵",
+      "tier": 2,
+      "tierName": "二阶·灵器",
+      "setId": null,
+      "setName": null,
+      "iconKey": "wpn_sword",
+      "pngPath": "assets/images/equipment/wpn_sword.png",
+      "baseStats": {
+        "atk": 7,
+        "magic": 7,
+        "critRate": 0.05
+      },
+      "recipe": [
+        {
+          "id": "mat_fengsha",
+          "count": 2
+        },
+        {
+          "id": "mat_xuantie",
+          "count": 4
+        }
+      ],
+      "atlasCell": {
+        "col": 4,
+        "row": 0,
+        "x": 320,
+        "y": 0,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "wolf_fang_club",
+      "name": "狮驼狼牙棒",
+      "slot": "weapon",
+      "slotName": "神兵",
+      "tier": 2,
+      "tierName": "二阶·灵器",
+      "setId": null,
+      "setName": null,
+      "iconKey": "wpn_wolf_club",
+      "pngPath": "assets/images/equipment/wpn_wolf_club.png",
+      "baseStats": {
+        "atk": 11,
+        "critDmg": 0.14
+      },
+      "recipe": [
+        {
+          "id": "mat_huojing",
+          "count": 2
+        },
+        {
+          "id": "mat_yaogu",
+          "count": 4
+        }
+      ],
+      "atlasCell": {
+        "col": 5,
+        "row": 0,
+        "x": 400,
+        "y": 0,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "trident_halberd",
+      "name": "三尖两刃神锋",
+      "slot": "weapon",
+      "slotName": "神兵",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_pingtian",
+      "setName": "平天魔尊",
+      "iconKey": "wpn_trident_spear",
+      "pngPath": "assets/images/equipment/wpn_trident_spear.png",
+      "baseStats": {
+        "atk": 13,
+        "critRate": 0.05,
+        "critDmg": 0.14
+      },
+      "recipe": [
+        {
+          "id": "mat_niujiao",
+          "count": 2
+        },
+        {
+          "id": "mat_huojing",
+          "count": 3
+        },
+        {
+          "id": "mat_xuantie",
+          "count": 4
+        }
+      ],
+      "atlasCell": {
+        "col": 6,
+        "row": 0,
+        "x": 480,
+        "y": 0,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "crescent_spade",
+      "name": "降妖月牙宝铲",
+      "slot": "weapon",
+      "slotName": "神兵",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_juanlian",
+      "setName": "流沙卷帘",
+      "iconKey": "wpn_crescent_spade",
+      "pngPath": "assets/images/equipment/wpn_crescent_spade.png",
+      "baseStats": {
+        "atk": 10,
+        "magic": 9,
+        "def": 6
+      },
+      "recipe": [
+        {
+          "id": "mat_taiyijin",
+          "count": 2
+        },
+        {
+          "id": "mat_longjin",
+          "count": 2
+        },
+        {
+          "id": "mat_hanlin",
+          "count": 4
+        }
+      ],
+      "atlasCell": {
+        "col": 7,
+        "row": 0,
+        "x": 560,
+        "y": 0,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "dragon_frost_lance",
+      "name": "西海寒渊龙枪",
+      "slot": "weapon",
+      "slotName": "神兵",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_zhenlong",
+      "setName": "西海真龙",
+      "iconKey": "wpn_dragon_lance",
+      "pngPath": "assets/images/equipment/wpn_dragon_lance.png",
+      "baseStats": {
+        "atk": 11,
+        "magic": 8,
+        "critRate": 0.06
+      },
+      "recipe": [
+        {
+          "id": "mat_leiyu",
+          "count": 2
+        },
+        {
+          "id": "mat_longjin",
+          "count": 3
+        },
+        {
+          "id": "mat_hanlin",
+          "count": 4
+        }
+      ],
+      "atlasCell": {
+        "col": 0,
+        "row": 1,
+        "x": 0,
+        "y": 80,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "seven_star_sword",
+      "name": "兜率七星宝剑",
+      "slot": "weapon",
+      "slotName": "神兵",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_taiqing",
+      "setName": "兜率太清",
+      "iconKey": "wpn_seven_sword",
+      "pngPath": "assets/images/equipment/wpn_seven_sword.png",
+      "baseStats": {
+        "magic": 14,
+        "maxMp": 26,
+        "critRate": 0.04
+      },
+      "recipe": [
+        {
+          "id": "mat_leiyu",
+          "count": 2
+        },
+        {
+          "id": "mat_guizhu",
+          "count": 3
+        },
+        {
+          "id": "mat_xuantie",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 1,
+        "row": 1,
+        "x": 80,
+        "y": 80,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "ruyi_jingu_staff",
+      "name": "如意金箍神珍",
+      "slot": "weapon",
+      "slotName": "神兵",
+      "tier": 4,
+      "tierName": "四阶·圣器",
+      "setId": "set_dasheng",
+      "setName": "齐天大圣",
+      "iconKey": "wpn_jingu_staff",
+      "pngPath": "assets/images/equipment/wpn_jingu_staff.png",
+      "baseStats": {
+        "atk": 17,
+        "critRate": 0.07,
+        "critDmg": 0.2
+      },
+      "recipe": [
+        {
+          "id": "mat_yaodan",
+          "count": 1
+        },
+        {
+          "id": "mat_butianshi",
+          "count": 1
+        },
+        {
+          "id": "mat_taiyijin",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 2,
+        "row": 1,
+        "x": 160,
+        "y": 80,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "nine_tooth_rake",
+      "name": "上宝沁金九齿耙",
+      "slot": "weapon",
+      "slotName": "神兵",
+      "tier": 4,
+      "tierName": "四阶·圣器",
+      "setId": "set_tianpeng",
+      "setName": "天蓬星河",
+      "iconKey": "wpn_nine_rake",
+      "pngPath": "assets/images/equipment/wpn_nine_rake.png",
+      "baseStats": {
+        "atk": 15,
+        "def": 10,
+        "maxHp": 28
+      },
+      "recipe": [
+        {
+          "id": "mat_yaodan",
+          "count": 1
+        },
+        {
+          "id": "mat_niujiao",
+          "count": 2
+        },
+        {
+          "id": "mat_taiyijin",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 3,
+        "row": 1,
+        "x": 240,
+        "y": 80,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "nine_ring_staff",
+      "name": "九环旃檀锡杖",
+      "slot": "weapon",
+      "slotName": "神兵",
+      "tier": 4,
+      "tierName": "四阶·圣器",
+      "setId": "set_fotuo",
+      "setName": "锦襕佛陀",
+      "iconKey": "wpn_tin_staff",
+      "pngPath": "assets/images/equipment/wpn_tin_staff.png",
+      "baseStats": {
+        "magic": 18,
+        "maxMp": 34,
+        "mpRegen": 2.2
+      },
+      "recipe": [
+        {
+          "id": "mat_yaodan",
+          "count": 1
+        },
+        {
+          "id": "mat_jinlian",
+          "count": 3
+        },
+        {
+          "id": "mat_zhusi",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 4,
+        "row": 1,
+        "x": 320,
+        "y": 80,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "bronze_band",
+      "name": "行者百炼铜箍",
+      "slot": "helm",
+      "slotName": "冠冕",
+      "tier": 1,
+      "tierName": "一阶·凡铁",
+      "setId": null,
+      "setName": null,
+      "iconKey": "hlm_bronze_band",
+      "pngPath": "assets/images/equipment/hlm_bronze_band.png",
+      "baseStats": {
+        "atk": 3,
+        "def": 6,
+        "maxHp": 14
+      },
+      "recipe": [
+        {
+          "id": "mat_xuantie",
+          "count": 3
+        },
+        {
+          "id": "mat_hupi",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 5,
+        "row": 1,
+        "x": 400,
+        "y": 80,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "monk_bamboo_hat",
+      "name": "云游竹编斗笠",
+      "slot": "helm",
+      "slotName": "冠冕",
+      "tier": 1,
+      "tierName": "一阶·凡铁",
+      "setId": null,
+      "setName": null,
+      "iconKey": "hlm_bamboo_hat",
+      "pngPath": "assets/images/equipment/hlm_bamboo_hat.png",
+      "baseStats": {
+        "def": 5,
+        "maxMp": 16,
+        "mpRegen": 1
+      },
+      "recipe": [
+        {
+          "id": "mat_hupi",
+          "count": 3
+        },
+        {
+          "id": "mat_hanlin",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 6,
+        "row": 1,
+        "x": 480,
+        "y": 80,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "bone_skull_helm",
+      "name": "白骨狰狞战盔",
+      "slot": "helm",
+      "slotName": "冠冕",
+      "tier": 1,
+      "tierName": "一阶·凡铁",
+      "setId": null,
+      "setName": null,
+      "iconKey": "hlm_bone_helm",
+      "pngPath": "assets/images/equipment/hlm_bone_helm.png",
+      "baseStats": {
+        "atk": 4,
+        "critRate": 0.03,
+        "def": 4
+      },
+      "recipe": [
+        {
+          "id": "mat_yaogu",
+          "count": 4
+        },
+        {
+          "id": "mat_xuantie",
+          "count": 1
+        }
+      ],
+      "atlasCell": {
+        "col": 7,
+        "row": 1,
+        "x": 560,
+        "y": 80,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "kunlun_helm",
+      "name": "昆仑玄铁胄",
+      "slot": "helm",
+      "slotName": "冠冕",
+      "tier": 2,
+      "tierName": "二阶·灵器",
+      "setId": null,
+      "setName": null,
+      "iconKey": "hlm_iron",
+      "pngPath": "assets/images/equipment/hlm_iron.png",
+      "baseStats": {
+        "def": 10,
+        "maxHp": 24
+      },
+      "recipe": [
+        {
+          "id": "mat_fengsha",
+          "count": 2
+        },
+        {
+          "id": "mat_xuantie",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 0,
+        "row": 2,
+        "x": 0,
+        "y": 160,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "asura_mask",
+      "name": "修罗怒目面",
+      "slot": "helm",
+      "slotName": "冠冕",
+      "tier": 2,
+      "tierName": "二阶·灵器",
+      "setId": null,
+      "setName": null,
+      "iconKey": "hlm_mask",
+      "pngPath": "assets/images/equipment/hlm_mask.png",
+      "baseStats": {
+        "atk": 6,
+        "critRate": 0.04,
+        "def": 4
+      },
+      "recipe": [
+        {
+          "id": "mat_huojing",
+          "count": 2
+        },
+        {
+          "id": "mat_yaogu",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 1,
+        "row": 2,
+        "x": 80,
+        "y": 160,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "yellow_wind_hood",
+      "name": "黄风御沙兜",
+      "slot": "helm",
+      "slotName": "冠冕",
+      "tier": 2,
+      "tierName": "二阶·灵器",
+      "setId": null,
+      "setName": null,
+      "iconKey": "hlm_sand_hood",
+      "pngPath": "assets/images/equipment/hlm_sand_hood.png",
+      "baseStats": {
+        "def": 7,
+        "maxHp": 18,
+        "moveSpeed": 6
+      },
+      "recipe": [
+        {
+          "id": "mat_fengsha",
+          "count": 2
+        },
+        {
+          "id": "mat_hupi",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 2,
+        "row": 2,
+        "x": 160,
+        "y": 160,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "crimson_hero_band",
+      "name": "赤金卷帘英雄箍",
+      "slot": "helm",
+      "slotName": "冠冕",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_juanlian",
+      "setName": "流沙卷帘",
+      "iconKey": "hlm_hero_band",
+      "pngPath": "assets/images/equipment/hlm_hero_band.png",
+      "baseStats": {
+        "atk": 6,
+        "magic": 6,
+        "maxHp": 22,
+        "def": 7
+      },
+      "recipe": [
+        {
+          "id": "mat_jinlian",
+          "count": 2
+        },
+        {
+          "id": "mat_longjin",
+          "count": 2
+        },
+        {
+          "id": "mat_yaogu",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 3,
+        "row": 2,
+        "x": 240,
+        "y": 160,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "coral_dragon_crown",
+      "name": "沧海青玉龙角冠",
+      "slot": "helm",
+      "slotName": "冠冕",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_zhenlong",
+      "setName": "西海真龙",
+      "iconKey": "hlm_dragon_crown",
+      "pngPath": "assets/images/equipment/hlm_dragon_crown.png",
+      "baseStats": {
+        "magic": 8,
+        "critRate": 0.05,
+        "maxMp": 22
+      },
+      "recipe": [
+        {
+          "id": "mat_leiyu",
+          "count": 2
+        },
+        {
+          "id": "mat_longjin",
+          "count": 2
+        },
+        {
+          "id": "mat_hanlin",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 4,
+        "row": 2,
+        "x": 320,
+        "y": 160,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "taiqing_lotus_cap",
+      "name": "太清混元芙蓉冠",
+      "slot": "helm",
+      "slotName": "冠冕",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_taiqing",
+      "setName": "兜率太清",
+      "iconKey": "hlm_lotus_cap",
+      "pngPath": "assets/images/equipment/hlm_lotus_cap.png",
+      "baseStats": {
+        "magic": 9,
+        "maxMp": 28,
+        "mpRegen": 1.8
+      },
+      "recipe": [
+        {
+          "id": "mat_jinlian",
+          "count": 2
+        },
+        {
+          "id": "mat_zhusi",
+          "count": 3
+        },
+        {
+          "id": "mat_guizhu",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 5,
+        "row": 2,
+        "x": 400,
+        "y": 160,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "bull_horn_helm",
+      "name": "平天魔牛双角盔",
+      "slot": "helm",
+      "slotName": "冠冕",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_pingtian",
+      "setName": "平天魔尊",
+      "iconKey": "hlm_bull_helm",
+      "pngPath": "assets/images/equipment/hlm_bull_helm.png",
+      "baseStats": {
+        "atk": 8,
+        "def": 11,
+        "maxHp": 24
+      },
+      "recipe": [
+        {
+          "id": "mat_niujiao",
+          "count": 2
+        },
+        {
+          "id": "mat_huojing",
+          "count": 2
+        },
+        {
+          "id": "mat_xuantie",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 6,
+        "row": 2,
+        "x": 480,
+        "y": 160,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "phoenix_crown",
+      "name": "凤翅紫金冠",
+      "slot": "helm",
+      "slotName": "冠冕",
+      "tier": 4,
+      "tierName": "四阶·圣器",
+      "setId": "set_dasheng",
+      "setName": "齐天大圣",
+      "iconKey": "hlm_phoenix",
+      "pngPath": "assets/images/equipment/hlm_phoenix.png",
+      "baseStats": {
+        "atk": 9,
+        "critRate": 0.05,
+        "critDmg": 0.16,
+        "maxHp": 22
+      },
+      "recipe": [
+        {
+          "id": "mat_zhenhuo",
+          "count": 1
+        },
+        {
+          "id": "mat_taiyijin",
+          "count": 2
+        },
+        {
+          "id": "mat_fengsha",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 7,
+        "row": 2,
+        "x": 560,
+        "y": 160,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "tianpeng_gold_hat",
+      "name": "天蓬九曜乌金胄",
+      "slot": "helm",
+      "slotName": "冠冕",
+      "tier": 4,
+      "tierName": "四阶·圣器",
+      "setId": "set_tianpeng",
+      "setName": "天蓬星河",
+      "iconKey": "hlm_tianpeng_hat",
+      "pngPath": "assets/images/equipment/hlm_tianpeng_hat.png",
+      "baseStats": {
+        "def": 15,
+        "maxHp": 38,
+        "atk": 5
+      },
+      "recipe": [
+        {
+          "id": "mat_yaodan",
+          "count": 1
+        },
+        {
+          "id": "mat_niujiao",
+          "count": 2
+        },
+        {
+          "id": "mat_xuantie",
+          "count": 4
+        }
+      ],
+      "atlasCell": {
+        "col": 0,
+        "row": 3,
+        "x": 0,
+        "y": 240,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "dharma_hat",
+      "name": "五佛毗卢宝冠",
+      "slot": "helm",
+      "slotName": "冠冕",
+      "tier": 4,
+      "tierName": "四阶·圣器",
+      "setId": "set_fotuo",
+      "setName": "锦襕佛陀",
+      "iconKey": "hlm_dharma",
+      "pngPath": "assets/images/equipment/hlm_dharma.png",
+      "baseStats": {
+        "magic": 11,
+        "maxMp": 32,
+        "mpRegen": 2.2,
+        "def": 7
+      },
+      "recipe": [
+        {
+          "id": "mat_yaodan",
+          "count": 1
+        },
+        {
+          "id": "mat_jinlian",
+          "count": 2
+        },
+        {
+          "id": "mat_guizhu",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 1,
+        "row": 3,
+        "x": 80,
+        "y": 240,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "tiger_skin_kilt",
+      "name": "双叉虎皮战裙",
+      "slot": "armor",
+      "slotName": "宝甲",
+      "tier": 1,
+      "tierName": "一阶·凡铁",
+      "setId": null,
+      "setName": null,
+      "iconKey": "arm_tiger_kilt",
+      "pngPath": "assets/images/equipment/arm_tiger_kilt.png",
+      "baseStats": {
+        "def": 8,
+        "atk": 3,
+        "maxHp": 18
+      },
+      "recipe": [
+        {
+          "id": "mat_hupi",
+          "count": 4
+        },
+        {
+          "id": "mat_yaogu",
+          "count": 1
+        }
+      ],
+      "atlasCell": {
+        "col": 2,
+        "row": 3,
+        "x": 160,
+        "y": 240,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "grey_monk_robe",
+      "name": "禅院灰布僧衣",
+      "slot": "armor",
+      "slotName": "宝甲",
+      "tier": 1,
+      "tierName": "一阶·凡铁",
+      "setId": null,
+      "setName": null,
+      "iconKey": "arm_monk_robe",
+      "pngPath": "assets/images/equipment/arm_monk_robe.png",
+      "baseStats": {
+        "def": 7,
+        "magic": 4,
+        "maxMp": 18
+      },
+      "recipe": [
+        {
+          "id": "mat_hupi",
+          "count": 3
+        },
+        {
+          "id": "mat_hanlin",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 3,
+        "row": 3,
+        "x": 240,
+        "y": 240,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "black_bear_plate",
+      "name": "黑风玄铁护心铠",
+      "slot": "armor",
+      "slotName": "宝甲",
+      "tier": 1,
+      "tierName": "一阶·凡铁",
+      "setId": null,
+      "setName": null,
+      "iconKey": "arm_bear_plate",
+      "pngPath": "assets/images/equipment/arm_bear_plate.png",
+      "baseStats": {
+        "def": 11,
+        "maxHp": 24
+      },
+      "recipe": [
+        {
+          "id": "mat_xuantie",
+          "count": 3
+        },
+        {
+          "id": "mat_hupi",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 4,
+        "row": 3,
+        "x": 320,
+        "y": 240,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "mountain_plate",
+      "name": "山文重鳞铠",
+      "slot": "armor",
+      "slotName": "宝甲",
+      "tier": 2,
+      "tierName": "二阶·灵器",
+      "setId": null,
+      "setName": null,
+      "iconKey": "arm_heavy",
+      "pngPath": "assets/images/equipment/arm_heavy.png",
+      "baseStats": {
+        "def": 16,
+        "maxHp": 34
+      },
+      "recipe": [
+        {
+          "id": "mat_fengsha",
+          "count": 2
+        },
+        {
+          "id": "mat_xuantie",
+          "count": 4
+        }
+      ],
+      "atlasCell": {
+        "col": 5,
+        "row": 3,
+        "x": 400,
+        "y": 240,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "spider_silk_vest",
+      "name": "盘丝天罗软猬衣",
+      "slot": "armor",
+      "slotName": "宝甲",
+      "tier": 2,
+      "tierName": "二阶·灵器",
+      "setId": null,
+      "setName": null,
+      "iconKey": "arm_spider_vest",
+      "pngPath": "assets/images/equipment/arm_spider_vest.png",
+      "baseStats": {
+        "def": 11,
+        "magic": 6,
+        "critRate": 0.04,
+        "maxHp": 22
+      },
+      "recipe": [
+        {
+          "id": "mat_zhusi",
+          "count": 3
+        },
+        {
+          "id": "mat_guizhu",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 6,
+        "row": 3,
+        "x": 480,
+        "y": 240,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "flame_robe",
+      "name": "赤炎罗刹火云袍",
+      "slot": "armor",
+      "slotName": "宝甲",
+      "tier": 2,
+      "tierName": "二阶·灵器",
+      "setId": null,
+      "setName": null,
+      "iconKey": "arm_flame_robe",
+      "pngPath": "assets/images/equipment/arm_flame_robe.png",
+      "baseStats": {
+        "def": 10,
+        "atk": 5,
+        "magic": 6,
+        "maxHp": 24
+      },
+      "recipe": [
+        {
+          "id": "mat_huojing",
+          "count": 3
+        },
+        {
+          "id": "mat_zhusi",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 7,
+        "row": 3,
+        "x": 560,
+        "y": 240,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "quicksand_armor",
+      "name": "八百流沙玄武铠",
+      "slot": "armor",
+      "slotName": "宝甲",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_juanlian",
+      "setName": "流沙卷帘",
+      "iconKey": "arm_quicksand",
+      "pngPath": "assets/images/equipment/arm_quicksand.png",
+      "baseStats": {
+        "def": 16,
+        "magic": 7,
+        "maxHp": 34
+      },
+      "recipe": [
+        {
+          "id": "mat_taiyijin",
+          "count": 2
+        },
+        {
+          "id": "mat_longjin",
+          "count": 2
+        },
+        {
+          "id": "mat_hanlin",
+          "count": 4
+        }
+      ],
+      "atlasCell": {
+        "col": 0,
+        "row": 4,
+        "x": 0,
+        "y": 320,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "dragon_scale",
+      "name": "西海银鳞龙王甲",
+      "slot": "armor",
+      "slotName": "宝甲",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_zhenlong",
+      "setName": "西海真龙",
+      "iconKey": "arm_dragon",
+      "pngPath": "assets/images/equipment/arm_dragon.png",
+      "baseStats": {
+        "def": 14,
+        "magic": 6,
+        "critRate": 0.04,
+        "maxHp": 28
+      },
+      "recipe": [
+        {
+          "id": "mat_leiyu",
+          "count": 2
+        },
+        {
+          "id": "mat_longjin",
+          "count": 3
+        },
+        {
+          "id": "mat_hanlin",
+          "count": 4
+        }
+      ],
+      "atlasCell": {
+        "col": 1,
+        "row": 4,
+        "x": 80,
+        "y": 320,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "bagua_dao_robe",
+      "name": "紫绶八卦仙衣",
+      "slot": "armor",
+      "slotName": "宝甲",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_taiqing",
+      "setName": "兜率太清",
+      "iconKey": "arm_bagua_robe",
+      "pngPath": "assets/images/equipment/arm_bagua_robe.png",
+      "baseStats": {
+        "def": 12,
+        "magic": 10,
+        "maxMp": 30,
+        "mpRegen": 1.5
+      },
+      "recipe": [
+        {
+          "id": "mat_jinlian",
+          "count": 2
+        },
+        {
+          "id": "mat_zhusi",
+          "count": 3
+        },
+        {
+          "id": "mat_fengsha",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 2,
+        "row": 4,
+        "x": 160,
+        "y": 320,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "bull_demon_plate",
+      "name": "平天混元重魔铠",
+      "slot": "armor",
+      "slotName": "宝甲",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_pingtian",
+      "setName": "平天魔尊",
+      "iconKey": "arm_bull_plate",
+      "pngPath": "assets/images/equipment/arm_bull_plate.png",
+      "baseStats": {
+        "def": 19,
+        "atk": 6,
+        "maxHp": 38
+      },
+      "recipe": [
+        {
+          "id": "mat_niujiao",
+          "count": 2
+        },
+        {
+          "id": "mat_huojing",
+          "count": 3
+        },
+        {
+          "id": "mat_xuantie",
+          "count": 4
+        }
+      ],
+      "atlasCell": {
+        "col": 3,
+        "row": 4,
+        "x": 240,
+        "y": 320,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "golden_mail",
+      "name": "锁子黄金甲",
+      "slot": "armor",
+      "slotName": "宝甲",
+      "tier": 4,
+      "tierName": "四阶·圣器",
+      "setId": "set_dasheng",
+      "setName": "齐天大圣",
+      "iconKey": "arm_gold",
+      "pngPath": "assets/images/equipment/arm_gold.png",
+      "baseStats": {
+        "def": 17,
+        "atk": 8,
+        "critRate": 0.04,
+        "maxHp": 36
+      },
+      "recipe": [
+        {
+          "id": "mat_butianshi",
+          "count": 1
+        },
+        {
+          "id": "mat_taiyijin",
+          "count": 3
+        },
+        {
+          "id": "mat_xuantie",
+          "count": 4
+        }
+      ],
+      "atlasCell": {
+        "col": 4,
+        "row": 4,
+        "x": 320,
+        "y": 320,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "tianpeng_armor",
+      "name": "天蓬吞天玄铁铠",
+      "slot": "armor",
+      "slotName": "宝甲",
+      "tier": 4,
+      "tierName": "四阶·圣器",
+      "setId": "set_tianpeng",
+      "setName": "天蓬星河",
+      "iconKey": "arm_tianpeng",
+      "pngPath": "assets/images/equipment/arm_tianpeng.png",
+      "baseStats": {
+        "def": 23,
+        "maxHp": 52
+      },
+      "recipe": [
+        {
+          "id": "mat_yaodan",
+          "count": 1
+        },
+        {
+          "id": "mat_niujiao",
+          "count": 2
+        },
+        {
+          "id": "mat_taiyijin",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 5,
+        "row": 4,
+        "x": 400,
+        "y": 320,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "kasaya_robe",
+      "name": "锦襕九品仙法衣",
+      "slot": "armor",
+      "slotName": "宝甲",
+      "tier": 4,
+      "tierName": "四阶·圣器",
+      "setId": "set_fotuo",
+      "setName": "锦襕佛陀",
+      "iconKey": "arm_robe",
+      "pngPath": "assets/images/equipment/arm_robe.png",
+      "baseStats": {
+        "def": 14,
+        "magic": 12,
+        "maxMp": 38,
+        "maxHp": 30
+      },
+      "recipe": [
+        {
+          "id": "mat_yaodan",
+          "count": 1
+        },
+        {
+          "id": "mat_jinlian",
+          "count": 3
+        },
+        {
+          "id": "mat_zhusi",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 6,
+        "row": 4,
+        "x": 480,
+        "y": 320,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "straw_sandals",
+      "name": "踏山苦行草鞋",
+      "slot": "boots",
+      "slotName": "步履",
+      "tier": 1,
+      "tierName": "一阶·凡铁",
+      "setId": null,
+      "setName": null,
+      "iconKey": "bts_straw",
+      "pngPath": "assets/images/equipment/bts_straw.png",
+      "baseStats": {
+        "moveSpeed": 8,
+        "def": 4,
+        "maxHp": 12
+      },
+      "recipe": [
+        {
+          "id": "mat_hupi",
+          "count": 3
+        },
+        {
+          "id": "mat_yaogu",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 7,
+        "row": 4,
+        "x": 560,
+        "y": 320,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "wolf_leather_boots",
+      "name": "疾风苍狼皮靴",
+      "slot": "boots",
+      "slotName": "步履",
+      "tier": 1,
+      "tierName": "一阶·凡铁",
+      "setId": null,
+      "setName": null,
+      "iconKey": "bts_wolf",
+      "pngPath": "assets/images/equipment/bts_wolf.png",
+      "baseStats": {
+        "moveSpeed": 10,
+        "atk": 3,
+        "critRate": 0.02
+      },
+      "recipe": [
+        {
+          "id": "mat_hupi",
+          "count": 4
+        },
+        {
+          "id": "mat_yaogu",
+          "count": 1
+        }
+      ],
+      "atlasCell": {
+        "col": 0,
+        "row": 5,
+        "x": 0,
+        "y": 400,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "iron_greaves",
+      "name": "巡山乌铁战靴",
+      "slot": "boots",
+      "slotName": "步履",
+      "tier": 1,
+      "tierName": "一阶·凡铁",
+      "setId": null,
+      "setName": null,
+      "iconKey": "bts_iron",
+      "pngPath": "assets/images/equipment/bts_iron.png",
+      "baseStats": {
+        "moveSpeed": 5,
+        "def": 8,
+        "maxHp": 18
+      },
+      "recipe": [
+        {
+          "id": "mat_xuantie",
+          "count": 3
+        },
+        {
+          "id": "mat_hupi",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 1,
+        "row": 5,
+        "x": 80,
+        "y": 400,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "sand_walker_boots",
+      "name": "御风踏沙轻靴",
+      "slot": "boots",
+      "slotName": "步履",
+      "tier": 2,
+      "tierName": "二阶·灵器",
+      "setId": null,
+      "setName": null,
+      "iconKey": "bts_sand",
+      "pngPath": "assets/images/equipment/bts_sand.png",
+      "baseStats": {
+        "moveSpeed": 13,
+        "def": 6,
+        "maxHp": 16
+      },
+      "recipe": [
+        {
+          "id": "mat_fengsha",
+          "count": 2
+        },
+        {
+          "id": "mat_hupi",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 2,
+        "row": 5,
+        "x": 160,
+        "y": 400,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "bone_shadow_boots",
+      "name": "幽冥鬼影步履",
+      "slot": "boots",
+      "slotName": "步履",
+      "tier": 2,
+      "tierName": "二阶·灵器",
+      "setId": null,
+      "setName": null,
+      "iconKey": "bts_shadow",
+      "pngPath": "assets/images/equipment/bts_shadow.png",
+      "baseStats": {
+        "moveSpeed": 12,
+        "magic": 5,
+        "critRate": 0.03
+      },
+      "recipe": [
+        {
+          "id": "mat_guizhu",
+          "count": 2
+        },
+        {
+          "id": "mat_yaogu",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 3,
+        "row": 5,
+        "x": 240,
+        "y": 400,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "frost_tread_boots",
+      "name": "通天踏冰寒靴",
+      "slot": "boots",
+      "slotName": "步履",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_taiqing",
+      "setName": "兜率太清",
+      "iconKey": "bts_frost",
+      "pngPath": "assets/images/equipment/bts_frost.png",
+      "baseStats": {
+        "moveSpeed": 14,
+        "magic": 7,
+        "maxMp": 22,
+        "def": 7
+      },
+      "recipe": [
+        {
+          "id": "mat_leiyu",
+          "count": 1
+        },
+        {
+          "id": "mat_longjin",
+          "count": 2
+        },
+        {
+          "id": "mat_hanlin",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 4,
+        "row": 5,
+        "x": 320,
+        "y": 400,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "abyss_water_boots",
+      "name": "分水踏浪玄靴",
+      "slot": "boots",
+      "slotName": "步履",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_juanlian",
+      "setName": "流沙卷帘",
+      "iconKey": "bts_quicksand",
+      "pngPath": "assets/images/equipment/bts_quicksand.png",
+      "baseStats": {
+        "moveSpeed": 13,
+        "def": 9,
+        "mpRegen": 1.4,
+        "maxHp": 20
+      },
+      "recipe": [
+        {
+          "id": "mat_taiyijin",
+          "count": 1
+        },
+        {
+          "id": "mat_longjin",
+          "count": 2
+        },
+        {
+          "id": "mat_hanlin",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 5,
+        "row": 5,
+        "x": 400,
+        "y": 400,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "tide_dragon_boots",
+      "name": "四海腾云龙鳞靴",
+      "slot": "boots",
+      "slotName": "步履",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_zhenlong",
+      "setName": "西海真龙",
+      "iconKey": "bts_dragon",
+      "pngPath": "assets/images/equipment/bts_dragon.png",
+      "baseStats": {
+        "moveSpeed": 17,
+        "atk": 5,
+        "critRate": 0.04
+      },
+      "recipe": [
+        {
+          "id": "mat_leiyu",
+          "count": 2
+        },
+        {
+          "id": "mat_longjin",
+          "count": 2
+        },
+        {
+          "id": "mat_hanlin",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 6,
+        "row": 5,
+        "x": 480,
+        "y": 400,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "wind_fire_boots",
+      "name": "风火流云神行履",
+      "slot": "boots",
+      "slotName": "步履",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_pingtian",
+      "setName": "平天魔尊",
+      "iconKey": "bts_wind_fire",
+      "pngPath": "assets/images/equipment/bts_wind_fire.png",
+      "baseStats": {
+        "moveSpeed": 16,
+        "atk": 7,
+        "critDmg": 0.12
+      },
+      "recipe": [
+        {
+          "id": "mat_niujiao",
+          "count": 1
+        },
+        {
+          "id": "mat_huojing",
+          "count": 3
+        },
+        {
+          "id": "mat_fengsha",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 7,
+        "row": 5,
+        "x": 560,
+        "y": 400,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "cloud_silk_boots",
+      "name": "藕丝步云履",
+      "slot": "boots",
+      "slotName": "步履",
+      "tier": 4,
+      "tierName": "四阶·圣器",
+      "setId": "set_dasheng",
+      "setName": "齐天大圣",
+      "iconKey": "bts_cloud_silk",
+      "pngPath": "assets/images/equipment/bts_cloud_silk.png",
+      "baseStats": {
+        "moveSpeed": 20,
+        "atk": 7,
+        "critRate": 0.05,
+        "def": 8
+      },
+      "recipe": [
+        {
+          "id": "mat_zhenhuo",
+          "count": 1
+        },
+        {
+          "id": "mat_zhusi",
+          "count": 3
+        },
+        {
+          "id": "mat_fengsha",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 0,
+        "row": 6,
+        "x": 0,
+        "y": 480,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "tianpeng_war_boots",
+      "name": "天罡镇岳重靴",
+      "slot": "boots",
+      "slotName": "步履",
+      "tier": 4,
+      "tierName": "四阶·圣器",
+      "setId": "set_tianpeng",
+      "setName": "天蓬星河",
+      "iconKey": "bts_tianpeng",
+      "pngPath": "assets/images/equipment/bts_tianpeng.png",
+      "baseStats": {
+        "moveSpeed": 12,
+        "def": 14,
+        "maxHp": 34
+      },
+      "recipe": [
+        {
+          "id": "mat_yaodan",
+          "count": 1
+        },
+        {
+          "id": "mat_taiyijin",
+          "count": 2
+        },
+        {
+          "id": "mat_xuantie",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 1,
+        "row": 6,
+        "x": 80,
+        "y": 480,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "golden_lotus_shoes",
+      "name": "步步生莲金丝履",
+      "slot": "boots",
+      "slotName": "步履",
+      "tier": 4,
+      "tierName": "四阶·圣器",
+      "setId": "set_fotuo",
+      "setName": "锦襕佛陀",
+      "iconKey": "bts_lotus",
+      "pngPath": "assets/images/equipment/bts_lotus.png",
+      "baseStats": {
+        "moveSpeed": 16,
+        "magic": 9,
+        "mpRegen": 2,
+        "maxHp": 22
+      },
+      "recipe": [
+        {
+          "id": "mat_yaodan",
+          "count": 1
+        },
+        {
+          "id": "mat_jinlian",
+          "count": 2
+        },
+        {
+          "id": "mat_zhusi",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 2,
+        "row": 6,
+        "x": 160,
+        "y": 480,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "wood_prayer_beads",
+      "name": "紫檀百八佛珠",
+      "slot": "accessory",
+      "slotName": "灵饰",
+      "tier": 1,
+      "tierName": "一阶·凡铁",
+      "setId": null,
+      "setName": null,
+      "iconKey": "acc_wood_beads",
+      "pngPath": "assets/images/equipment/acc_wood_beads.png",
+      "baseStats": {
+        "magic": 4,
+        "maxMp": 18,
+        "mpRegen": 1.2
+      },
+      "recipe": [
+        {
+          "id": "mat_yaogu",
+          "count": 3
+        },
+        {
+          "id": "mat_hanlin",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 3,
+        "row": 6,
+        "x": 240,
+        "y": 480,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "wolf_tooth_charm",
+      "name": "辟邪狼牙骨佩",
+      "slot": "accessory",
+      "slotName": "灵饰",
+      "tier": 1,
+      "tierName": "一阶·凡铁",
+      "setId": null,
+      "setName": null,
+      "iconKey": "acc_wolf_fang",
+      "pngPath": "assets/images/equipment/acc_wolf_fang.png",
+      "baseStats": {
+        "atk": 4,
+        "critRate": 0.03
+      },
+      "recipe": [
+        {
+          "id": "mat_yaogu",
+          "count": 3
+        },
+        {
+          "id": "mat_hupi",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 4,
+        "row": 6,
+        "x": 320,
+        "y": 480,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "copper_bell",
+      "name": "聚魂青铜妖铃",
+      "slot": "accessory",
+      "slotName": "灵饰",
+      "tier": 1,
+      "tierName": "一阶·凡铁",
+      "setId": null,
+      "setName": null,
+      "iconKey": "acc_copper_bell",
+      "pngPath": "assets/images/equipment/acc_copper_bell.png",
+      "baseStats": {
+        "def": 5,
+        "maxHp": 14,
+        "maxMp": 12
+      },
+      "recipe": [
+        {
+          "id": "mat_xuantie",
+          "count": 3
+        },
+        {
+          "id": "mat_yaogu",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 5,
+        "row": 6,
+        "x": 400,
+        "y": 480,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "wind_pearl",
+      "name": "定风避尘珠",
+      "slot": "accessory",
+      "slotName": "灵饰",
+      "tier": 2,
+      "tierName": "二阶·灵器",
+      "setId": null,
+      "setName": null,
+      "iconKey": "acc_pearl",
+      "pngPath": "assets/images/equipment/acc_pearl.png",
+      "baseStats": {
+        "def": 7,
+        "maxMp": 18,
+        "critRate": 0.03
+      },
+      "recipe": [
+        {
+          "id": "mat_fengsha",
+          "count": 3
+        },
+        {
+          "id": "mat_hanlin",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 6,
+        "row": 6,
+        "x": 480,
+        "y": 480,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "fire_jade",
+      "name": "离火金睛佩",
+      "slot": "accessory",
+      "slotName": "灵饰",
+      "tier": 2,
+      "tierName": "二阶·灵器",
+      "setId": null,
+      "setName": null,
+      "iconKey": "acc_jade",
+      "pngPath": "assets/images/equipment/acc_jade.png",
+      "baseStats": {
+        "atk": 5,
+        "critRate": 0.04,
+        "critDmg": 0.12
+      },
+      "recipe": [
+        {
+          "id": "mat_huojing",
+          "count": 3
+        },
+        {
+          "id": "mat_xuantie",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 7,
+        "row": 6,
+        "x": 560,
+        "y": 480,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "taiyi_talisman",
+      "name": "太乙聚灵符",
+      "slot": "accessory",
+      "slotName": "灵饰",
+      "tier": 2,
+      "tierName": "二阶·灵器",
+      "setId": null,
+      "setName": null,
+      "iconKey": "acc_talisman",
+      "pngPath": "assets/images/equipment/acc_talisman.png",
+      "baseStats": {
+        "magic": 8,
+        "maxMp": 28,
+        "mpRegen": 2
+      },
+      "recipe": [
+        {
+          "id": "mat_guizhu",
+          "count": 2
+        },
+        {
+          "id": "mat_zhusi",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 0,
+        "row": 7,
+        "x": 0,
+        "y": 560,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "nine_skull_necklace",
+      "name": "九骷化龙念珠",
+      "slot": "accessory",
+      "slotName": "灵饰",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_juanlian",
+      "setName": "流沙卷帘",
+      "iconKey": "acc_skull_beads",
+      "pngPath": "assets/images/equipment/acc_skull_beads.png",
+      "baseStats": {
+        "atk": 6,
+        "magic": 7,
+        "maxHp": 22
+      },
+      "recipe": [
+        {
+          "id": "mat_leiyu",
+          "count": 1
+        },
+        {
+          "id": "mat_guizhu",
+          "count": 3
+        },
+        {
+          "id": "mat_yaogu",
+          "count": 4
+        }
+      ],
+      "atlasCell": {
+        "col": 1,
+        "row": 7,
+        "x": 80,
+        "y": 560,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "ocean_heart_pearl",
+      "name": "定海辟水夜明珠",
+      "slot": "accessory",
+      "slotName": "灵饰",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_zhenlong",
+      "setName": "西海真龙",
+      "iconKey": "acc_ocean_pearl",
+      "pngPath": "assets/images/equipment/acc_ocean_pearl.png",
+      "baseStats": {
+        "magic": 8,
+        "maxMp": 26,
+        "critRate": 0.05
+      },
+      "recipe": [
+        {
+          "id": "mat_leiyu",
+          "count": 2
+        },
+        {
+          "id": "mat_longjin",
+          "count": 2
+        },
+        {
+          "id": "mat_hanlin",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 2,
+        "row": 7,
+        "x": 160,
+        "y": 560,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "jingang_jade_bangle",
+      "name": "兜率紫金金刚环",
+      "slot": "accessory",
+      "slotName": "灵饰",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_taiqing",
+      "setName": "兜率太清",
+      "iconKey": "acc_jingang_ring",
+      "pngPath": "assets/images/equipment/acc_jingang_ring.png",
+      "baseStats": {
+        "def": 10,
+        "magic": 8,
+        "maxMp": 24
+      },
+      "recipe": [
+        {
+          "id": "mat_taiyijin",
+          "count": 2
+        },
+        {
+          "id": "mat_guizhu",
+          "count": 2
+        },
+        {
+          "id": "mat_xuantie",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 3,
+        "row": 7,
+        "x": 240,
+        "y": 560,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "iron_fan_pendant",
+      "name": "翠云芭蕉灵叶佩",
+      "slot": "accessory",
+      "slotName": "灵饰",
+      "tier": 3,
+      "tierName": "三阶·仙宝",
+      "setId": "set_pingtian",
+      "setName": "平天魔尊",
+      "iconKey": "acc_fan_pendant",
+      "pngPath": "assets/images/equipment/acc_fan_pendant.png",
+      "baseStats": {
+        "atk": 7,
+        "critDmg": 0.15,
+        "mpRegen": 1.5
+      },
+      "recipe": [
+        {
+          "id": "mat_niujiao",
+          "count": 2
+        },
+        {
+          "id": "mat_fengsha",
+          "count": 3
+        },
+        {
+          "id": "mat_zhusi",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 4,
+        "row": 7,
+        "x": 320,
+        "y": 560,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "golden_fillet_ring",
+      "name": "紧箍齐天金环",
+      "slot": "accessory",
+      "slotName": "灵饰",
+      "tier": 4,
+      "tierName": "四阶·圣器",
+      "setId": "set_dasheng",
+      "setName": "齐天大圣",
+      "iconKey": "acc_golden_fillet",
+      "pngPath": "assets/images/equipment/acc_golden_fillet.png",
+      "baseStats": {
+        "atk": 9,
+        "critRate": 0.06,
+        "critDmg": 0.18
+      },
+      "recipe": [
+        {
+          "id": "mat_zhenhuo",
+          "count": 1
+        },
+        {
+          "id": "mat_butianshi",
+          "count": 1
+        },
+        {
+          "id": "mat_taiyijin",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 5,
+        "row": 7,
+        "x": 400,
+        "y": 560,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "glutton_jade_gourd",
+      "name": "饕餮乾坤白玉葫",
+      "slot": "accessory",
+      "slotName": "灵饰",
+      "tier": 4,
+      "tierName": "四阶·圣器",
+      "setId": "set_tianpeng",
+      "setName": "天蓬星河",
+      "iconKey": "acc_jade_gourd",
+      "pngPath": "assets/images/equipment/acc_jade_gourd.png",
+      "baseStats": {
+        "def": 11,
+        "maxHp": 38,
+        "atk": 6
+      },
+      "recipe": [
+        {
+          "id": "mat_yaodan",
+          "count": 1
+        },
+        {
+          "id": "mat_jinlian",
+          "count": 2
+        },
+        {
+          "id": "mat_longjin",
+          "count": 3
+        }
+      ],
+      "atlasCell": {
+        "col": 6,
+        "row": 7,
+        "x": 480,
+        "y": 560,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "relic_ring",
+      "name": "佛祖金身舍利戒",
+      "slot": "accessory",
+      "slotName": "灵饰",
+      "tier": 4,
+      "tierName": "四阶·圣器",
+      "setId": "set_fotuo",
+      "setName": "锦襕佛陀",
+      "iconKey": "acc_ring",
+      "pngPath": "assets/images/equipment/acc_ring.png",
+      "baseStats": {
+        "atk": 5,
+        "magic": 10,
+        "def": 8,
+        "maxHp": 22,
+        "mpRegen": 1.8
+      },
+      "recipe": [
+        {
+          "id": "mat_butianshi",
+          "count": 1
+        },
+        {
+          "id": "mat_jinlian",
+          "count": 3
+        },
+        {
+          "id": "mat_guizhu",
+          "count": 2
+        }
+      ],
+      "atlasCell": {
+        "col": 7,
+        "row": 7,
+        "x": 560,
+        "y": 560,
+        "w": 80,
+        "h": 80
+      }
+    }
+  ],
+  "materials": [
+    {
+      "id": "mat_yaogu",
+      "name": "百炼妖骨",
+      "tier": 1,
+      "tierLabel": "凡材",
+      "color": "#ced4da",
+      "iconKey": "mat_bone",
+      "pngPath": "assets/images/materials/mat_bone.png",
+      "dropRateHint": "小妖高频 (42%)",
+      "sourceDesc": "白骨洞/双叉岭/狼妖骷髅系小妖掉落",
+      "atlasCell": {
+        "col": 0,
+        "row": 8,
+        "x": 0,
+        "y": 640,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "mat_hupi",
+      "name": "斑斓兽皮",
+      "tier": 1,
+      "tierLabel": "凡材",
+      "color": "#e9c46a",
+      "iconKey": "mat_pelt",
+      "pngPath": "assets/images/materials/mat_pelt.png",
+      "dropRateHint": "小妖高频 (42%)",
+      "sourceDesc": "两界山/黄风岭/虎豹熊狼野兽系掉落",
+      "atlasCell": {
+        "col": 1,
+        "row": 8,
+        "x": 80,
+        "y": 640,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "mat_hanlin",
+      "name": "寒渊青鳞",
+      "tier": 1,
+      "tierLabel": "凡材",
+      "color": "#69f0ae",
+      "iconKey": "mat_scale",
+      "pngPath": "assets/images/materials/mat_scale.png",
+      "dropRateHint": "小妖高频 (42%)",
+      "sourceDesc": "鹰愁涧/流沙河/通天河水妖鱼怪掉落",
+      "atlasCell": {
+        "col": 2,
+        "row": 8,
+        "x": 160,
+        "y": 640,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "mat_xuantie",
+      "name": "玄铁残片",
+      "tier": 1,
+      "tierLabel": "凡材",
+      "color": "#90e0ef",
+      "iconKey": "mat_iron",
+      "pngPath": "assets/images/materials/mat_iron.png",
+      "dropRateHint": "小妖高频 (42%)",
+      "sourceDesc": "黑风卫/持盾甲兵/山贼恶寇与装备分解产出",
+      "atlasCell": {
+        "col": 3,
+        "row": 8,
+        "x": 240,
+        "y": 640,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "mat_huojing",
+      "name": "赤炎火精",
+      "tier": 2,
+      "tierLabel": "灵材",
+      "color": "#ff6e40",
+      "iconKey": "mat_fire_core",
+      "pngPath": "assets/images/materials/mat_fire_core.png",
+      "dropRateHint": "精英必掉 / 火系妖兵 (24%)",
+      "sourceDesc": "火焰山/观音院火弓手与罗刹火灵掉落",
+      "atlasCell": {
+        "col": 4,
+        "row": 8,
+        "x": 320,
+        "y": 640,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "mat_fengsha",
+      "name": "三昧风砂",
+      "tier": 2,
+      "tierLabel": "灵材",
+      "color": "#4cc9f0",
+      "iconKey": "mat_wind_sand",
+      "pngPath": "assets/images/materials/mat_wind_sand.png",
+      "dropRateHint": "精英必掉 / 大漠妖兵 (24%)",
+      "sourceDesc": "黄风岭/平顶峭壁狂风沙妖掉落",
+      "atlasCell": {
+        "col": 5,
+        "row": 8,
+        "x": 400,
+        "y": 640,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "mat_guizhu",
+      "name": "幽冥鬼珠",
+      "tier": 2,
+      "tierLabel": "灵材",
+      "color": "#80ffdb",
+      "iconKey": "mat_ghost_orb",
+      "pngPath": "assets/images/materials/mat_ghost_orb.png",
+      "dropRateHint": "精英必掉 / 幽冥妖兵 (24%)",
+      "sourceDesc": "白骨岭/波月洞鬼火法师与尸魔掉落",
+      "atlasCell": {
+        "col": 6,
+        "row": 8,
+        "x": 480,
+        "y": 640,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "mat_zhusi",
+      "name": "盘丝仙缕",
+      "tier": 2,
+      "tierLabel": "灵材",
+      "color": "#f72585",
+      "iconKey": "mat_silk",
+      "pngPath": "assets/images/materials/mat_silk.png",
+      "dropRateHint": "精英必掉 / 毒泽妖兵 (24%)",
+      "sourceDesc": "盘丝洞/西梁毒泽蛛精与毒蜂掉落",
+      "atlasCell": {
+        "col": 7,
+        "row": 8,
+        "x": 560,
+        "y": 640,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "mat_longjin",
+      "name": "西海龙筋",
+      "tier": 2,
+      "tierLabel": "灵材",
+      "color": "#00bbf9",
+      "iconKey": "mat_tendon",
+      "pngPath": "assets/images/materials/mat_tendon.png",
+      "dropRateHint": "精英必掉 / 水族头目 (26%)",
+      "sourceDesc": "碧波潭/通天冰河/流沙河潜蛟头目掉落",
+      "atlasCell": {
+        "col": 0,
+        "row": 9,
+        "x": 0,
+        "y": 720,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "mat_leiyu",
+      "name": "紫霄雷玉",
+      "tier": 3,
+      "tierLabel": "仙材",
+      "color": "#c77dff",
+      "iconKey": "mat_thunder_jade",
+      "pngPath": "assets/images/materials/mat_thunder_jade.png",
+      "dropRateHint": "妖王必掉 / 精英头目 (42%)",
+      "sourceDesc": "小雷音寺/金甲天将/雷电妖将掉落",
+      "atlasCell": {
+        "col": 1,
+        "row": 9,
+        "x": 80,
+        "y": 720,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "mat_jinlian",
+      "name": "功德金莲",
+      "tier": 3,
+      "tierLabel": "仙材",
+      "color": "#ffd166",
+      "iconKey": "mat_lotus",
+      "pngPath": "assets/images/materials/mat_lotus.png",
+      "dropRateHint": "妖王必掉 / 禅林精英 (42%)",
+      "sourceDesc": "黑风禅院/天竺灵山护法头目与宝匣掉落",
+      "atlasCell": {
+        "col": 2,
+        "row": 9,
+        "x": 160,
+        "y": 720,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "mat_niujiao",
+      "name": "平天魔角",
+      "tier": 3,
+      "tierLabel": "仙材",
+      "color": "#ff4d6d",
+      "iconKey": "mat_horn",
+      "pngPath": "assets/images/materials/mat_horn.png",
+      "dropRateHint": "妖王必掉 / 重甲精英 (42%)",
+      "sourceDesc": "狮驼岭/翠云山/独角兕重装魔将掉落",
+      "atlasCell": {
+        "col": 3,
+        "row": 9,
+        "x": 240,
+        "y": 720,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "mat_taiyijin",
+      "name": "太乙精金",
+      "tier": 3,
+      "tierLabel": "仙材",
+      "color": "#ffb703",
+      "iconKey": "mat_gold_ingot",
+      "pngPath": "assets/images/materials/mat_gold_ingot.png",
+      "dropRateHint": "妖王必掉 / 法宝精英 (42%)",
+      "sourceDesc": "平顶山/金兜洞道门头目与神品分解产出",
+      "atlasCell": {
+        "col": 4,
+        "row": 9,
+        "x": 320,
+        "y": 720,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "mat_yaodan",
+      "name": "千年妖王丹",
+      "tier": 4,
+      "tierLabel": "神材",
+      "color": "#ffd60a",
+      "iconKey": "mat_demon_core",
+      "pngPath": "assets/images/materials/mat_demon_core.png",
+      "dropRateHint": "守关妖王 (55%~100% + 保底)",
+      "sourceDesc": "各劫守关大妖王伏诛掉落本命内丹",
+      "atlasCell": {
+        "col": 5,
+        "row": 9,
+        "x": 400,
+        "y": 720,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "mat_zhenhuo",
+      "name": "不灭真火种",
+      "tier": 4,
+      "tierLabel": "神材",
+      "color": "#ff5400",
+      "iconKey": "mat_samadhi_flame",
+      "pngPath": "assets/images/materials/mat_samadhi_flame.png",
+      "dropRateHint": "中后劫妖王 (65%~100% + 保底)",
+      "sourceDesc": "红孩儿/牛魔王/黄风大圣等高阶妖王掉落",
+      "atlasCell": {
+        "col": 6,
+        "row": 9,
+        "x": 480,
+        "y": 720,
+        "w": 80,
+        "h": 80
+      }
+    },
+    {
+      "id": "mat_butianshi",
+      "name": "五彩补天石",
+      "tier": 4,
+      "tierLabel": "神材",
+      "color": "#ff2a54",
+      "iconKey": "mat_chaos_stone",
+      "pngPath": "assets/images/materials/mat_chaos_stone.png",
+      "dropRateHint": "终劫妖尊 / 高劫度额外掉落",
+      "sourceDesc": "第四劫终极妖尊或高劫度轮回妖王掉落，可铸至高圣器",
+      "atlasCell": {
+        "col": 7,
+        "row": 9,
+        "x": 560,
+        "y": 720,
+        "w": 80,
+        "h": 80
+      }
+    }
+  ]
+}

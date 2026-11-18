@@ -1,0 +1,12 @@
+{
+  "description": "西游破劫录 - 像素横版动作肉鸽抖音小游戏",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "postcss": true,
+    "minified": false
+  },
+  "compileType": "game",
+  "appid": "tt_replace_with_your_douyin_appid",
+  "projectname": "xiyou-rogue-douyin"
+}

@@ -1,0 +1,15 @@
+{
+  "description": "西游破劫录 - 像素横版动作肉鸽（微信小游戏 & 抖音小游戏双端兼容）",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": false,
+    "newFeature": true
+  },
+  "compileType": "game",
+  "appid": "touristappid",
+  "projectname": "xiyou-rogue-minigame",
+  "condition": {}
+}

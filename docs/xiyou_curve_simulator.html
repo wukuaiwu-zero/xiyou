@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>《西游破劫录》游戏曲线与随机发牌推演台</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+</head>
+<body class="bg-[var(--background)] text-[var(--foreground)] antialiased p-5 md:p-6 select-none">
+  <div class="max-w-5xl mx-auto space-y-5">
+    <!-- Header -->
+    <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2.5">
+          <span class="px-2.5 py-0.5 rounded-md text-xs font-semibold bg-[var(--primary)] text-[var(--primary-foreground)]">西游破劫录 · 数值中枢</span>
+          <h1 class="text-lg md:text-xl font-bold text-[var(--foreground)]">三维游戏曲线与「局局新鲜感」推演台</h1>
+        </div>
+        <p class="text-sm text-[var(--muted-foreground)] mt-1">
+          融合「5分钟快节奏锯齿心流」×「八十一难五维正交发牌（近3局0撞车）」×「双曲软上限长线防膨胀」
+        </p>
+      </div>
+      <!-- Tabs -->
+      <div class="flex flex-wrap gap-1.5 bg-[var(--secondary)] p-1 rounded-lg border border-[var(--border)]">
+        <button id="tabBtn-pacing" onclick="switchTab('pacing')" class="px-3 py-1.5 rounded-md text-xs font-semibold transition bg-[var(--primary)] text-[var(--primary-foreground)]">
+          ⚡ 单局快节奏曲线
+        </button>
+        <button id="tabBtn-rng" onclick="switchTab('rng')" class="px-3 py-1.5 rounded-md text-xs font-semibold transition text-[var(--muted-foreground)] hover:text-[var(--foreground)]">
+          🎲 局局不重样发牌器
+        </button>
+        <button id="tabBtn-meta" onclick="switchTab('meta')" class="px-3 py-1.5 rounded-md text-xs font-semibold transition text-[var(--muted-foreground)] hover:text-[var(--foreground)]">
+          📈 长期维护防膨胀
+        </button>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 1: 单局快节奏锯齿心流曲线 ==================== -->
+    <div id="panel-pacing" class="space-y-5">
+      <!-- KPI Summary Row -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4">
+          <div class="text-xs text-[var(--muted-foreground)]">预计单局总时长（抖音黄金档）</div>
+          <div id="kpi-duration" class="text-xl font-bold mt-1 text-[var(--foreground)]">4分48秒</div>
+          <div class="text-xs text-emerald-500 mt-0.5">4劫快刷 · 3秒破冰上手</div>
+        </div>
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4">
+          <div class="text-xs text-[var(--muted-foreground)]">终劫妖尊实战 TTK 对比</div>
+          <div class="flex items-baseline gap-2 mt-1">
+            <span id="kpi-new-ttk" class="text-xl font-bold text-emerald-500">16.8s</span>
+            <span id="kpi-old-ttk" class="text-xs line-through text-rose-500">原版 42.5s(刮痧)</span>
+          </div>
+          <div class="text-xs text-[var(--muted-foreground)] mt-0.5">告别后期血牛坐牢</div>
+        </div>
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4">
+          <div class="text-xs text-[var(--muted-foreground)]">第3劫「激励复活」转化张力</div>
+          <div id="kpi-pinch" class="text-xl font-bold text-amber-500 mt-1">黄金高压 (82%)</div>
+          <div class="text-xs text-[var(--muted-foreground)] mt-0.5">故意收紧剪刀差促看视频复活</div>
+        </div>
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-4">
+          <div class="text-xs text-[var(--muted-foreground)]">第4劫神装质变爽感倍率</div>
+          <div id="kpi-spike" class="text-xl font-bold text-purple-500 mt-1">4.89x 爆发</div>
+          <div class="text-xs text-[var(--muted-foreground)] mt-0.5">3 / 6 / 9 卷阶跃觉醒</div>
+        </div>
+      </div>
+
+      <!-- Main Chart + Sliders -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <!-- SVG Curve Canvas -->
+        <div class="lg:col-span-2 bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 flex flex-col justify-between">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <div>
+              <h2 class="text-base font-semibold">局内 300秒「锯齿心流张力 & 击杀耗时 (TTK)」对比曲线</h2>
+              <p class="text-xs text-[var(--muted-foreground)]">绿线保持在 12s~20s 爽快博弈带，第2劫爽快超车，第3劫冲高促复活，第4劫觉醒割草</p>
+            </div>
+            <div class="flex items-center gap-3 text-xs">
+              <span class="flex items-center gap-1.5"><span class="w-3 h-1 bg-rose-500 inline-block rounded"></span>原版线性曲线(越打越刮)</span>
+              <span class="flex items-center gap-1.5"><span class="w-3 h-1 bg-emerald-500 inline-block rounded"></span>新版锯齿曲线(爽点交替)</span>
+            </div>
+          </div>
+
+          <div class="w-full overflow-hidden rounded-lg border border-[var(--border)] p-2 bg-[var(--secondary)]">
+            <svg id="pacingSvg" viewBox="0 0 620 250" class="w-full h-auto"></svg>
+          </div>
+
+          <!-- 300s Micro-Rhythm Strip -->
+          <div class="mt-4 space-y-1.5">
+            <div class="flex justify-between text-xs text-[var(--muted-foreground)]">
+              <span>0:00 开局法相3选1</span>
+              <span>1:05 3卷小成超车</span>
+              <span>2:35 第3劫高压(复活锚点)</span>
+              <span>3:55 6卷觉醒割草</span>
+              <span>4:50 终劫妖尊</span>
+            </div>
+            <div class="grid grid-cols-12 gap-1 h-6 rounded-md overflow-hidden text-xs font-medium text-white">
+              <div class="col-span-1 bg-amber-500 flex items-center justify-center" title="0~15s 开局本命法相爽点前置">破冰</div>
+              <div class="col-span-2 bg-emerald-600 flex items-center justify-center" title="第一劫：快速清怪建立手感">一劫起势</div>
+              <div class="col-span-3 bg-teal-600 flex items-center justify-center" title="第二劫：凑齐3卷质变 + 西游奇遇">二劫成型爽点</div>
+              <div class="col-span-3 bg-rose-600 flex items-center justify-center" title="第三劫：ψ=1.14 高压试炼，观音甘露广告复活黄金点">三劫试炼波峰</div>
+              <div class="col-span-3 bg-purple-600 flex items-center justify-center" title="第四劫：6~9卷法相化境割草 + 终劫双阶段妖尊">四劫无双决战</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Parameter Controls -->
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 flex flex-col justify-between space-y-4">
+          <div class="space-y-3.5">
+            <h3 class="text-sm font-semibold border-b border-[var(--border)] pb-2">实时曲线调参器</h3>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span>单卷天书微指数成长率</span>
+                <span id="val-scrollBase" class="font-mono font-semibold text-emerald-500">1.145x (+14.5%)</span>
+              </div>
+              <input id="inp-scrollBase" type="range" min="1.08" max="1.22" step="0.005" value="1.145" oninput="updatePacing()" class="w-full accent-emerald-500" />
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span>3 / 6 / 9 卷质变阶跃增幅</span>
+                <span id="val-spikeBonus" class="font-mono font-semibold text-purple-500">+32%</span>
+              </div>
+              <input id="inp-spikeBonus" type="range" min="0" max="0.55" step="0.02" value="0.32" oninput="updatePacing()" class="w-full accent-purple-500" />
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span>怪物每劫基础生命斜率</span>
+                <span id="val-enemySlope" class="font-mono font-semibold text-amber-500">1.38x</span>
+              </div>
+              <input id="inp-enemySlope" type="range" min="1.20" max="1.60" step="0.02" value="1.38" oninput="updatePacing()" class="w-full accent-amber-500" />
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span>第3劫压迫调制因子 ψ(2)</span>
+                <span id="val-psi2" class="font-mono font-semibold text-rose-500">1.14x</span>
+              </div>
+              <input id="inp-psi2" type="range" min="0.95" max="1.35" step="0.01" value="1.14" oninput="updatePacing()" class="w-full accent-rose-500" />
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span>轮回劫度（0~5 劫难进阶）</span>
+                <span id="val-asc" class="font-mono font-semibold">0 劫 · 凡胎初渡</span>
+              </div>
+              <input id="inp-asc" type="range" min="0" max="5" step="1" value="0" oninput="updatePacing()" class="w-full accent-sky-500" />
+            </div>
+          </div>
+
+          <div class="pt-2 border-t border-[var(--border)] flex gap-2">
+            <button onclick="resetPacing()" class="flex-1 py-2 px-3 rounded-lg border border-[var(--border)] text-xs font-medium hover:bg-[var(--secondary)] transition">
+              恢复黄金推荐值
+            </button>
+            <button id="copyJsonBtn" onclick="copyConfigJson()" class="flex-1 py-2 px-3 rounded-lg bg-[var(--primary)] text-[var(--primary-foreground)] text-xs font-semibold hover:opacity-90 transition">
+              📋 复制配置 JSON
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 2: 局局新鲜感·天道司命发牌器 ==================== -->
+    <div id="panel-rng" class="hidden space-y-5">
+      <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[var(--border)]">
+          <div>
+            <h2 class="text-base font-semibold">🎲 天道司命·五维正交随机发牌模拟（内置近3局记忆防撞车）</h2>
+            <p class="text-xs text-[var(--muted-foreground)] mt-0.5">
+              当前单局理论不重样组合空间：<span class="font-semibold text-emerald-500">5角色 × 3法相 × 168,000八十一难四洲路线 × 7天道异象 × 10双系融合 × 4奇遇 ≈ 7.05 × 10⁸ 种体验</span>
+            </p>
+          </div>
+          <div class="flex items-center gap-2">
+            <select id="rngHeroSelect" onchange="rollNewRun()" class="bg-[var(--secondary)] border border-[var(--border)] rounded-lg px-3 py-2 text-xs font-semibold text-[var(--foreground)]">
+              <option value="wukong">🐵 孙悟空（齐天大圣）</option>
+              <option value="tangseng">📿 唐僧（玄奘圣僧）</option>
+              <option value="bajie">🐷 猪八戒（天蓬元帅）</option>
+              <option value="wujing">🌊 沙悟净（卷帘大将）</option>
+              <option value="bailongma">🐉 白龙马（敖烈太子）</option>
+            </select>
+            <button onclick="rollNewRun()" class="px-4 py-2 rounded-lg bg-[var(--primary)] text-[var(--primary-foreground)] text-xs font-bold shadow-sm hover:opacity-90 transition">
+              🎲 模拟新开一局 (连点体验差异)
+            </button>
+          </div>
+        </div>
+
+        <!-- Current Rolled Run Blueprint -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4">
+          <div class="p-3.5 rounded-lg bg-[var(--secondary)] border border-[var(--border)]">
+            <div class="text-xs text-[var(--muted-foreground)]">① 第0秒手感变招 · 开局本命法相</div>
+            <div id="rng-aspect-title" class="text-sm font-bold text-amber-500 mt-1"></div>
+            <p id="rng-aspect-desc" class="text-xs text-[var(--foreground)] mt-1 leading-relaxed"></p>
+          </div>
+          <div class="p-3.5 rounded-lg bg-[var(--secondary)] border border-[var(--border)]">
+            <div class="text-xs text-[var(--muted-foreground)]">② 本局底层规则改写 · 天道异象</div>
+            <div id="rng-mut-title" class="text-sm font-bold text-rose-500 mt-1"></div>
+            <p id="rng-mut-desc" class="text-xs text-[var(--foreground)] mt-1 leading-relaxed"></p>
+          </div>
+          <div class="p-3.5 rounded-lg bg-[var(--secondary)] border border-[var(--border)]">
+            <div class="text-xs text-[var(--muted-foreground)]">③ 双系融合导向 & 因果奇遇</div>
+            <div id="rng-duo-title" class="text-sm font-bold text-purple-500 mt-1"></div>
+            <p id="rng-duo-desc" class="text-xs text-[var(--foreground)] mt-1 leading-relaxed"></p>
+          </div>
+        </div>
+
+        <!-- 4-Act Dynamic Sampling from 81 Tribulations -->
+        <div class="mt-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-semibold text-[var(--muted-foreground)]">④ 本局「八十一难·四洲抽劫路线」（每关击败妖王后双传送门二选一，总耗时约5分钟）</span>
+            <span id="rng-seed-badge" class="text-xs font-mono text-[var(--muted-foreground)]"></span>
+          </div>
+          <div id="rng-route-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3"></div>
+        </div>
+
+        <!-- Consecutive Run Comparison Log -->
+        <div class="mt-4 pt-3 border-t border-[var(--border)]">
+          <div class="text-xs font-semibold text-[var(--muted-foreground)] mb-2">最近开局去重对比记录（验证连续开局 0 重复感）：</div>
+          <div id="rng-history-list" class="space-y-1.5 text-xs"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 3: 长期维护防膨胀模型 ==================== -->
+    <div id="panel-meta" class="hidden space-y-5">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div class="lg:col-span-2 bg-[var(--card)] border border-[var(--border)] rounded-xl p-5">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <div>
+              <h2 class="text-base font-semibold">局外成长「双曲软上限」vs 原版「线性无限膨胀」对比</h2>
+              <p class="text-xs text-[var(--muted-foreground)]">Bonus(L) = Cap × L / (L + K)：前5级陡峭爽快留住新手，后期收敛于软顶，维护2年也不破坏第一关动作手感</p>
+            </div>
+          </div>
+          <div class="w-full overflow-hidden rounded-lg border border-[var(--border)] p-2 bg-[var(--secondary)]">
+            <svg id="metaSvg" viewBox="0 0 620 225" class="w-full h-auto"></svg>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4 text-xs">
+            <div class="p-3 rounded-lg bg-[var(--secondary)] border border-[var(--border)]">
+              <div class="font-bold text-emerald-500">D1 ~ D3 新手筑基期</div>
+              <p class="text-[var(--muted-foreground)] mt-1">前6局快速解锁师徒5人与+30%兜底属性，死亡也有强获得感。</p>
+            </div>
+            <div class="p-3 rounded-lg bg-[var(--secondary)] border border-[var(--border)]">
+              <div class="font-bold text-amber-500">D4 ~ D30 图鉴扩池期</div>
+              <p class="text-[var(--muted-foreground)] mt-1">垂直属性渐进触顶，转为横向收集81难图鉴、15法相与新法宝蓝图。</p>
+            </div>
+            <div class="p-3 rounded-lg bg-[var(--secondary)] border border-[var(--border)]">
+              <div class="font-bold text-purple-500">D30 ~ D180+ 赛季轮回期</div>
+              <p class="text-[var(--muted-foreground)] mt-1">依靠「九转劫度戒律榜」+「每日同种挑战赛」+「表驱动月更劫难」低成本长青。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anti-Dilution Pool Calculator -->
+        <div class="bg-[var(--card)] border border-[var(--border)] rounded-xl p-5 flex flex-col justify-between space-y-4">
+          <div class="space-y-3.5">
+            <h3 class="text-sm font-semibold border-b border-[var(--border)] pb-2">防卡池稀释：「紧箍封印槽」推演</h3>
+            <p class="text-xs text-[var(--muted-foreground)]">
+              肉鸽长期更新最大的坑是<strong>「法宝越加越多，玩家越难凑齐心仪流派」</strong>。通过局外解锁【封印槽】与【杨柳骰】，让成型率恒定在黄金区间！
+            </p>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span>版本累计法宝总数（随月更扩充）</span>
+                <span id="val-poolSize" class="font-mono font-semibold">24 件</span>
+              </div>
+              <input id="inp-poolSize" type="range" min="6" max="60" step="2" value="24" oninput="updateMeta()" class="w-full accent-amber-500" />
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span>玩家紧箍封印槽（屏蔽污染项）</span>
+                <span id="val-banish" class="font-mono font-semibold text-emerald-500">4 槽</span>
+              </div>
+              <input id="inp-banish" type="range" min="0" max="12" step="1" value="4" oninput="updateMeta()" class="w-full accent-emerald-500" />
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span>观音杨柳重随骰子次数</span>
+                <span id="val-reroll" class="font-mono font-semibold text-purple-500">2 次/局</span>
+              </div>
+              <input id="inp-reroll" type="range" min="0" max="5" step="1" value="2" oninput="updateMeta()" class="w-full accent-purple-500" />
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-[var(--secondary)] border border-[var(--border)] space-y-2">
+            <div class="flex justify-between text-xs">
+              <span class="text-[var(--muted-foreground)]">无保护裸抽成型概率：</span>
+              <span id="res-raw-prob" class="font-mono text-rose-500 font-semibold">34%</span>
+            </div>
+            <div class="flex justify-between text-xs">
+              <span class="text-[var(--muted-foreground)]">封印+重随后核心流派成型率：</span>
+              <span id="res-guarded-prob" class="font-mono text-emerald-500 font-bold text-sm">76% (黄金舒适区)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ==================== Tab 切换 ====================
+    function switchTab(tab) {
+      ['pacing', 'rng', 'meta'].forEach((k) => {
+        const panel = document.getElementById('panel-' + k);
+        const btn = document.getElementById('tabBtn-' + k);
+        if (k === tab) {
+          panel.classList.remove('hidden');
+          btn.className = 'px-3 py-1.5 rounded-md text-xs font-semibold transition bg-[var(--primary)] text-[var(--primary-foreground)]';
+        } else {
+          panel.classList.add('hidden');
+          btn.className = 'px-3 py-1.5 rounded-md text-xs font-semibold transition text-[var(--muted-foreground)] hover:text-[var(--foreground)]';
+        }
+      });
+      if (tab === 'pacing') updatePacing();
+      if (tab === 'meta') updateMeta();
+    }
+
+    // ==================== Tab 1: 单局快节奏锯齿曲线计算与绘制 ====================
+    const ASC_NAMES = [
+      '0 劫 · 凡胎初渡',
+      '1 劫 · 小乘试炼',
+      '2 劫 · 心猿意马',
+      '3 劫 · 三灾利害',
+      '4 劫 · 五蕴皆空',
+      '5 劫 · 九转金丹'
+    ];
+    const ASC_MULTS = [1.0, 1.22, 1.48, 1.80, 2.15, 2.60];
+
+    function updatePacing() {
+      const scrollBase = parseFloat(document.getElementById('inp-scrollBase').value);
+      const spikeBonus = parseFloat(document.getElementById('inp-spikeBonus').value);
+      const enemySlope = parseFloat(document.getElementById('inp-enemySlope').value);
+      const psi2 = parseFloat(document.getElementById('inp-psi2').value);
+      const asc = parseInt(document.getElementById('inp-asc').value, 10);
+
+      document.getElementById('val-scrollBase').textContent = `${scrollBase.toFixed(3)}x (+${((scrollBase - 1) * 100).toFixed(1)}%)`;
+      document.getElementById('val-spikeBonus').textContent = `+${Math.round(spikeBonus * 100)}%`;
+      document.getElementById('val-enemySlope').textContent = `${enemySlope.toFixed(2)}x`;
+      document.getElementById('val-psi2').textContent = `${psi2.toFixed(2)}x`;
+      document.getElementById('val-asc').textContent = ASC_NAMES[asc];
+
+      // 8个采样时间点：4劫小怪中段 + 4劫守关Boss
+      const labels = ['一劫初', '黑风王', '二劫中(3卷)', '黄风圣', '三劫高压', '白骨魔', '四劫(6卷)', '终劫牛魔'];
+      const scrolls = [1, 2, 3, 5, 6, 7, 8, 9];
+      const oldBossEquivHp = [480, 620, 920, 1251, 1680, 2150, 2900, 3702];
+      const psiArr = [1.0, 1.0, 0.94, 0.95, psi2, psi2, 0.96, 0.97];
+      const stageFloat = [0, 0.35, 1.0, 1.35, 2.0, 2.35, 3.0, 3.35];
+
+      const effectiveBaseDps = 36; // 考虑实战走位闪避后的秒均输出
+      const oldTtkPts = [];
+      const newTtkPts = [];
+
+      for (let i = 0; i < 8; i++) {
+        const s = scrolls[i] - 1;
+        // 原版线性成长
+        const oldMult = 1 + s * 0.18;
+        const oldTtk = (oldBossEquivHp[i] * ASC_MULTS[asc]) / (effectiveBaseDps * oldMult);
+        oldTtkPts.push(Math.min(52, oldTtk));
+
+        // 新版微指数 + 3/6/9阶跃 + 连斩极速
+        let bp = 1.0;
+        if (scrolls[i] >= 9) bp = 1 + spikeBonus * 1.55;
+        else if (scrolls[i] >= 6) bp = 1 + spikeBonus;
+        else if (scrolls[i] >= 3) bp = 1 + spikeBonus * 0.5;
+
+        const momentumAtkSpd = 1.11;
+        const newPlayerMult = Math.pow(scrollBase, s) * bp * momentumAtkSpd;
+        const newEnemyHp = 560 * Math.pow(enemySlope, stageFloat[i]) * psiArr[i] * ASC_MULTS[asc];
+        const newTtk = newEnemyHp / (effectiveBaseDps * newPlayerMult);
+        newTtkPts.push(Math.min(52, Math.max(6, newTtk)));
+      }
+
+      // 更新顶部 KPI
+      const finalNewTtk = newTtkPts[7];
+      const finalOldTtk = oldTtkPts[7];
+      const act3Ttk = newTtkPts[5];
+      const estTotalSec = Math.round(210 + (newTtkPts[1] + newTtkPts[3] + newTtkPts[5] + newTtkPts[7]) * 1.25);
+      const mins = Math.floor(estTotalSec / 60);
+      const secs = estTotalSec % 60;
+
+      document.getElementById('kpi-duration').textContent = `${mins}分${String(secs).padStart(2, '0')}秒`;
+      document.getElementById('kpi-new-ttk').textContent = `${finalNewTtk.toFixed(1)}s`;
+      document.getElementById('kpi-old-ttk').textContent = `原版 ${finalOldTtk.toFixed(1)}s`;
+
+      const pinchScore = Math.min(98, Math.max(35, Math.round((act3Ttk / 22) * 80)));
+      const pinchEl = document.getElementById('kpi-pinch');
+      pinchEl.textContent = pinchScore >= 72 && pinchScore <= 88 ? `黄金高压 (${pinchScore}%)` : pinchScore > 88 ? `偏难劝退 (${pinchScore}%)` : `偏松 (${pinchScore}%)`;
+
+      const finalMult = Math.pow(scrollBase, 8) * (1 + spikeBonus * 1.55) * 1.11;
+      document.getElementById('kpi-spike').textContent = `${finalMult.toFixed(2)}x 爆发`;
+
+      renderPacingSvg(labels, oldTtkPts, newTtkPts);
+    }
+
+    function renderPacingSvg(labels, oldPts, newPts) {
+      const svg = document.getElementById('pacingSvg');
+      const W = 620, H = 250;
+      const padL = 44, padR = 22, padT = 22, padB = 34;
+      const plotW = W - padL - padR;
+      const plotH = H - padT - padB;
+      const maxY = 48;
+
+      const xAt = (i) => padL + (i / (labels.length - 1)) * plotW;
+      const yAt = (v) => padT + plotH - (Math.min(maxY, v) / maxY) * plotH;
+
+      // 爽快心流绿色安全带 (11s ~ 22s)
+      const bandTop = yAt(22);
+      const bandBot = yAt(11);
+
+      let html = `
+        <rect x="${padL}" y="${bandTop}" width="${plotW}" height="${bandBot - bandTop}" fill="rgba(16, 185, 129, 0.12)" rx="4" />
+        <text x="${padL + 8}" y="${bandTop + 14}" font-size="12" fill="#10b981">黄金动作博弈心流带 (Boss TTK 11s ~ 22s)</text>
+      `;
+
+      // 横向网格线
+      [10, 20, 30, 40].forEach((val) => {
+        const y = yAt(val);
+        html += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="currentColor" stroke-opacity="0.12" stroke-dasharray="3 3" />`;
+        html += `<text x="${padL - 8}" y="${y + 4}" font-size="12" text-anchor="end" fill="currentColor" opacity="0.6">${val}s</text>`;
+      });
+
+      // 绘制原版红线
+      const oldPoly = oldPts.map((v, i) => `${xAt(i)},${yAt(v)}`).join(' ');
+      html += `<polyline fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-dasharray="5 4" points="${oldPoly}" />`;
+
+      // 绘制新版绿线
+      const newPoly = newPts.map((v, i) => `${xAt(i)},${yAt(v)}`).join(' ');
+      html += `<polyline fill="none" stroke="#10b981" stroke-width="3" points="${newPoly}" />`;
+
+      // 节点圆点与X轴标签
+      labels.forEach((lb, i) => {
+        const cx = xAt(i);
+        const cyOld = yAt(oldPts[i]);
+        const cyNew = yAt(newPts[i]);
+        html += `<circle cx="${cx}" cy="${cyOld}" r="3.5" fill="#f43f5e" />`;
+        html += `<circle cx="${cx}" cy="${cyNew}" r="5" fill="${i === 5 ? '#f59e0b' : '#10b981'}" />`;
+        html += `<text x="${cx}" y="${cyNew - 9}" font-size="12" text-anchor="middle" font-weight="600" fill="${i === 5 ? '#f59e0b' : '#10b981'}">${newPts[i].toFixed(1)}s</text>`;
+        html += `<text x="${cx}" y="${H - 10}" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.75">${lb}</text>`;
+      });
+
+      svg.innerHTML = html;
+    }
+
+    function resetPacing() {
+      document.getElementById('inp-scrollBase').value = '1.145';
+      document.getElementById('inp-spikeBonus').value = '0.32';
+      document.getElementById('inp-enemySlope').value = '1.38';
+      document.getElementById('inp-psi2').value = '1.14';
+      document.getElementById('inp-asc').value = '0';
+      updatePacing();
+    }
+
+    function copyConfigJson() {
+      const cfg = {
+        scrollCompoundBase: parseFloat(document.getElementById('inp-scrollBase').value),
+        breakpoint6Bonus: parseFloat(document.getElementById('inp-spikeBonus').value),
+        enemyStageCompound: parseFloat(document.getElementById('inp-enemySlope').value),
+        sawtoothTensionPsi: [1.0, 0.95, parseFloat(document.getElementById('inp-psi2').value), 0.97],
+        ascensionPreview: parseInt(document.getElementById('inp-asc').value, 10)
+      };
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(JSON.stringify(cfg, null, 2));
+      }
+      const btn = document.getElementById('copyJsonBtn');
+      btn.textContent = '✅ 已复制配置 JSON！';
+      setTimeout(() => { btn.textContent = '📋 复制配置 JSON'; }, 1800);
+    }
+
+    // ==================== Tab 2: 局局不重样发牌模拟 ====================
+    const ASPECTS = {
+      wukong: [
+        { id: 'wk1', name: '【身外毫毛相】· 分身围殴流', el: '雷', desc: '第3段重砸与翻滚唤出金猴残影协同挥棍，攻击距离+15%' },
+        { id: 'wk2', name: '【定海千钧相】· 震地破甲流', el: '土', desc: '金箍棒巨化附带震波，撞墙粉碎(Wall-Splat)伤害翻倍' },
+        { id: 'wk3', name: '【齐天狂雷相】· 暴击引雷流', el: '雷', desc: '暴击必落紫霄奔雷弹射2妖，大闹天宫冷却缩减25%' }
+      ],
+      tangseng: [
+        { id: 'ts1', name: '【大乘万佛相】· 散射弹幕流', el: '圣', desc: '九环锡杖法球一分为三，叠满5层度化直接引爆金莲' },
+        { id: 'ts2', name: '【怒目金刚相】· 金钟反伤流', el: '圣', desc: '护盾期间暴击+30%，饮用甘露召唤6秒护法金钟罩' },
+        { id: 'ts3', name: '【紧箍咒言相】· 眩晕业火流', el: '火', desc: '被眩晕妖魔挂上赤金紧箍灼烧并传染邻近妖群' }
+      ],
+      bajie: [
+        { id: 'bj1', name: '【饕餮吞天相】· 吃包成长流', el: '土', desc: '每吃1个肉包永久加气血与体型范围，溢出治疗转护盾' },
+        { id: 'bj2', name: '【天蓬星河相】· 漩涡冰爆流', el: '水', desc: '旋风耙掀起弱水聚拢全屏群妖，收招炸裂寒冰水柱' },
+        { id: 'bj3', name: '【狂齿破军相】· 残血疯魔流', el: '火', desc: '血量越低攻速暴击越高(+45%)，回勾必挂撕裂流血' }
+      ],
+      wujing: [
+        { id: 'wj1', name: '【弱水三千相】· 双阵封锁流', el: '水', desc: '流沙阵充能变为2座且面积+35%，阵内敌方弹幕减速60%' },
+        { id: 'wj2', name: '【朔月追魂相】· 折返剑气流', el: '风', desc: '每击皆发月牙气刃，飞至尽头自动折返二次切割' },
+        { id: 'wj3', name: '【卷帘镇岳相】· 宝幢守御流', el: '圣', desc: '空中下砸立起琉璃宝幢挡弹幕并提供范围25%减伤' }
+      ],
+      bailongma: [
+        { id: 'bl1', name: '【九霄雷龙相】· 空战龙枪流', el: '雷', desc: '滞空伤害+32%，二段/三段跳向地面投射3枚雷霆龙枪' },
+        { id: 'bl2', name: '【沧海幻龙相】· 无限闪击流', el: '风', desc: '翻滚改为2层龙息无CD，穿怪立即缩减真龙闪2秒冷却' },
+        { id: 'bl3', name: '【西海玄冰相】· 冻结碎冰流', el: '水', desc: '突刺叠满寒霜冻结妖王，破冰一击触发2.2倍必暴' }
+      ]
+    };
+
+    const STAGES = [
+      [
+        { id: 's01', name: '双叉岭寅虎劫', boss: '寅将军', bias: '天书双掉落', terrain: '密林断崖·捕兽暗夹' },
+        { id: 's02', name: '鹰愁涧寒潭劫', boss: '寒潭孽蛟', bias: '法宝盲盒', terrain: '飞瀑栈桥·寒潮滑冰' },
+        { id: 's03', name: '黑风山袈裟劫', boss: '黑风大王', bias: '仙缘变异', terrain: '火烧禅院·梁木坠火' },
+        { id: 's04', name: '云栈洞高老庄', boss: '魔化刚鬣', bias: '金铢悬赏', terrain: '狂风庄院·碎墙暗室' }
+      ],
+      [
+        { id: 's11', name: '黄风岭三昧劫', boss: '黄风大圣', bias: '法宝重铸', terrain: '黄沙逆风·流沙陷坑' },
+        { id: 's12', name: '八百里流沙河', boss: '九骷水魔', bias: '天书祭坛', terrain: '浮木渡河·水柱喷涌' },
+        { id: 's13', name: '万寿山五庄观', boss: '护观仙傀', bias: '人参果奇遇', terrain: '浮空仙阶·乾坤袖风' },
+        { id: 's14', name: '平顶山莲花洞', boss: '金银二王', bias: '双紫法宝', terrain: '炼宝溶洞·金银咒印' }
+      ],
+      [
+        { id: 's21', name: '白虎岭三打劫', boss: '白骨夫人', bias: '三才归宗', terrain: '幽冥鬼火·迷雾幻象' },
+        { id: 's22', name: '枯松涧火云洞', boss: '红孩儿', bias: '真火附魔', terrain: '火箭机关·三昧火池' },
+        { id: 's23', name: '金兜山独角洞', boss: '独角兕王', bias: '八卦炉重炼', terrain: '磁力金环·重甲石阵' },
+        { id: 's24', name: '盘丝岭千蛛窟', boss: '百眼魔君', bias: '高阶变异', terrain: '弹力蛛网·毒雾深井' }
+      ],
+      [
+        { id: 's31', name: '八百里火焰山', boss: '平天牛魔王', bias: '终劫红装', terrain: '熔岩喷发·崩塌祭坛' },
+        { id: 's32', name: '小雷音伪佛劫', boss: '黄眉老佛', bias: '终劫红装', terrain: '金铙禁制·伪佛大殿' },
+        { id: 's33', name: '八百里狮驼岭', boss: '金翅大鹏', bias: '终劫红装', terrain: '万妖骨城·罡风天穹' },
+        { id: 's34', name: '陷空山无底洞', boss: '半截观音', bias: '终劫红装', terrain: '无底垂直井·暗影烛台' }
+      ]
+    ];
+
+    const MUTATORS = [
+      { id: 'm1', name: '【血月狂劫】极速爽刷局', desc: '妖魔移速攻击+20%，但你全技能冷却-35%且杀怪必爆回血血珠！' },
+      { id: 'm2', name: '【缩地成寸】精英RUSH局', desc: '地图长度缩短30%，精英怪翻倍且必掉双倍三才天书！' },
+      { id: 'm3', name: '【紫霄雷罚】走位引雷局', desc: '每7秒天降3道紫霄神雷，可走位引雷直接轰碎持盾怪与妖王！' },
+      { id: 'm4', name: '【丹炉失控】连环尸爆局', desc: '小怪死亡留下延时火丹，引爆连锁炸穿整条走廊！' },
+      { id: 'm5', name: '【修罗破釜】刀尖高爆局', desc: '气血上限-30%，但最终伤害+55%且翻滚无敌帧大幅延长！' }
+    ];
+
+    const DUOS = [
+      { title: '风助火势 · 业火龙卷 + 奇遇【八卦炼丹炉】', desc: '芭蕉扇与红葫芦融合卷起全屏火龙卷；中段遇老君炉可赌神话双词条' },
+      { title: '雷泽感电 · 万雷穿心 + 奇遇【心魔古镜】', desc: '水阵内雷伤+50%全屏弹射；击败六耳幻影直接复制升阶随身法宝' },
+      { title: '踏风惊雷 · 撞墙落雷 + 奇遇【人参果树】', desc: '每次击飞撞墙自动劈落暴击神雷；偷打人参果连拿2卷主属性天书' },
+      { title: '红莲金身 · 护盾炙烤 + 奇遇【观音垂柳】', desc: '护盾值转化为周围每秒业火灼烧；杨柳枝可将杂色天书一键洗成6卷觉醒' }
+    ];
+
+    let runCounter = 0;
+    let recentMem = [];
+
+    function weightedPickAntiRepeat(arr, usedSet) {
+      const weights = arr.map((it) => (usedSet.has(it.id) ? 0.06 : 1.0));
+      let sum = weights.reduce((a, b) => a + b, 0);
+      let r = Math.random() * sum;
+      for (let i = 0; i < arr.length; i++) {
+        r -= weights[i];
+        if (r <= 0) return arr[i];
+      }
+      return arr[0];
+    }
+
+    function rollNewRun() {
+      runCounter++;
+      const hero = document.getElementById('rngHeroSelect').value;
+      const usedIds = new Set();
+      recentMem.slice(-2).forEach((m) => m.ids.forEach((id) => usedIds.add(id)));
+
+      const asp = weightedPickAntiRepeat(ASPECTS[hero], usedIds);
+      const mut = weightedPickAntiRepeat(MUTATORS, usedIds);
+      const duo = DUOS[(runCounter + Math.floor(Math.random() * DUOS.length)) % DUOS.length];
+
+      const pickedActs = STAGES.map((pool) => {
+        const main = weightedPickAntiRepeat(pool, usedIds);
+        const others = pool.filter((x) => x.id !== main.id);
+        const alt = weightedPickAntiRepeat(others, usedIds);
+        return { main, alt };
+      });
+
+      document.getElementById('rng-aspect-title').textContent = asp.name;
+      document.getElementById('rng-aspect-desc').textContent = asp.desc;
+      document.getElementById('rng-mut-title').textContent = mut.name;
+      document.getElementById('rng-mut-desc').textContent = mut.desc;
+      document.getElementById('rng-duo-title').textContent = duo.title;
+      document.getElementById('rng-duo-desc').textContent = duo.desc;
+      document.getElementById('rng-seed-badge').textContent = `第 #${runCounter} 局 · Seed: 0x${Math.floor(100000 + Math.random() * 899999).toString(16).toUpperCase()}`;
+
+      const routeHtml = pickedActs
+        .map(
+          (node, idx) => `
+          <div class="p-3 rounded-lg bg-[var(--secondary)] border border-[var(--border)] flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-[var(--muted-foreground)]">
+                <span>第 ${idx + 1} 劫 (${60 + idx * 8}s)</span>
+                <span class="px-1.5 py-0.5 rounded bg-[var(--card)] border border-[var(--border)]">${node.main.bias}</span>
+              </div>
+              <div class="text-sm font-bold mt-1.5 text-[var(--foreground)]">${node.main.name}</div>
+              <div class="text-xs text-emerald-500 mt-0.5">妖王：${node.main.boss}</div>
+              <div class="text-xs text-[var(--muted-foreground)] mt-0.5">${node.main.terrain}</div>
+            </div>
+            <div class="mt-2 pt-2 border-t border-[var(--border)] text-xs text-[var(--muted-foreground)]">
+              🔀 分岔备选门：${node.alt.name}
+            </div>
+          </div>
+        `
+        )
+        .join('');
+      document.getElementById('rng-route-grid').innerHTML = routeHtml;
+
+      const curIds = [asp.id, mut.id, ...pickedActs.map((x) => x.main.id)];
+      recentMem.unshift({
+        no: runCounter,
+        summary: `第 ${runCounter} 局：${asp.name.split('·')[0]} + ${mut.name.split('】')[0]}】 → [${pickedActs.map((x) => x.main.name).join(' ➔ ')}]`,
+        ids: curIds
+      });
+      if (recentMem.length > 4) recentMem.pop();
+
+      document.getElementById('rng-history-list').innerHTML = recentMem
+        .map(
+          (item, idx) => `
+          <div class="px-3 py-1.5 rounded bg-[var(--secondary)] border border-[var(--border)] ${idx === 0 ? 'font-semibold text-emerald-500' : 'text-[var(--muted-foreground)]'}">
+            ${item.summary}
+          </div>
+        `
+        )
+        .join('');
+    }
+
+    // ==================== Tab 3: 长期维护防膨胀与防稀释 ====================
+    function updateMeta() {
+      const poolSize = parseInt(document.getElementById('inp-poolSize').value, 10);
+      const banish = Math.min(poolSize - 4, parseInt(document.getElementById('inp-banish').value, 10));
+      const reroll = parseInt(document.getElementById('inp-reroll').value, 10);
+
+      document.getElementById('val-poolSize').textContent = `${poolSize} 件`;
+      document.getElementById('val-banish').textContent = `${banish} 槽`;
+      document.getElementById('val-reroll').textContent = `${reroll} 次/局`;
+
+      // 单局约4次法宝3选1机会，计算摸到心仪核心组件(约3件目标池)的概率
+      const targetCount = 3;
+      const singleOfferMissRaw = Math.max(0.05, 1 - (targetCount * 3) / Math.max(4, poolSize));
+      const rawHitProb = 1 - Math.pow(singleOfferMissRaw, 3);
+
+      const effPool = Math.max(4, poolSize - banish);
+      const singleOfferMissGuarded = Math.max(0.03, 1 - (targetCount * 3) / effPool);
+      const totalRolls = 3 + reroll;
+      const guardedHitProb = 1 - Math.pow(singleOfferMissGuarded, totalRolls);
+
+      document.getElementById('res-raw-prob').textContent = `${Math.round(rawHitProb * 100)}%`;
+      const gPct = Math.min(96, Math.round(guardedHitProb * 100));
+      document.getElementById('res-guarded-prob').textContent =
+        gPct >= 65 ? `${gPct}% (黄金舒适区)` : `${gPct}% (建议增加封印槽)`;
+
+      renderMetaSvg();
+    }
+
+    function renderMetaSvg() {
+      const svg = document.getElementById('metaSvg');
+      const W = 620, H = 225;
+      const padL = 48, padR = 24, padT = 20, padB = 32;
+      const plotW = W - padL - padR;
+      const plotH = H - padT - padB;
+      const maxLv = 30;
+      const maxPct = 180;
+
+      const xAt = (lv) => padL + (lv / maxLv) * plotW;
+      const yAt = (pct) => padT + plotH - (Math.min(maxPct, pct) / maxPct) * plotH;
+
+      let html = '';
+      // 软上限封顶参考线 (55%)
+      const capY = yAt(55);
+      html += `<line x1="${padL}" y1="${capY}" x2="${W - padR}" y2="${capY}" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4 4" />`;
+      html += `<text x="${W - padR - 6}" y="${capY - 6}" font-size="12" text-anchor="end" fill="#10b981">局外攻击软上限天花板 (+55%)</text>`;
+
+      [0, 50, 100, 150].forEach((p) => {
+        const y = yAt(p);
+        html += `<line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="currentColor" stroke-opacity="0.1" />`;
+        html += `<text x="${padL - 8}" y="${y + 4}" font-size="12" text-anchor="end" fill="currentColor" opacity="0.6">+${p}%</text>`;
+      });
+
+      const oldPts = [];
+      const softPts = [];
+      for (let lv = 0; lv <= maxLv; lv++) {
+        oldPts.push(`${xAt(lv)},${yAt(lv * 8)}`);
+        const soft = 55 * (lv / (lv + 6));
+        softPts.push(`${xAt(lv)},${yAt(soft)}`);
+      }
+
+      html += `<polyline fill="none" stroke="#f43f5e" stroke-width="2.5" stroke-dasharray="5 4" points="${oldPts.join(' ')}" />`;
+      html += `<polyline fill="none" stroke="#10b981" stroke-width="3" points="${softPts.join(' ')}" />`;
+
+      html += `<text x="${xAt(21)}" y="${yAt(160)}" font-size="12" fill="#f43f5e">原版线性累加(数值崩坏秒怪)</text>`;
+      html += `<text x="${xAt(18)}" y="${yAt(44)}" font-size="12" font-weight="600" fill="#10b981">双曲软上限曲线(前期快·长线稳)</text>`;
+
+      [0, 5, 10, 15, 20, 25, 30].forEach((lv) => {
+        html += `<text x="${xAt(lv)}" y="${H - 8}" font-size="12" text-anchor="middle" fill="currentColor" opacity="0.7">Lv.${lv}</text>`;
+      });
+
+      svg.innerHTML = html;
+    }
+
+    // 初始化默认视图
+    updatePacing();
+    rollNewRun();
+  </script>
+</body>
+</html>
