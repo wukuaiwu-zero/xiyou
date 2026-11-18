@@ -238,9 +238,9 @@
     {
       no: 26, id: 'trib_26', chapter: 2, rank: 'boss',
       tribName: '乌鸡国救主', monsterName: '乌鸡国青毛狮子王', weapon: '冷艳锯两刃刀',
-      archetype: 'yin_general',
-      palette: { T: '#00b4d8', Y: '#ffd166', R: '#ff0a54', D: '#3c096c' },
-      patterns: ['bull_stampede', 'quake_cudgel', 'soul_spiral'],
+      archetype: 'azure_lion_king',
+      palette: { T: '#00b4d8', Y: '#ffd166', R: '#ff0a54', D: '#1d3557' },
+      patterns: ['bull_stampede', 'quake_cudgel', 'nine_roar_stun'],
       color: '#00b4d8', accent: '#ffd166',
       lore: '文殊菩萨座下青毛狮子，推真王落井、篡位三年反调风调雨顺。'
     },
@@ -578,9 +578,9 @@
     {
       no: 65, id: 'trib_65', chapter: 7, rank: 'boss',
       tribName: '比丘救子', monsterName: '比丘国 · 白鹿国丈', weapon: '蟠桃龙头寿杖',
-      archetype: 'wuzhuang_immortal',
-      palette: { G: '#ffffff', C: '#90e0ef', B: '#5a189a', S: '#ffe5d9', R: '#f72585' },
-      patterns: ['soul_spiral', 'bone_spikes', 'phantom_blink'],
+      archetype: 'white_deer_sage',
+      palette: { W: '#ffffff', C: '#90e0ef', B: '#5a189a', G: '#ffd166', R: '#f72585' },
+      patterns: ['five_thunder_decree', 'bone_spikes', 'phantom_blink'],
       color: '#90e0ef', accent: '#f72585',
       lore: '南极寿星座下白鹿私逃比丘国，蛊惑国王用一千一百一十一个小儿心肝做药引。'
     },
@@ -611,9 +611,9 @@
     {
       no: 69, id: 'trib_69', chapter: 7, rank: 'boss',
       tribName: '无底洞遭困', monsterName: '金鼻白毛老鼠精 · 地涌夫人', weapon: '绣鞋替身·双股寒光剑',
-      archetype: 'jade_rabbit',
-      palette: { W: '#f8f9fa', P: '#ffd60a', M: '#f72585', G: '#ffd166', C: '#ff4d6d', D: '#3c096c' },
-      patterns: ['phantom_blink', 'scorpion_sting', 'soul_spiral'],
+      archetype: 'golden_mouse_queen',
+      palette: { W: '#f8f9fa', P: '#ffd60a', M: '#f72585', G: '#ffd166', C: '#00f5d4', D: '#3c096c' },
+      patterns: ['phantom_blink', 'silk_snare_barrage', 'scorpion_sting'],
       color: '#f72585', accent: '#ffd60a',
       lore: '灵山偷食香花宝烛之半截观音，认托塔李天王做父，陷空山无底洞深达三百里！'
     },
@@ -628,8 +628,8 @@
     {
       no: 71, id: 'trib_71', chapter: 7, rank: 'boss',
       tribName: '隐雾山遇魔', monsterName: '南山大王 · 艾叶花豹精', weapon: '点钢铁杵·分瓣梅花阵',
-      archetype: 'yin_general',
-      palette: { T: '#ffba08', Y: '#22223b', R: '#00f5d4', D: '#4a4e69' },
+      archetype: 'leopard_king',
+      palette: { T: '#ffba08', D: '#22223b', C: '#00f5d4', R: '#ff0a54' },
       patterns: ['phantom_blink', 'spear_charge', 'sand_barrage'],
       color: '#ffba08', accent: '#00f5d4',
       lore: '隐雾山折岳连环洞艾叶花皮豹子精，巧使分瓣梅花计调虎离山摄走唐僧。'
@@ -672,9 +672,9 @@
     {
       no: 76, id: 'trib_76', chapter: 8, rank: 'boss',
       tribName: '玄英洞受苦', monsterName: '玄英洞 · 辟寒辟暑辟尘三犀王', weapon: '寒冰宣花斧·玄天犀角',
-      archetype: 'single_horn_rhino',
-      palette: { B: '#00b4d8', L: '#caf0f8', G: '#80ffdb', D: '#03045e', R: '#ff0a54' },
-      patterns: ['bull_stampede', 'bone_spikes', 'quake_cudgel'],
+      archetype: 'frost_rhino_lord',
+      palette: { B: '#0077b6', L: '#90e0ef', C: '#00f5d4', D: '#03045e', R: '#ff0a54' },
+      patterns: ['bull_stampede', 'tidal_tsunami', 'quake_cudgel'],
       color: '#00b4d8', accent: '#80ffdb',
       lore: '金平府青龙山玄英洞三尊千年犀牛精，假扮佛像偷食酥合香油，唯有四木禽星可降。'
     },

@@ -1709,18 +1709,37 @@
       };
     });
 
+    const COLOSSUS_ARCHS = {
+      bull_demon_king: 3.4,
+      white_elephant_king: 3.35,
+      nine_spirit_saint: 3.35,
+      ancient_turtle: 3.45,
+      single_horn_rhino: 3.35,
+      frost_rhino_lord: 3.35,
+      tuolong_dragon: 3.3,
+      red_python_demon: 3.4,
+      azure_lion_king: 3.3
+    };
+
     Object.keys(BOSS_GRIDS).forEach((id) => {
-      const def = BOSS_GRIDS[id];
-      const arch = Monsters81Sprites && Monsters81Sprites.BOSS_ARCHETYPES && Monsters81Sprites.BOSS_ARCHETYPES[id];
-      const f1Grid = (arch && arch.f1) || def.f1 || def.f0;
-      _cache.bosses[id] = {
-        f0: bakeGrid(def.f0, def.palette, 3, false),
-        f1: bakeGrid(f1Grid, def.palette, 3, false),
-        flash: bakeGrid(def.f0, def.palette, 3, true)
-      };
+      if (Monsters81Sprites && Monsters81Sprites.BOSS_ARCHETYPES && Monsters81Sprites.BOSS_ARCHETYPES[id]) {
+        _cache.bosses[id] = Monsters81Sprites.bakeArchetypeEntry(
+          bakeGrid,
+          id,
+          null,
+          COLOSSUS_ARCHS[id] || 3.2
+        );
+      } else {
+        const def = BOSS_GRIDS[id];
+        _cache.bosses[id] = {
+          f0: bakeGrid(def.f0, def.palette, 3.2, false),
+          f1: bakeGrid(def.f1 || def.f0, def.palette, 3.2, false),
+          flash: bakeGrid(def.f0, def.palette, 3.2, true)
+        };
+      }
     });
 
-    // 烘焙九九八十一难全部 55 套妖魔母版与 81 难专属配色精灵（小妖 + 劫难头目 + 守关妖王 + 高清图鉴帧）
+    // 烘焙九九八十一难全部妖魔母版与 81 难专属配色精灵（含 Boss 四态动作帧 + 二阶段狂暴真身帧）
     _cache.monstersHiRes = {};
     if (Monsters81Sprites) {
       Object.keys(Monsters81Sprites.MOB_ARCHETYPES).forEach((archId) => {
@@ -1730,31 +1749,39 @@
         }
       });
       Object.keys(Monsters81Sprites.BOSS_ARCHETYPES).forEach((archId) => {
-        const baked = Monsters81Sprites.bakeArchetypeEntry(bakeGrid, archId, null, 2.8);
-        if (!_cache.bosses[archId]) {
-          _cache.bosses[archId] = baked;
-        }
+        const bossSc = COLOSSUS_ARCHS[archId] || 3.18;
+        const baked = Monsters81Sprites.bakeArchetypeEntry(bakeGrid, archId, null, bossSc);
+        _cache.bosses[archId] = baked;
         if (!_cache.enemies[archId]) {
-          _cache.enemies[archId] = Monsters81Sprites.bakeArchetypeEntry(bakeGrid, archId, null, 2.2);
+          _cache.enemies[archId] = Monsters81Sprites.bakeArchetypeEntry(bakeGrid, archId, null, 2.25);
         }
       });
       if (Tribulations81 && Array.isArray(Tribulations81.TRIBULATIONS_81)) {
         Tribulations81.TRIBULATIONS_81.forEach((trib) => {
-          const worldScale = trib.rank === 'boss' ? 2.85 : trib.rank === 'elite' ? 2.25 : 2.0;
-          const bakedWorld = Monsters81Sprites.bakeArchetypeEntry(bakeGrid, trib.archetype, trib.palette, worldScale);
-          _cache.enemies[trib.id] = bakedWorld;
-          _cache.bosses[trib.id] =
+          const bossScale =
             trib.rank === 'boss'
-              ? bakedWorld
-              : Monsters81Sprites.bakeArchetypeEntry(bakeGrid, trib.archetype, trib.palette, 2.75);
+              ? COLOSSUS_ARCHS[trib.archetype] || 3.18
+              : trib.rank === 'elite'
+                ? 3.35
+                : 3.45;
+          const enemyScale = trib.rank === 'boss' ? 2.4 : trib.rank === 'elite' ? 2.25 : 2.0;
+          _cache.enemies[trib.id] = Monsters81Sprites.bakeArchetypeEntry(
+            bakeGrid,
+            trib.archetype,
+            trib.palette,
+            enemyScale
+          );
+          _cache.bosses[trib.id] = Monsters81Sprites.bakeArchetypeEntry(
+            bakeGrid,
+            trib.archetype,
+            trib.palette,
+            bossScale
+          );
+          const archDef = Monsters81Sprites.getArchetype(trib.archetype);
+          const mergedPal = Object.assign({}, archDef.palette, trib.palette || {});
           _cache.monstersHiRes[trib.id] = {
-            f0: bakedWorld.hiRes,
-            f1: bakeGrid(
-              Monsters81Sprites.getArchetype(trib.archetype).f1 || Monsters81Sprites.getArchetype(trib.archetype).f0,
-              Object.assign({}, Monsters81Sprites.getArchetype(trib.archetype).palette, trib.palette || {}),
-              3.0,
-              false
-            )
+            f0: _cache.bosses[trib.id].hiRes,
+            f1: bakeGrid(archDef.f1 || archDef.f0, mergedPal, 3.0, false)
           };
         });
       }

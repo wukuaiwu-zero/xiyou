@@ -1037,11 +1037,16 @@
   }
 
   // ==================== 5. 五大主角高辨识度头面五官与鬓发胡须精雕 ====================
-  function drawHeroHeadAndFace(mc, heroId, build, pose) {
+  function drawHeroHeadAndFace(mc, heroId, build, pose, helmId) {
     const hcx = Math.round(build.cx + pose.leanX * 0.8);
     const hcy = Math.round(build.headCy + pose.headDy);
     const rx = build.headRx;
     const ry = build.headRy;
+    const isHeadbandOnly =
+      !helmId ||
+      helmId === 'bronze_band' ||
+      helmId === 'crimson_hero_band' ||
+      helmId === 'asura_mask';
 
     if (heroId === 'bailongma') {
       mc.beginLayer();
@@ -1051,10 +1056,12 @@
       mc.outlineLayer('#110b18', '#22172e', false);
     } else if (heroId === 'wujing') {
       mc.beginLayer();
-      mc.trapezoid(hcy - 16, hcy - 4, hcx - 11, hcx + 7, hcx - 9, hcx + 8, makeToneShader('#1b263b', 0.28, 0.35));
-      mc.line(hcx - 9, hcy - 14, hcx - 12, hcy - 19, '#1b263b', 1);
-      mc.line(hcx - 3, hcy - 15, hcx - 4, hcy - 20, '#2b3a55', 1);
-      mc.line(hcx + 3, hcy - 14, hcx + 5, hcy - 19, '#1b263b', 1);
+      mc.trapezoid(isHeadbandOnly ? hcy - 15 : hcy - 10, hcy - 4, hcx - 10, hcx + 7, hcx - 9, hcx + 8, makeToneShader('#1b263b', 0.28, 0.35));
+      if (isHeadbandOnly) {
+        mc.line(hcx - 9, hcy - 14, hcx - 12, hcy - 19, '#1b263b', 1);
+        mc.line(hcx - 3, hcy - 15, hcx - 4, hcy - 20, '#2b3a55', 1);
+        mc.line(hcx + 3, hcy - 14, hcx + 5, hcy - 19, '#1b263b', 1);
+      }
       mc.outlineLayer('#0d0914', '#1d1528', false);
     }
 
@@ -1386,7 +1393,7 @@
     drawWaistAccessory(mc, heroId, cx, build.waistW, hipY, accId);
 
     // 4. 头面五官与冠冕
-    drawHeroHeadAndFace(mc, heroId, build, pose);
+    drawHeroHeadAndFace(mc, heroId, build, pose, helmId);
     drawHeadgear(mc, heroId, build, pose, helmId);
 
     // 5. 护肩与近端屈肘手臂

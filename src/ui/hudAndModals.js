@@ -1111,10 +1111,11 @@
         ctx.imageSmoothingEnabled = false;
         const baseW = heroSpr._logicalW || heroSpr.width;
         const baseH = heroSpr._logicalH || heroSpr.height;
-        const sc = 1.52;
+        const sc = 1.48;
         const dw = Math.round(baseW * sc);
         const dh = Math.round(baseH * sc);
-        ctx.drawImage(heroSpr, Math.round(avX + avS / 2 - dw / 2 - 2), Math.round(avY - 1), dw, dh);
+        const anchorX = heroSpr._logicalW ? 23 * sc : dw / 2;
+        ctx.drawImage(heroSpr, Math.round(avX + avS / 2 - anchorX), Math.round(avY - 4), dw, dh);
         ctx.restore();
       }
 

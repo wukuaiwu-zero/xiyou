@@ -1,7 +1,7 @@
 {
   "title": "《西游破劫录》九九八十一难全怪物像素素材清单",
   "totalTribulations": 81,
-  "totalArchetypes": 54,
+  "totalArchetypes": 59,
   "atlasPath": "assets/images/monsters_81_atlas.png",
   "atlasCellSize": {
     "width": 96,
@@ -129,8 +129,8 @@
       "weapon": "百炼虎牙大刀",
       "lore": "双叉岭成精斑斓猛虎，唐王御弟西行出长安所遇第一尊妖王。",
       "size": {
-        "width": 69,
-        "height": 42
+        "width": 84,
+        "height": 57
       },
       "frames": {
         "f0": "assets/images/monsters/trib_05_f0.png",
@@ -291,8 +291,8 @@
       "weapon": "黑缨点钢枪",
       "lore": "黑风山黑风洞主，趁火盗走锦襕袈裟欲办佛衣会，武艺堪敌大圣。",
       "size": {
-        "width": 66,
-        "height": 45
+        "width": 87,
+        "height": 57
       },
       "frames": {
         "f0": "assets/images/monsters/trib_11_f0.png",
@@ -345,8 +345,8 @@
       "weapon": "三股钢叉·三昧神风",
       "lore": "灵山脚下得道金毛貂鼠，一口三昧神风吹得天地无光。",
       "size": {
-        "width": 66,
-        "height": 42
+        "width": 84,
+        "height": 54
       },
       "frames": {
         "f0": "assets/images/monsters/trib_13_f0.png",
@@ -399,8 +399,8 @@
       "weapon": "降妖玄水杖",
       "lore": "八百里流沙河鹅毛不浮，深渊水煞凝结之狂澜妖尊。",
       "size": {
-        "width": 63,
-        "height": 39
+        "width": 81,
+        "height": 51
       },
       "frames": {
         "f0": "assets/images/monsters/trib_15_f0.png",
@@ -507,8 +507,8 @@
       "weapon": "七星紫金拂尘",
       "lore": "人参果树震怒所化乾坤道法化身，袖里乾坤吸摄万物。",
       "size": {
-        "width": 63,
-        "height": 42
+        "width": 81,
+        "height": 54
       },
       "frames": {
         "f0": "assets/images/monsters/trib_19_f0.png",
@@ -534,8 +534,8 @@
       "weapon": "幽冥白骨爪",
       "lore": "白虎岭千年粉骷髅，三变幻形离间师徒，诡谲莫测。",
       "size": {
-        "width": 60,
-        "height": 39
+        "width": 78,
+        "height": 51
       },
       "frames": {
         "f0": "assets/images/monsters/trib_20_f0.png",
@@ -615,8 +615,8 @@
       "weapon": "蘸钢大刀·舍利内丹",
       "lore": "二十八宿奎木狼私下凡尘，金銮殿施咒将圣僧化作斑斓猛虎。",
       "size": {
-        "width": 66,
-        "height": 42
+        "width": 81,
+        "height": 51
       },
       "frames": {
         "f0": "assets/images/monsters/trib_23_f0.png",
@@ -642,8 +642,8 @@
       "weapon": "紫金红葫芦·七星剑",
       "lore": "太上老君看金炉童子下界，手执紫金红葫芦唤名即吸，更可移三山压顶！",
       "size": {
-        "width": 66,
-        "height": 42
+        "width": 78,
+        "height": 51
       },
       "frames": {
         "f0": "assets/images/monsters/trib_24_f0.png",
@@ -669,8 +669,8 @@
       "weapon": "羊脂玉净瓶·幌金绳",
       "lore": "莲花洞二大王，手持羊脂玉净瓶、芭蕉扇与幌金绳五大秘宝。",
       "size": {
-        "width": 66,
-        "height": 42
+        "width": 78,
+        "height": 51
       },
       "frames": {
         "f0": "assets/images/monsters/trib_25_f0.png",
@@ -692,12 +692,12 @@
       "tribName": "乌鸡国救主",
       "monsterName": "乌鸡国青毛狮子王",
       "rank": "boss",
-      "archetype": "yin_general",
+      "archetype": "azure_lion_king",
       "weapon": "冷艳锯两刃刀",
       "lore": "文殊菩萨座下青毛狮子，推真王落井、篡位三年反调风调雨顺。",
       "size": {
-        "width": 69,
-        "height": 42
+        "width": 84,
+        "height": 48
       },
       "frames": {
         "f0": "assets/images/monsters/trib_26_f0.png",
@@ -750,8 +750,8 @@
       "weapon": "丈八火尖枪·三昧真火",
       "lore": "牛魔王与铁扇公主之子，火焰山苦修三百年三昧真火，连大圣亦遭火败。",
       "size": {
-        "width": 66,
-        "height": 39
+        "width": 78,
+        "height": 48
       },
       "frames": {
         "f0": "assets/images/monsters/trib_28_f0.png",
@@ -858,8 +858,8 @@
       "weapon": "九节竹节钢鞭",
       "lore": "泾河龙王第九子鼍洁，霸占黑水河神府兴起黑浪摄走唐僧八戒。",
       "size": {
-        "width": 66,
-        "height": 39
+        "width": 81,
+        "height": 48
       },
       "frames": {
         "f0": "assets/images/monsters/trib_32_f0.png",
@@ -912,8 +912,8 @@
       "weapon": "五雷杏黄法剑",
       "lore": "车迟国第一大国师，精通五雷祈雨、云梯显圣与砍头复生奇术。",
       "size": {
-        "width": 66,
-        "height": 42
+        "width": 81,
+        "height": 48
       },
       "frames": {
         "f0": "assets/images/monsters/trib_34_f0.png",
@@ -939,8 +939,8 @@
       "weapon": "冷龙冰火骨杖",
       "lore": "白鹿精与羚羊精所化二、三国师，善剖腹剜心与滚油锅冷龙秘法。",
       "size": {
-        "width": 66,
-        "height": 42
+        "width": 81,
+        "height": 48
       },
       "frames": {
         "f0": "assets/images/monsters/trib_35_f0.png",
@@ -966,8 +966,8 @@
       "weapon": "九瓣赤铜锤",
       "lore": "观音莲花池金鱼走脱通天河，岁祭童男童女，一夜冰封八百里大河。",
       "size": {
-        "width": 66,
-        "height": 39
+        "width": 81,
+        "height": 48
       },
       "frames": {
         "f0": "assets/images/monsters/trib_36_f0.png",
@@ -1047,8 +1047,8 @@
       "weapon": "太上金刚琢·点钢枪",
       "lore": "太上老君坐骑板角青牛，手执金刚琢套尽漫天神佛兵刃水火！",
       "size": {
-        "width": 66,
-        "height": 42
+        "width": 84,
+        "height": 54
       },
       "frames": {
         "f0": "assets/images/monsters/trib_39_f0.png",
@@ -1128,8 +1128,8 @@
       "weapon": "如意金钩刃",
       "lore": "牛魔王之弟、红孩儿叔父，霸占解阳山落胎泉索要花红表礼。",
       "size": {
-        "width": 66,
-        "height": 42
+        "width": 81,
+        "height": 48
       },
       "frames": {
         "f0": "assets/images/monsters/trib_42_f0.png",
@@ -1182,8 +1182,8 @@
       "weapon": "倒马毒桩·三股钢叉",
       "lore": "雷音寺听经蜇伤如来左指之琵琶蝎女，尾上倒马毒桩连金刚不坏亦剧痛难当！",
       "size": {
-        "width": 66,
-        "height": 39
+        "width": 84,
+        "height": 48
       },
       "frames": {
         "f0": "assets/images/monsters/trib_44_f0.png",
@@ -1236,8 +1236,8 @@
       "weapon": "随心铁杆兵",
       "lore": "混世四猴之一，善聆音察理、知前后万物，与齐天大圣神通一般无二！",
       "size": {
-        "width": 66,
-        "height": 42
+        "width": 84,
+        "height": 48
       },
       "frames": {
         "f0": "assets/images/monsters/trib_46_f0.png",
@@ -1290,8 +1290,8 @@
       "weapon": "太阴芭蕉宝扇·青锋双剑",
       "lore": "翠云山芭蕉洞主，手执混沌开辟灵宝芭蕉扇，一扇风生八万四千里！",
       "size": {
-        "width": 66,
-        "height": 39
+        "width": 84,
+        "height": 45
       },
       "frames": {
         "f0": "assets/images/monsters/trib_48_f0.png",
@@ -1317,8 +1317,8 @@
       "weapon": "混铁棍·法天象地",
       "lore": "七大圣之首大力牛魔王，白牛法相顶天立地，力抗漫天佛兵天将！",
       "size": {
-        "width": 69,
-        "height": 48
+        "width": 90,
+        "height": 63
       },
       "frames": {
         "f0": "assets/images/monsters/trib_49_f0.png",
@@ -1371,8 +1371,8 @@
       "weapon": "月牙铲·九首血翼",
       "lore": "乱石山碧波潭万圣龙王赘婿，现本相九头血翼奇禽，盗取佛宝舍利。",
       "size": {
-        "width": 66,
-        "height": 39
+        "width": 87,
+        "height": 45
       },
       "frames": {
         "f0": "assets/images/monsters/trib_51_f0.png",
@@ -1425,8 +1425,8 @@
       "weapon": "金铙·后天人种袋·短软狼牙棒",
       "lore": "东来佛祖司磬黄眉童儿，假设小雷音寺，金铙困大圣、人种袋收尽诸天星宿！",
       "size": {
-        "width": 66,
-        "height": 42
+        "width": 81,
+        "height": 48
       },
       "frames": {
         "f0": "assets/images/monsters/trib_53_f0.png",
@@ -1479,8 +1479,8 @@
       "weapon": "双枪毒舌·血海缠卷",
       "lore": "七绝山驼罗庄成精红鳞巨蟒，双目如灯笼，吞食人畜无算。",
       "size": {
-        "width": 66,
-        "height": 36
+        "width": 84,
+        "height": 39
       },
       "frames": {
         "f0": "assets/images/monsters/trib_55_f0.png",
@@ -1533,8 +1533,8 @@
       "weapon": "紫阳金铃·宣花大斧",
       "lore": "观音菩萨坐骑金毛犼，项下三枚紫金铃晃出三百丈红火、浓烟与毒沙！",
       "size": {
-        "width": 66,
-        "height": 42
+        "width": 87,
+        "height": 45
       },
       "frames": {
         "f0": "assets/images/monsters/trib_57_f0.png",
@@ -1587,8 +1587,8 @@
       "weapon": "脐吐天罗情丝·双股剑",
       "lore": "盘丝岭濯垢泉七位蜘蛛女妖，脐中喷出万道银丝结成漫天丝蓬！",
       "size": {
-        "width": 66,
-        "height": 33
+        "width": 84,
+        "height": 39
       },
       "frames": {
         "f0": "assets/images/monsters/trib_59_f0.png",
@@ -1614,8 +1614,8 @@
       "weapon": "肋下千眼金光阵·百节剑",
       "lore": "黄花观道士真身七尺大蜈蚣，两肋下千只金眼齐放黄雾金光困锁大圣！",
       "size": {
-        "width": 66,
-        "height": 39
+        "width": 84,
+        "height": 45
       },
       "frames": {
         "f0": "assets/images/monsters/trib_60_f0.png",
@@ -1668,8 +1668,8 @@
       "weapon": "吞天钢刀·卷云象鼻枪",
       "lore": "狮驼洞大大王一口曾吞十万天兵，二大王白象长鼻一卷万钧之力！",
       "size": {
-        "width": 66,
-        "height": 39
+        "width": 84,
+        "height": 51
       },
       "frames": {
         "f0": "assets/images/monsters/trib_62_f0.png",
@@ -1695,8 +1695,8 @@
       "weapon": "方天画戟·阴阳二气瓶",
       "lore": "如来佛祖娘舅金翅大鹏，扇一翅九万里追上筋斗云，独占狮驼魔国！",
       "size": {
-        "width": 66,
-        "height": 36
+        "width": 90,
+        "height": 42
       },
       "frames": {
         "f0": "assets/images/monsters/trib_63_f0.png",
@@ -1745,11 +1745,11 @@
       "tribName": "比丘救子",
       "monsterName": "比丘国 · 白鹿国丈",
       "rank": "boss",
-      "archetype": "wuzhuang_immortal",
+      "archetype": "white_deer_sage",
       "weapon": "蟠桃龙头寿杖",
       "lore": "南极寿星座下白鹿私逃比丘国，蛊惑国王用一千一百一十一个小儿心肝做药引。",
       "size": {
-        "width": 63,
+        "width": 84,
         "height": 42
       },
       "frames": {
@@ -1853,12 +1853,12 @@
       "tribName": "无底洞遭困",
       "monsterName": "金鼻白毛老鼠精 · 地涌夫人",
       "rank": "boss",
-      "archetype": "jade_rabbit",
+      "archetype": "golden_mouse_queen",
       "weapon": "绣鞋替身·双股寒光剑",
       "lore": "灵山偷食香花宝烛之半截观音，认托塔李天王做父，陷空山无底洞深达三百里！",
       "size": {
-        "width": 66,
-        "height": 39
+        "width": 81,
+        "height": 42
       },
       "frames": {
         "f0": "assets/images/monsters/trib_69_f0.png",
@@ -1907,11 +1907,11 @@
       "tribName": "隐雾山遇魔",
       "monsterName": "南山大王 · 艾叶花豹精",
       "rank": "boss",
-      "archetype": "yin_general",
+      "archetype": "leopard_king",
       "weapon": "点钢铁杵·分瓣梅花阵",
       "lore": "隐雾山折岳连环洞艾叶花皮豹子精，巧使分瓣梅花计调虎离山摄走唐僧。",
       "size": {
-        "width": 69,
+        "width": 81,
         "height": 42
       },
       "frames": {
@@ -1992,8 +1992,8 @@
       "weapon": "九首衔拿神通·震彻三界吼",
       "lore": "太乙救苦天尊座下九头狮子，赤手空拳摇首一吼上通三圣下彻九泉，一口生擒众圣！",
       "size": {
-        "width": 66,
-        "height": 42
+        "width": 84,
+        "height": 51
       },
       "frames": {
         "f0": "assets/images/monsters/trib_74_f0.png",
@@ -2042,12 +2042,12 @@
       "tribName": "玄英洞受苦",
       "monsterName": "玄英洞 · 辟寒辟暑辟尘三犀王",
       "rank": "boss",
-      "archetype": "single_horn_rhino",
+      "archetype": "frost_rhino_lord",
       "weapon": "寒冰宣花斧·玄天犀角",
       "lore": "金平府青龙山玄英洞三尊千年犀牛精，假扮佛像偷食酥合香油，唯有四木禽星可降。",
       "size": {
-        "width": 66,
-        "height": 42
+        "width": 81,
+        "height": 45
       },
       "frames": {
         "f0": "assets/images/monsters/trib_76_f0.png",
@@ -2100,8 +2100,8 @@
       "weapon": "短软捣药玉杵",
       "lore": "广寒宫嫦娥仙子捣药玉兔，摄藏天竺真公主抛绣球欲配唐僧元阳。",
       "size": {
-        "width": 66,
-        "height": 39
+        "width": 84,
+        "height": 45
       },
       "frames": {
         "f0": "assets/images/monsters/trib_78_f0.png",
@@ -2181,8 +2181,8 @@
       "weapon": "九宫八卦巨甲·翻江海啸",
       "lore": "取经归途忘了替老鼋问佛祖寿年，老鼋淬水一沉凑满九九八十一难功德圆满！",
       "size": {
-        "width": 66,
-        "height": 30
+        "width": 90,
+        "height": 42
       },
       "frames": {
         "f0": "assets/images/monsters/trib_81_f0.png",

@@ -27,6 +27,7 @@
   const ua = typeof navigator !== 'undefined' && navigator.userAgent ? navigator.userAgent : '';
   const isWechatWebView = isBrowser && /MicroMessenger/i.test(ua);
   const isDouyinWebView = isBrowser && /(BytedanceWebview|Douyin|TTWebView|NewsArticle)/i.test(ua);
+  const isAndroidApp = isBrowser && typeof window !== 'undefined' && !!window.XiyouAndroidBridge;
 
   let _mainCanvas = null;
   let _deviceProfile = null;
@@ -112,13 +113,20 @@
       ? 'douyin_minigame'
       : isWechat
         ? 'wechat_minigame'
-        : isWechatWebView
-          ? 'wechat_webview'
-          : isDouyinWebView
-            ? 'douyin_webview'
-            : isBrowser
-              ? 'web'
-              : 'node';
+        : isAndroidApp
+          ? 'android_app'
+          : isWechatWebView
+            ? 'wechat_webview'
+            : isDouyinWebView
+              ? 'douyin_webview'
+              : isBrowser
+                ? 'web'
+                : 'node';
+
+    if (isAndroidApp) {
+      isAndroid = true;
+      os = 'android';
+    }
 
     _deviceProfile = {
       os,
@@ -137,35 +145,45 @@
   }
 
   /**
-   * 探测浏览器 CSS env(safe-area-inset-*) 刘海/灵动岛/底部手势条安全边距
+   * 探测浏览器 CSS env(safe-area-inset-*) 与 Android 原生桥接挖孔屏安全边距
    */
   function getBrowserSafeInsetsRaw() {
     if (!isBrowser || !document.body) {
       return { top: 0, right: 0, bottom: 0, left: 0 };
     }
-    if (_cachedCssInsets) return _cachedCssInsets;
-    try {
-      if (!_safeProbeEl) {
-        _safeProbeEl = document.createElement('div');
-        _safeProbeEl.style.cssText =
-          'position:fixed;top:0;left:0;width:0;height:0;pointer-events:none;visibility:hidden;' +
-          'padding-top:env(safe-area-inset-top,0px);' +
-          'padding-right:env(safe-area-inset-right,0px);' +
-          'padding-bottom:env(safe-area-inset-bottom,0px);' +
-          'padding-left:env(safe-area-inset-left,0px);';
-        document.body.appendChild(_safeProbeEl);
+    const nativeInsets = (typeof window !== 'undefined' && window.__xiyouNativeSafeInsets) || null;
+    if (!_cachedCssInsets) {
+      try {
+        if (!_safeProbeEl) {
+          _safeProbeEl = document.createElement('div');
+          _safeProbeEl.style.cssText =
+            'position:fixed;top:0;left:0;width:0;height:0;pointer-events:none;visibility:hidden;' +
+            'padding-top:env(safe-area-inset-top,0px);' +
+            'padding-right:env(safe-area-inset-right,0px);' +
+            'padding-bottom:env(safe-area-inset-bottom,0px);' +
+            'padding-left:env(safe-area-inset-left,0px);';
+          document.body.appendChild(_safeProbeEl);
+        }
+        const cs = window.getComputedStyle(_safeProbeEl);
+        _cachedCssInsets = {
+          top: Math.max(0, parseFloat(cs.paddingTop) || 0),
+          right: Math.max(0, parseFloat(cs.paddingRight) || 0),
+          bottom: Math.max(0, parseFloat(cs.paddingBottom) || 0),
+          left: Math.max(0, parseFloat(cs.paddingLeft) || 0)
+        };
+      } catch (e) {
+        _cachedCssInsets = { top: 0, right: 0, bottom: 0, left: 0 };
       }
-      const cs = window.getComputedStyle(_safeProbeEl);
-      _cachedCssInsets = {
-        top: Math.max(0, parseFloat(cs.paddingTop) || 0),
-        right: Math.max(0, parseFloat(cs.paddingRight) || 0),
-        bottom: Math.max(0, parseFloat(cs.paddingBottom) || 0),
-        left: Math.max(0, parseFloat(cs.paddingLeft) || 0)
-      };
-      return _cachedCssInsets;
-    } catch (e) {
-      return { top: 0, right: 0, bottom: 0, left: 0 };
     }
+    if (nativeInsets) {
+      return {
+        top: Math.max(_cachedCssInsets.top, Number(nativeInsets.top) || 0),
+        right: Math.max(_cachedCssInsets.right, Number(nativeInsets.right) || 0),
+        bottom: Math.max(_cachedCssInsets.bottom, Number(nativeInsets.bottom) || 0),
+        left: Math.max(_cachedCssInsets.left, Number(nativeInsets.left) || 0)
+      };
+    }
+    return _cachedCssInsets;
   }
 
   /**
@@ -434,6 +452,10 @@
           miniApi.vibrateShort({ type: type === 'medium' ? 'medium' : 'light' });
         }
       } catch (e) {}
+    } else if (isBrowser && typeof window !== 'undefined' && window.XiyouAndroidBridge && typeof window.XiyouAndroidBridge.vibrate === 'function') {
+      try {
+        window.XiyouAndroidBridge.vibrate(type || 'light');
+      } catch (e) {}
     } else if (isBrowser && typeof navigator !== 'undefined' && typeof navigator.vibrate === 'function') {
       try {
         navigator.vibrate(type === 'heavy' ? 38 : type === 'medium' ? 18 : 9);
@@ -492,6 +514,12 @@
   }
 
   function requestFullscreen() {
+    if (isBrowser && typeof window !== 'undefined' && window.XiyouAndroidBridge && typeof window.XiyouAndroidBridge.enterImmersive === 'function') {
+      try {
+        window.XiyouAndroidBridge.enterImmersive();
+      } catch (e) {}
+      return;
+    }
     if (!isBrowser || !document.documentElement) return;
     const doc = document;
     const isFs = doc.fullscreenElement || doc.webkitFullscreenElement || doc.msFullscreenElement;
@@ -612,6 +640,12 @@
     if (isMiniGame && miniApi && typeof miniApi.exitMiniProgram === 'function') {
       try {
         miniApi.exitMiniProgram({});
+        return true;
+      } catch (e) {}
+    }
+    if (isBrowser && typeof window !== 'undefined' && window.XiyouAndroidBridge && typeof window.XiyouAndroidBridge.exitApp === 'function') {
+      try {
+        window.XiyouAndroidBridge.exitApp();
         return true;
       } catch (e) {}
     }
@@ -819,6 +853,7 @@
     isMiniGame,
     miniApi,
     isBrowser,
+    isAndroidApp,
     isWechatWebView,
     isDouyinWebView,
     getDeviceProfile,

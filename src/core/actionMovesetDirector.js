@@ -1024,7 +1024,8 @@
         const curSpec = this.currentAttackSpec;
         const elapsed = this.attackDuration - this.attackTimer;
         const hitList = curSpec.hitTimes || [curSpec.hitTime];
-        const cancelAt = curSpec.cancelTime || this.attackDuration * 0.68;
+        const durScale = this.attackDuration / Math.max(0.01, curSpec.duration || this.attackDuration);
+        const cancelAt = (curSpec.cancelTime || (curSpec.duration || this.attackDuration) * 0.68) * durScale;
         if (this.attackSubHitIdx >= hitList.length && elapsed >= cancelAt) {
           this.attackTimer = 0;
         }
@@ -1091,6 +1092,14 @@
       if (this.dead || this.isGroundSmashing) return;
       if (this.skillCdTimer > 0) {
         return origTryCastSkill.call(this, worldCtx);
+      }
+
+      // 极速连按「J -> J -> U」搓招优化：若下一段普攻已在预输入队列中，先瞬时结算进位再读取对应段数的派生技！
+      if (this.inputBuffer && this.inputBuffer.act === 'attack' && this.attackTimer > 0 && this.attackTimer < 0.12) {
+        const bufDir = this.inputBuffer.moveDir;
+        this.inputBuffer = null;
+        this.attackTimer = 0;
+        this.tryPrimaryAttack(bufDir);
       }
 
       const deriv = this.getAvailableDerivation();

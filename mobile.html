@@ -3869,9 +3869,9 @@
     {
       no: 26, id: 'trib_26', chapter: 2, rank: 'boss',
       tribName: '乌鸡国救主', monsterName: '乌鸡国青毛狮子王', weapon: '冷艳锯两刃刀',
-      archetype: 'yin_general',
-      palette: { T: '#00b4d8', Y: '#ffd166', R: '#ff0a54', D: '#3c096c' },
-      patterns: ['bull_stampede', 'quake_cudgel', 'soul_spiral'],
+      archetype: 'azure_lion_king',
+      palette: { T: '#00b4d8', Y: '#ffd166', R: '#ff0a54', D: '#1d3557' },
+      patterns: ['bull_stampede', 'quake_cudgel', 'nine_roar_stun'],
       color: '#00b4d8', accent: '#ffd166',
       lore: '文殊菩萨座下青毛狮子，推真王落井、篡位三年反调风调雨顺。'
     },
@@ -4209,9 +4209,9 @@
     {
       no: 65, id: 'trib_65', chapter: 7, rank: 'boss',
       tribName: '比丘救子', monsterName: '比丘国 · 白鹿国丈', weapon: '蟠桃龙头寿杖',
-      archetype: 'wuzhuang_immortal',
-      palette: { G: '#ffffff', C: '#90e0ef', B: '#5a189a', S: '#ffe5d9', R: '#f72585' },
-      patterns: ['soul_spiral', 'bone_spikes', 'phantom_blink'],
+      archetype: 'white_deer_sage',
+      palette: { W: '#ffffff', C: '#90e0ef', B: '#5a189a', G: '#ffd166', R: '#f72585' },
+      patterns: ['five_thunder_decree', 'bone_spikes', 'phantom_blink'],
       color: '#90e0ef', accent: '#f72585',
       lore: '南极寿星座下白鹿私逃比丘国，蛊惑国王用一千一百一十一个小儿心肝做药引。'
     },
@@ -4242,9 +4242,9 @@
     {
       no: 69, id: 'trib_69', chapter: 7, rank: 'boss',
       tribName: '无底洞遭困', monsterName: '金鼻白毛老鼠精 · 地涌夫人', weapon: '绣鞋替身·双股寒光剑',
-      archetype: 'jade_rabbit',
-      palette: { W: '#f8f9fa', P: '#ffd60a', M: '#f72585', G: '#ffd166', C: '#ff4d6d', D: '#3c096c' },
-      patterns: ['phantom_blink', 'scorpion_sting', 'soul_spiral'],
+      archetype: 'golden_mouse_queen',
+      palette: { W: '#f8f9fa', P: '#ffd60a', M: '#f72585', G: '#ffd166', C: '#00f5d4', D: '#3c096c' },
+      patterns: ['phantom_blink', 'silk_snare_barrage', 'scorpion_sting'],
       color: '#f72585', accent: '#ffd60a',
       lore: '灵山偷食香花宝烛之半截观音，认托塔李天王做父，陷空山无底洞深达三百里！'
     },
@@ -4259,8 +4259,8 @@
     {
       no: 71, id: 'trib_71', chapter: 7, rank: 'boss',
       tribName: '隐雾山遇魔', monsterName: '南山大王 · 艾叶花豹精', weapon: '点钢铁杵·分瓣梅花阵',
-      archetype: 'yin_general',
-      palette: { T: '#ffba08', Y: '#22223b', R: '#00f5d4', D: '#4a4e69' },
+      archetype: 'leopard_king',
+      palette: { T: '#ffba08', D: '#22223b', C: '#00f5d4', R: '#ff0a54' },
       patterns: ['phantom_blink', 'spear_charge', 'sand_barrage'],
       color: '#ffba08', accent: '#00f5d4',
       lore: '隐雾山折岳连环洞艾叶花皮豹子精，巧使分瓣梅花计调虎离山摄走唐僧。'
@@ -4303,9 +4303,9 @@
     {
       no: 76, id: 'trib_76', chapter: 8, rank: 'boss',
       tribName: '玄英洞受苦', monsterName: '玄英洞 · 辟寒辟暑辟尘三犀王', weapon: '寒冰宣花斧·玄天犀角',
-      archetype: 'single_horn_rhino',
-      palette: { B: '#00b4d8', L: '#caf0f8', G: '#80ffdb', D: '#03045e', R: '#ff0a54' },
-      patterns: ['bull_stampede', 'bone_spikes', 'quake_cudgel'],
+      archetype: 'frost_rhino_lord',
+      palette: { B: '#0077b6', L: '#90e0ef', C: '#00f5d4', D: '#03045e', R: '#ff0a54' },
+      patterns: ['bull_stampede', 'tidal_tsunami', 'quake_cudgel'],
       color: '#00b4d8', accent: '#80ffdb',
       lore: '金平府青龙山玄英洞三尊千年犀牛精，假扮佛像偷食酥合香油，唯有四木禽星可降。'
     },
@@ -8363,6 +8363,7 @@
   const ua = typeof navigator !== 'undefined' && navigator.userAgent ? navigator.userAgent : '';
   const isWechatWebView = isBrowser && /MicroMessenger/i.test(ua);
   const isDouyinWebView = isBrowser && /(BytedanceWebview|Douyin|TTWebView|NewsArticle)/i.test(ua);
+  const isAndroidApp = isBrowser && typeof window !== 'undefined' && !!window.XiyouAndroidBridge;
 
   let _mainCanvas = null;
   let _deviceProfile = null;
@@ -8448,13 +8449,20 @@
       ? 'douyin_minigame'
       : isWechat
         ? 'wechat_minigame'
-        : isWechatWebView
-          ? 'wechat_webview'
-          : isDouyinWebView
-            ? 'douyin_webview'
-            : isBrowser
-              ? 'web'
-              : 'node';
+        : isAndroidApp
+          ? 'android_app'
+          : isWechatWebView
+            ? 'wechat_webview'
+            : isDouyinWebView
+              ? 'douyin_webview'
+              : isBrowser
+                ? 'web'
+                : 'node';
+
+    if (isAndroidApp) {
+      isAndroid = true;
+      os = 'android';
+    }
 
     _deviceProfile = {
       os,
@@ -8473,35 +8481,45 @@
   }
 
   /**
-   * 探测浏览器 CSS env(safe-area-inset-*) 刘海/灵动岛/底部手势条安全边距
+   * 探测浏览器 CSS env(safe-area-inset-*) 与 Android 原生桥接挖孔屏安全边距
    */
   function getBrowserSafeInsetsRaw() {
     if (!isBrowser || !document.body) {
       return { top: 0, right: 0, bottom: 0, left: 0 };
     }
-    if (_cachedCssInsets) return _cachedCssInsets;
-    try {
-      if (!_safeProbeEl) {
-        _safeProbeEl = document.createElement('div');
-        _safeProbeEl.style.cssText =
-          'position:fixed;top:0;left:0;width:0;height:0;pointer-events:none;visibility:hidden;' +
-          'padding-top:env(safe-area-inset-top,0px);' +
-          'padding-right:env(safe-area-inset-right,0px);' +
-          'padding-bottom:env(safe-area-inset-bottom,0px);' +
-          'padding-left:env(safe-area-inset-left,0px);';
-        document.body.appendChild(_safeProbeEl);
+    const nativeInsets = (typeof window !== 'undefined' && window.__xiyouNativeSafeInsets) || null;
+    if (!_cachedCssInsets) {
+      try {
+        if (!_safeProbeEl) {
+          _safeProbeEl = document.createElement('div');
+          _safeProbeEl.style.cssText =
+            'position:fixed;top:0;left:0;width:0;height:0;pointer-events:none;visibility:hidden;' +
+            'padding-top:env(safe-area-inset-top,0px);' +
+            'padding-right:env(safe-area-inset-right,0px);' +
+            'padding-bottom:env(safe-area-inset-bottom,0px);' +
+            'padding-left:env(safe-area-inset-left,0px);';
+          document.body.appendChild(_safeProbeEl);
+        }
+        const cs = window.getComputedStyle(_safeProbeEl);
+        _cachedCssInsets = {
+          top: Math.max(0, parseFloat(cs.paddingTop) || 0),
+          right: Math.max(0, parseFloat(cs.paddingRight) || 0),
+          bottom: Math.max(0, parseFloat(cs.paddingBottom) || 0),
+          left: Math.max(0, parseFloat(cs.paddingLeft) || 0)
+        };
+      } catch (e) {
+        _cachedCssInsets = { top: 0, right: 0, bottom: 0, left: 0 };
       }
-      const cs = window.getComputedStyle(_safeProbeEl);
-      _cachedCssInsets = {
-        top: Math.max(0, parseFloat(cs.paddingTop) || 0),
-        right: Math.max(0, parseFloat(cs.paddingRight) || 0),
-        bottom: Math.max(0, parseFloat(cs.paddingBottom) || 0),
-        left: Math.max(0, parseFloat(cs.paddingLeft) || 0)
-      };
-      return _cachedCssInsets;
-    } catch (e) {
-      return { top: 0, right: 0, bottom: 0, left: 0 };
     }
+    if (nativeInsets) {
+      return {
+        top: Math.max(_cachedCssInsets.top, Number(nativeInsets.top) || 0),
+        right: Math.max(_cachedCssInsets.right, Number(nativeInsets.right) || 0),
+        bottom: Math.max(_cachedCssInsets.bottom, Number(nativeInsets.bottom) || 0),
+        left: Math.max(_cachedCssInsets.left, Number(nativeInsets.left) || 0)
+      };
+    }
+    return _cachedCssInsets;
   }
 
   /**
@@ -8770,6 +8788,10 @@
           miniApi.vibrateShort({ type: type === 'medium' ? 'medium' : 'light' });
         }
       } catch (e) {}
+    } else if (isBrowser && typeof window !== 'undefined' && window.XiyouAndroidBridge && typeof window.XiyouAndroidBridge.vibrate === 'function') {
+      try {
+        window.XiyouAndroidBridge.vibrate(type || 'light');
+      } catch (e) {}
     } else if (isBrowser && typeof navigator !== 'undefined' && typeof navigator.vibrate === 'function') {
       try {
         navigator.vibrate(type === 'heavy' ? 38 : type === 'medium' ? 18 : 9);
@@ -8828,6 +8850,12 @@
   }
 
   function requestFullscreen() {
+    if (isBrowser && typeof window !== 'undefined' && window.XiyouAndroidBridge && typeof window.XiyouAndroidBridge.enterImmersive === 'function') {
+      try {
+        window.XiyouAndroidBridge.enterImmersive();
+      } catch (e) {}
+      return;
+    }
     if (!isBrowser || !document.documentElement) return;
     const doc = document;
     const isFs = doc.fullscreenElement || doc.webkitFullscreenElement || doc.msFullscreenElement;
@@ -8948,6 +8976,12 @@
     if (isMiniGame && miniApi && typeof miniApi.exitMiniProgram === 'function') {
       try {
         miniApi.exitMiniProgram({});
+        return true;
+      } catch (e) {}
+    }
+    if (isBrowser && typeof window !== 'undefined' && window.XiyouAndroidBridge && typeof window.XiyouAndroidBridge.exitApp === 'function') {
+      try {
+        window.XiyouAndroidBridge.exitApp();
         return true;
       } catch (e) {}
     }
@@ -9155,6 +9189,7 @@
     isMiniGame,
     miniApi,
     isBrowser,
+    isAndroidApp,
     isWechatWebView,
     isDouyinWebView,
     getDeviceProfile,
@@ -11058,1003 +11093,1393 @@
     }
   };
 
-  // ==================== 二、九九八十一难大妖王 Boss 像素矩阵 (22x15 ~ 26x18, 默认 scale=2.8~3) ====================
+  // ==================== 二、九九八十一难大妖王 Boss 巨型像素矩阵 (26x20 ~ 32x24, 霸主体型 + 四态动作帧 + 二阶真身色板) ====================
   const BOSS_ARCHETYPES = {
-    // 1. 寅将军（双叉岭斑斓猛虎妖王）
+    // 1. 寅将军·双叉虎王（王字额斑斓巨虎、吞肩玄甲、猩红狂风披风、百炼虎牙巨刀）
     yin_general: {
       palette: { O: '#0f0c14', T: '#f77f00', Y: '#fcbf49', W: '#ffffff', R: '#d62828', D: '#2b2d42', M: '#ced4da' },
+      p2Palette: { T: '#ff4800', Y: '#ffd60a', R: '#ff0a54', D: '#370617', M: '#ffd166' },
       f0: [
-        '..OOO..........OOO..MMM',
-        '.OTTTTOOOOOOOOTTTTOOMWM',
-        '.OTOTTTTTTTTTTTTOTO.OMO',
-        'OTTTTRWTTTTTTRWTTTTO.O.',
-        'OTTTTTTWWWWWWTTTTTTO.O.',
-        '.OOTTTTWOOWOWTTTTOOOOO.',
-        '.OODDDDDYYYYDDDDDDOO...',
-        'OODDTTTTYYYYTTTTDDDO...',
-        'OODDDDDDDDDDDDDDDDDO...',
-        '.OOTTTTTYYYYTTTTTTO....',
-        '..OTTTT......TTTTO.....',
-        '..ODDDO......ODDDO.....',
-        '.OODDDO......ODDDOO....',
-        '.OOOOOO......OOOOOO....'
+        '...OOOO............OOOO..MMM',
+        '..OTTTTOOOOOOOOOOOOTTTTOOMWM',
+        '..OTOTTTTTTTYYTTTTTTTOTOOMWM',
+        '.OTTTTOTTTTTYYTTTTTOTTTTOOMO',
+        '.OTTTTTRWTTTTTTTTTRWTTTTOOMO',
+        '.OTTTTTTTWWWWWWWWTTTTTTTO.O.',
+        '..OOTTTTTWOOOWOOOWTTTTTO..O.',
+        '.OORRODDDDDDYYYYDDDDDDDOOOO.',
+        'OORRRDDTTTTTYYYYTTTTTDDDOO..',
+        'ORRRRDDTTYYYYYYYYYYTTDDDOO..',
+        'ORRR.OODDDDDYYYYDDDDDDOO....',
+        '.OO..OOTTTTTYYYYTTTTTTO.....',
+        '.....OODDDDDDDDDDDDDDDO.....',
+        '.....OTTTTTT....TTTTTTO.....',
+        '.....OTTTTT......TTTTTO.....',
+        '.....ODDDDO......ODDDDO.....',
+        '....OODDDDO......ODDDDOO....',
+        '....OOTTTTO......OTTTTOO....',
+        '....OOOOOOO......OOOOOOO....'
       ],
       f1: [
-        '..OOO..........OOO...MM',
-        '.OTTTTOOOOOOOOTTTTO.MWM',
-        '.OTOTTTTTTTTTTTTOTO.OMO',
-        'OTTTTRWTTTTTTRWTTTTO.O.',
-        'OTTTTTTWWWWWWTTTTTTO.O.',
-        '.OOTTTTWOOWOWTTTTOOOOO.',
-        '.OODDDDDYYYYDDDDDDOO...',
-        'OODDTTTTYYYYTTTTDDDO...',
-        '.OODDDDDDDDDDDDDDDO....',
-        '..OTTTT......TTTTO.....',
-        '..ODDDO......ODDDO.....',
-        '..OOOOO......OOOOO.....',
-        '.......................',
-        '.......................'
+        '...OOOO............OOOO...MM',
+        '..OTTTTOOOOOOOOOOOOTTTTO.MWM',
+        '..OTOTTTTTTTYYTTTTTTTOTO.MWM',
+        '.OTTTTOTTTTTYYTTTTTOTTTTOOMO',
+        '.OTTTTTRWTTTTTTTTTRWTTTTO.O.',
+        '.OTTTTTTTWWWWWWWWTTTTTTTO.O.',
+        '..OOTTTTTWOOOWOOOWTTTTTOOOO.',
+        'OORRODDDDDDDYYYYDDDDDDDOO...',
+        'ORRRRDDTTTTTYYYYTTTTTDDDO...',
+        'ORRR.OODDTTTYYYYTTTDDDOO....',
+        '.OO..OOTTTTTYYYYTTTTTTO.....',
+        '.....OODDDDDDDDDDDDDDDO.....',
+        '....OOTTTTT......TTTTTOO....',
+        '....OTTTTT........TTTTTO....',
+        '....ODDDDO........ODDDDO....',
+        '...OODDDDO........ODDDDOO...',
+        '...OOOOOOO........OOOOOOO...',
+        '............................',
+        '............................'
       ]
     },
 
-    // 2. 黑风大王·熊罴精（黑缨长枪、乌金重铠）
+    // 2. 黑风大王·熊罴精（黑风山魁梧巨熊魔躯、偷袈裟佛金护心镜、烈焰黑缨点钢长枪）
     black_bear_king: {
-      palette: { O: '#0f0c14', D: '#22223b', B: '#343a40', R: '#ff4800', G: '#ffb703', M: '#adb5bd', W: '#ffffff' },
+      palette: { O: '#0f0c14', D: '#1c1d2e', B: '#343a40', R: '#ff4800', G: '#ffb703', M: '#adb5bd', W: '#ffffff' },
+      p2Palette: { D: '#120814', B: '#370617', R: '#ff0a54', G: '#ffd60a', M: '#ff9f1c' },
       f0: [
-        '...OOO........OOO...RR',
-        '..ODDDDOOOOOODDDDO.RWR',
-        '..ODBBBBBBBBBBBBDO..OO',
-        '.ODBBBRWBBBBBRWBBDO.O.',
-        '.ODBBBBBBBBBBBBBBDO.O.',
-        '.ODBBBBGGGGGGGGGBDO.O.',
-        'OODGGGGGGGGGGGGGGDOOO.',
-        'ODBBBBGGGGGGGGGBBBDO..',
-        'ODBBBBBBBBBBBBBBBBDO..',
-        '.OOGGGGGGGGGGGGGGOO...',
-        '..ODBBBBBBBBBBBBDO....',
-        '..ODBBB......BBBDO....',
-        '..ODDDO......ODDDO....',
-        '.OODDDO......ODDDOO...',
-        '.OOOOOO......OOOOOO...'
+        '....OOOO..........OOOO....RR.',
+        '...ODDDDOOOOOOOOOODDDDO..RWRO',
+        '..ODDBBBBBBBBBBBBBBBBDDO.RWRO',
+        '..ODBBBBGGGGBBBBGGGGBBDO..OO.',
+        '.ODBBBBRWBBBBBBBBRWBBBBDO.OMO',
+        '.ODBBBBBBBBBBBBBBBBBBBBDO.OMO',
+        '.ODBBBBBBWWGGGGGGWWBBBBDO.O..',
+        '.OOGGGGGGGGGGGGGGGGGGGGOOOO..',
+        'OODGGBBBBBGGGGGGGGBBBBGGBDO..',
+        'ODBBBBBGGGRRGGGGRRGGBBBBBDO..',
+        'ODBBBBBBBBGGGGGGGGBBBBBBBDO..',
+        'OODDDDDDDDGGGGGGGGDDDDDDDOO..',
+        '.OOGGGGGGGGGGGGGGGGGGGGGOO...',
+        '..ODBBBBBBBBBBBBBBBBBBBBDO...',
+        '..ODBBBBBB........BBBBBBDO...',
+        '..ODBBBB............BBBBDO...',
+        '..ODDDDO............ODDDDO...',
+        '.OODDGDO............ODGDDOO..',
+        '.OOOOOOO............OOOOOOO..'
       ],
       f1: [
-        '...OOO........OOO..RR.',
-        '..ODDDDOOOOOODDDDORWR.',
-        '..ODBBBBBBBBBBBBDO.OO.',
-        '.ODBBBRWBBBBBRWBBDO.O.',
-        '.ODBBBBBBBBBBBBBBDO.O.',
-        '.ODBBBBGGGGGGGGGBDO.O.',
-        'OODGGGGGGGGGGGGGGDOOO.',
-        'ODBBBBGGGGGGGGGBBBDO..',
-        '.ODBBBBBBBBBBBBBBDO...',
-        '.OOGGGGGGGGGGGGGGOO...',
-        '..ODBBB......BBBDO....',
-        '..ODDDO......ODDDO....',
-        '.OOOOOO......OOOOOO...',
-        '......................',
-        '......................'
+        '....OOOO..........OOOO...RR..',
+        '...ODDDDOOOOOOOOOODDDDO.RWRO.',
+        '..ODDBBBBBBBBBBBBBBBBDDO.RRO.',
+        '..ODBBBBGGGGBBBBGGGGBBDO..OO.',
+        '.ODBBBBRWBBBBBBBBRWBBBBDO.OMO',
+        '.ODBBBBBBBBBBBBBBBBBBBBDO.O..',
+        '.ODBBBBBBWWGGGGGGWWBBBBDOOO..',
+        'OODGGGGGGGGGGGGGGGGGGGGOO....',
+        'ODBGGBBBBBGGGGGGGGBBBBGGBDO..',
+        'ODBBBBBGGGRRGGGGRRGGBBBBBDO..',
+        '.OODDDDDDDGGGGGGGGDDDDDDOO...',
+        '..OOGGGGGGGGGGGGGGGGGGGGOO...',
+        '..ODBBBBBB........BBBBBBDO...',
+        '.OODBBBB............BBBBDDO..',
+        '.OODDDDO............ODDDDOO..',
+        '.OOOOOOO............OOOOOOO..',
+        '.............................',
+        '.............................',
+        '.............................'
       ]
     },
 
-    // 3. 黄风大圣·貂鼠精（三股钢叉、三昧神风金袍）
+    // 3. 黄风大圣·貂鼠精（金毛貂王宝冠、大漠三昧风神袍、三股巨钢叉、脚踏狂沙旋风）
     yellow_wind_sage: {
       palette: { O: '#0f0c14', Y: '#e9c46a', G: '#f4a261', R: '#e76f51', W: '#fff3b0', D: '#582f0e' },
+      p2Palette: { Y: '#ffd60a', G: '#ff9f1c', R: '#ff0a54', W: '#ffffff', D: '#370617' },
       f0: [
-        '.....OOOOOOOOOO...WWW.',
-        '...OOYYYYYYYYYYOO.OYO.',
-        '..OYYGGGGGGGGGGYYOOYO.',
-        '.OYYGGRWOGGORWGYYO.OO.',
-        '.OYYYYGGGGGGGGYYYO.O..',
-        '..OOYYYYWWWWYYYYOO.O..',
-        '.OODDDDDYYYYDDDDDOOO..',
-        'OODDYYYYYYYYYYYYDDOO..',
-        'OODDYYYYGGGGYYYYDDOO..',
-        '.OODDDDDDDDDDDDDDOO...',
-        '..OOYYYY....YYYYOO....',
-        '...ODDD......DDDO.....',
-        '..OODDD......DDDOO....',
-        '..OOOOO......OOOOO....'
+        '......OOOOOOOOOOOO...W.W.W..',
+        '....OOYYYYYYYYYYYYOO.OWWWO..',
+        '...OYYGGGGYYYYGGGGYYO.OYO...',
+        '..OYYGGGGGGGGGGGGGGYYOOYO...',
+        '.OYYGGGRWOYYYYOGRWGGYYOO....',
+        '.OYYYYYYGGGGGGGGYYYYYYO.O...',
+        '..OOYYYYYWWWWWWYYYYYOO..O...',
+        '.OORRDDDDDYYYYDDDDDDOOOOO...',
+        'OORRDDYYYYGGGGYYYYYYDDOO....',
+        'ORRRDDYYGGGGGGGGYYDDDDOO....',
+        '.OORDDDDDDYYYYDDDDDDDDO.....',
+        '..OOYYYYYYGGGGYYYYYYOO......',
+        '...OODDDDDDDDDDDDDDDOO......',
+        '...OOYYYYYY....YYYYYYOO.....',
+        '..GGYYYYOO......OOYYYYGG....',
+        '.GGGDDDDGGG....GGGDDDDGGG...',
+        '..GGGGGGGG......GGGGGGGG....',
+        '....GGGG..........GGGG......'
       ],
       f1: [
-        '.....OOOOOOOOOO..W.W.W',
-        '...OOYYYYYYYYYYOO.OYO.',
-        '..OYYGGGGGGGGGGYYOOYO.',
-        '.OYYGGRWOGGORWGYYO.OO.',
-        '.OYYYYGGGGGGGGYYYO.O..',
-        '..OOYYYYWWWWYYYYOO.O..',
-        '.OODDDDDYYYYDDDDDOOO..',
-        'OODDYYYYGGGGYYYYDDOO..',
-        '.OODDDDDDDDDDDDDDOO...',
-        '..OOYYYY....YYYYOO....',
-        '...ODDD......DDDO.....',
-        '..OOOOO......OOOOO....',
-        '......................',
-        '......................'
+        '......OOOOOOOOOOOO....WWW...',
+        '....OOYYYYYYYYYYYYOO..OWWO..',
+        '...OYYGGGGYYYYGGGGYYO..OYO..',
+        '..OYYGGGGGGGGGGGGGGYYO.OO...',
+        '.OYYGGGRWOYYYYOGRWGGYYO.O...',
+        '.OYYYYYYGGGGGGGGYYYYYYO.O...',
+        '..OOYYYYYWWWWWWYYYYYOOOOO...',
+        '.OORRDDDDDYYYYDDDDDDOO......',
+        'OORRDDYYYYGGGGYYYYYYDDOO....',
+        '.OORDDDDDDYYYYDDDDDDDDO.....',
+        '..OOYYYYYYGGGGYYYYYYOO......',
+        '...OODDDDDDDDDDDDDDDOO......',
+        '..GGYYYYOO......OOYYYYGG....',
+        '.GGGGDDDGGGG..GGGGDDDGGGG...',
+        '..GGGGGGGGGG..GGGGGGGGGG....',
+        '............................',
+        '............................',
+        '............................'
       ]
     },
 
-    // 4. 流沙水妖王 / 泾河水神残影
+    // 4. 流沙河卷帘魔影（怒张赤发、九颗巨型白骨骷髅念珠、降妖月牙宝杖、深渊黑水巨浪）
     liusha_demon: {
       palette: { O: '#0f0c14', R: '#d62828', B: '#0077b6', C: '#00f5d4', W: '#ffffff', P: '#5a189a', G: '#ffd166' },
+      p2Palette: { R: '#ff0a54', B: '#03045e', C: '#80ffdb', P: '#7209b7', G: '#ffd60a' },
       f0: [
-        '.....OORRRRRROO...CCC',
-        '....ORRRRRRRRRRO.CWCO',
-        '...OOCCCCCCCCCCOO.OO.',
-        '..OCCCRWOCCORWCCCO.O.',
-        '..OCCCCRRRRRRCCCCO.O.',
-        '..OOWOWOGGGGOWOWOOOO.',
-        '.OOPPPPPCCCCPPPPPOO..',
-        'OOPPPCCCCCCCCCCPPPOO.',
-        '.OOPPPPPPPPPPPPPPOO..',
-        '..OOBBBBCCCCBBBBOO...',
-        '.OOBBCCWWWWWWCCBBOO..',
-        'OOBBCCCCCCCCCCCCBBOO.',
-        '.OOOOOOOOOOOOOOOOOO..'
+        '......OORRRRRRRROO....CCCC.',
+        '....OORRRRRRRRRRRROO.CWWWWC',
+        '...OORRGGGGGGGGGGRROOCW..WC',
+        '..OOCCCCCCCCCCCCCCCCOO.CC..',
+        '.OCCCCRWCCCCCCCCRWCCCCO.O..',
+        '.OCCCCCRRRRRRRRRRCCCCCO.O..',
+        '.OOWWWOOGGGGGGGGOOWWWOO.O..',
+        'OOPPPWWOOCCCCCCOOOWWPPPOOO.',
+        'OPPPWWCCCCCCCCCCCCWWPPPPO..',
+        'OOPPPPPCCCCCCCCCCPPPPPPPO..',
+        '.OOPPPPPPPPPPPPPPPPPPPPOO..',
+        '..OOBBBBBBCCCCBBBBBBBOO....',
+        '.OOBBCCCCWWWWWWCCCCBBBOO...',
+        'OOBBCCCCWWWWWWWWCCCCBBBOO..',
+        'CCCCCCCCCCCCCCCCCCCCCCCCCC.',
+        '.CCCCWWWWCCCCCCCCWWWWCCCC..',
+        '..CCCCCCCCCCCCCCCCCCCCCC...'
       ],
       f1: [
-        '.....OORRRRRROO..CCC.',
-        '....ORRRRRRRRRROCWCO.',
-        '...OOCCCCCCCCCCOO.OO.',
-        '..OCCCRWOCCORWCCCO.O.',
-        '..OCCCCRRRRRRCCCCO.O.',
-        '..OOWOWOGGGGOWOWOOOO.',
-        '.OOPPPPPCCCCPPPPPOO..',
-        'OOPPPCCCCCCCCCCPPPOO.',
-        '.OOPPPPPPPPPPPPPPOO..',
-        '.OOBBCCCCWWWWCCBBBOO.',
-        'OOBBCCWWWWWWWWCCBBOO.',
-        '.OOOOOOOOOOOOOOOOOO..',
-        '.....................'
+        '......OORRRRRRRROO...CCCC..',
+        '....OORRRRRRRRRRRROOCWWWWC.',
+        '...OORRGGGGGGGGGGRROOCW.WC.',
+        '..OOCCCCCCCCCCCCCCCCOO.CC..',
+        '.OCCCCRWCCCCCCCCRWCCCCO.O..',
+        '.OCCCCCRRRRRRRRRRCCCCCO.O..',
+        '.OOWWWOOGGGGGGGGOOWWWOOOO..',
+        'OOPPPWWOOCCCCCCOOOWWPPPO...',
+        'OPPPWWCCCCCCCCCCCCWWPPPPO..',
+        '.OOPPPPPCCCCCCCCPPPPPPPOO..',
+        '..OOBBBBBBCCCCBBBBBBBOO....',
+        '.OOBBCCCCWWWWWWCCCCBBBOO...',
+        'WWCCCCCCWWWWWWWWCCCCCCWWCC.',
+        '.CCCCCCCCCCCCCCCCCCCCCCCC..',
+        '...........................',
+        '...........................',
+        '...........................'
       ]
     },
 
-    // 5. 五庄乾坤道尊傀 / 人参果树古灵
+    // 5. 乾坤袖镇观道尊傀（五庄观紫金太极冠、宽袍乾坤巨袖、七星紫金拂尘、先天灵根仙气）
     wuzhuang_immortal: {
       palette: { O: '#0f0c14', G: '#ffd166', C: '#06d6a0', B: '#1d3557', W: '#f8f9fa', S: '#ffe5d9', R: '#ef233c' },
+      p2Palette: { G: '#ffd60a', C: '#00f5d4', B: '#240046', R: '#ff0a54' },
       f0: [
-        '.......OOGGOO.....CCC',
-        '.....OOBBGGGBBOO.CWCO',
-        '....OSSSSSSSSSSOO.OO.',
-        '....OSWOSSSSOWSO..O..',
-        '.....OOSSSSSSOO...O..',
-        '.....OOWWWWWWWOOOOO..',
-        '...OOBBCCCCCCBBBOO...',
-        '..OOBBCCWRWWCCBBBOO..',
-        '..OOBBCCWWWRCCBBBOO..',
-        '...OOBBCCCCCCBBBOO...',
-        '....OOBBBBBBBBBOO....',
-        '....OOWW....WWOO.....',
-        '...OOBBO....OBBOO....',
-        '...OOOOO....OOOOO....'
+        '........OOGGGGOO......CCCC.',
+        '......OOBBGGGGBBOO...CWWWWC',
+        '.....OOBGGGGGGGGBOO..CWWWWC',
+        '....OOSSSSSSSSSSSSOO..OOOO.',
+        '....OSSWOOSSSSOOWSSO...OG..',
+        '.....OOSSSSSSSSSSOO....OG..',
+        '.....OOWWWWWWWWWWWOOOOOOG..',
+        '..OOOBBBCCCCCCCCBBBBOOOOO..',
+        '.OOBBBBCCCWRWWCCCBBBBBOO...',
+        'OOBBBBBCCCWWWRCCCBBBBBBOO..',
+        'OOBBBGGCCCCCCCCCCGGGBBBOO..',
+        '.OOOOBBBBBGGGGGBBBBBBOOO...',
+        '....OOBBBBBBBBBBBBBOO......',
+        '....OOBBBB....BBBBBOO......',
+        '....OOWWWO....OWWWOO.......',
+        '...OOBBBO......OBBBOO......',
+        '...OOOOOO......OOOOOO......',
+        '..CCCCCCC......CCCCCCC.....'
       ],
       f1: [
-        '.......OOGGOO....CCC.',
-        '.....OOBBGGGBBOOCWCO.',
-        '....OSSSSSSSSSSOO.OO.',
-        '....OSWOSSSSOWSO..O..',
-        '.....OOSSSSSSOO...O..',
-        '.....OOWWWWWWWOOOOO..',
-        '...OOBBCCCCCCBBBOO...',
-        '..OOBBCCWRWWCCBBBOO..',
-        '...OOBBCCCCCCBBBOO...',
-        '....OOBBBBBBBBBOO....',
-        '....OOWW....WWOO.....',
-        '...OOOOO....OOOOO....',
-        '.....................',
-        '.....................'
+        '........OOGGGGOO.....CCCC..',
+        '......OOBBGGGGBBOO..CWWWWC.',
+        '.....OOBGGGGGGGGBOO.CWWWWC.',
+        '....OOSSSSSSSSSSSSOO..OOO..',
+        '....OSSWOOSSSSOOWSSO...OG..',
+        '.....OOSSSSSSSSSSOO....OG..',
+        '.....OOWWWWWWWWWWWOOOOOOG..',
+        '..OOOBBBCCCCCCCCBBBBOOOO...',
+        '.OOBBBBCCCWRWWCCCBBBBBOO...',
+        'OOBBBBBCCCWWWRCCCBBBBBBOO..',
+        '.OOOOBBBBBGGGGGBBBBBBOOO...',
+        '....OOBBBBBBBBBBBBBOO......',
+        '....OOWWWO....OWWWOO.......',
+        '...OOOOOO......OOOOOO......',
+        '..CCCCCCCC....CCCCCCCC.....',
+        '...........................',
+        '...........................',
+        '...........................'
       ]
     },
 
-    // 6. 白骨夫人·尸魔
+    // 6. 白骨夫人·尸魔（九幽森罗白骨高冠、六翼惨白肋骨披风、幽冥鬼火利爪、悬浮怨魂裙）
     white_bone_lady: {
       palette: { O: '#0f0c14', W: '#f8f9fa', C: '#80ffdb', P: '#7209b7', M: '#b5179e', H: '#240046' },
+      p2Palette: { W: '#e0fbfc', C: '#00f5d4', P: '#ff0a54', M: '#f72585', H: '#10002b' },
       f0: [
-        '.....OCCOOOOCCO.....',
-        '....OOHHHHHHHHOO....',
-        '...OHHWWWWWWWWHO....',
-        '...OHWWMOWWOMWHO....',
-        '...OHWWWWWWWWWWO....',
-        '..OOHHPPPPPPPPPHOO..',
-        '.OOHPPPMMMMMMPPPPHO.',
-        '.OHPPPMMWWWWMMMPPHO.',
-        '..OOPPPMMMMMMPPPPOO.',
-        '...OOPPPPPPPPPPPOO..',
-        '....OPPP....PPPO....',
-        '...OCC........CCO...',
-        '....C..........C....'
+        '......OCCCOOOOOOCCCO......',
+        '.....OCWCOHHHHHHOCWCO.....',
+        '....OOHHHHHHHHHHHHHHOO....',
+        'WW..OHHWWWWWWWWWWWWHO..WW.',
+        'OWWOHHWWWMOWWWOMWWWHHOOWWO',
+        '.OWWOHWWWWWWWWWWWWWWHOWWO.',
+        '..OOOHHPPPPPPPPPPPPPHOOO..',
+        'WW.OOHPPPMMMMMMMMPPPPHOWW.',
+        'OWWOHPPPMMWWWWWWMMMPPHOWWO',
+        '.OOOOPPPMMMMMMMMMMPPPPOOO.',
+        '...OOPPPPPPPPPPPPPPPPPOO..',
+        '....OOPPPPMMMMMMPPPPPOO...',
+        '.....OPPPP......PPPPO.....',
+        '....OOHHH........HHHOO....',
+        '...OCCCCC........CCCCCO...',
+        '....CCCC..........CCCC....',
+        '.....CC............CC.....'
       ],
       f1: [
-        '....OCCOOOOOOCCO....',
-        '....OOHHHHHHHHOO....',
-        '...OHHWWWWWWWWHO....',
-        '...OHWWMOWWOMWHO....',
-        '...OHWWWWWWWWWWO....',
-        '..OOHHPPPPPPPPPHOO..',
-        '.OOHPPPMMMMMMPPPPHO.',
-        '..OOPPPMMWWWMMMPPOO.',
-        '...OOPPPPPPPPPPPOO..',
-        '....OPPP....PPPO....',
-        '....OCC......CCO....',
-        '.....C........C.....',
-        '....................'
+        '.....OCCCOOOOOOOOCCCO.....',
+        '....OCWCOHHHHHHHHOCWCO....',
+        'WW..OOHHHHHHHHHHHHHHOO..WW',
+        'OWW.OHHWWWWWWWWWWWWHO.OWWO',
+        '.OWWOHWWWMOWWWOMWWWHHOWWO.',
+        '..OOOHWWWWWWWWWWWWWWHHOO..',
+        'WW..OOHHPPPPPPPPPPPHOO..WW',
+        'OWWOOHPPPMMMMMMMMPPPPHOOWO',
+        '.OOOOPPPMMWWWWWWMMMPPPPOO.',
+        '...OOPPPPPPPPPPPPPPPPPOO..',
+        '....OOPPPPMMMMMMPPPPPOO...',
+        '.....OPPPP......PPPPO.....',
+        '....OCCCCC......CCCCCO....',
+        '.....CCCC........CCCC.....',
+        '......CC..........CC......',
+        '..........................',
+        '..........................'
       ]
     },
 
-    // 7. 黄袍怪·奎木狼星（青面獠牙、二十八宿明黄袍、蘸钢大刀）
+    // 7. 黄袍怪·奎木狼星（二十八宿星官双角、青面獠牙、明黄星辰宝袍、舍利内丹+蘸钢大刀）
     yellow_robe_demon: {
       palette: { O: '#0f0c14', B: '#4ea8de', D: '#1d3557', Y: '#ffb703', G: '#ffd166', R: '#ff0a54', W: '#ffffff' },
+      p2Palette: { B: '#00f5d4', D: '#240046', Y: '#ff5400', G: '#ffd60a', R: '#ff0a54' },
       f0: [
-        '...OO..........OO..WWW',
-        '..OBBOOOOOOOOOBBO.OWWO',
-        '..OBBBBBBBBBBBBBO..OO.',
-        '.OBBBRWBBBBBBRWBBO.O..',
-        '.OBBBWWWWWWWWBBBBO.O..',
-        '..OOBWOOOOOOOWBOOOOO..',
-        '.OOYYYYGGGGGGYYYYOO...',
-        'OOYYYYGGGGGGGGYYYYOO..',
-        'OOYYDDDDGGGGDDDDYYOO..',
-        '.OOYYYYYYYYYYYYYYOO...',
-        '..OOYYYY....YYYYOO....',
-        '...ODDDO....ODDDO.....',
-        '..OODDDO....ODDDOO....',
-        '..OOOOOO....OOOOOO....'
+        '...OOO............OOO..WWWW',
+        '..OBBBOOOOOOOOOOOOBBBOOWWWO',
+        '..OBBBBGGGGGGGGGBBBBBO.OWWO',
+        '.OBBBBBBBBBBBBBBBBBBBBO.OO.',
+        '.OBBBBBRWBBBBBBBBRWBBBO.OG.',
+        '.OBBBBBWWWWWWWWWWBBBBBO.OG.',
+        '..OOBBWOOOOOOOOOOWBBOOOOOG.',
+        '.OOYYYYYYGGGGGGYYYYYYOOOO..',
+        'OOYYYYYYYGGGGGGYYYYYYYOO...',
+        'OOYYYDDDDGGGGGGDDDDYYYOO...',
+        'OOYYYYYYYGGGGGGYYYYYYYOO...',
+        '.OOYYYYYYYYYYYYYYYYYYOO....',
+        '..OOYYYYYY....YYYYYYOO.....',
+        '..OOYYYYY......YYYYYOO.....',
+        '...ODDDDO......ODDDDO......',
+        '..OODDDDO......ODDDDOO.....',
+        '..OOOOOOO......OOOOOOO.....'
       ],
       f1: [
-        '...OO..........OO...WW',
-        '..OBBOOOOOOOOOBBO..WWO',
-        '..OBBBBBBBBBBBBBO..OO.',
-        '.OBBBRWBBBBBBRWBBO.O..',
-        '.OBBBWWWWWWWWBBBBO.O..',
-        '..OOBWOOOOOOOWBOOOOO..',
-        '.OOYYYYGGGGGGYYYYOO...',
-        'OOYYYYGGGGGGGGYYYYOO..',
-        '.OOYYDDDDGGDDDDYYOO...',
-        '..OOYYYY....YYYYOO....',
-        '...ODDDO....ODDDO.....',
-        '..OOOOOO....OOOOOO....',
-        '......................',
-        '......................'
+        '...OOO............OOO...WWW',
+        '..OBBBOOOOOOOOOOOOBBBO.OWWO',
+        '..OBBBBGGGGGGGGGBBBBBO..OWO',
+        '.OBBBBBBBBBBBBBBBBBBBBO.OO.',
+        '.OBBBBBRWBBBBBBBBRWBBBO.OG.',
+        '.OBBBBBWWWWWWWWWWBBBBBO.OG.',
+        '..OOBBWOOOOOOOOOOWBBOOOOOG.',
+        '.OOYYYYYYGGGGGGYYYYYYOOO...',
+        'OOYYYYYYYGGGGGGYYYYYYYOO...',
+        '.OOYYDDDDGGGGGGDDDDYYOO....',
+        '..OOYYYYYYYYYYYYYYYYOO.....',
+        '..OOYYYYYY....YYYYYYOO.....',
+        '...ODDDDO......ODDDDO......',
+        '..OOOOOOO......OOOOOOO.....',
+        '...........................',
+        '...........................',
+        '...........................'
       ]
     },
 
-    // 8. 金角大王 & 9. 银角大王（额顶独角、紫金红葫芦/羊脂玉净瓶、七星剑）
+    // 8. 金角大王 & 9. 银角大王（太上兜率独角金冠、紫金红葫芦/玉净瓶宝光、七星法剑）
     gold_silver_horn: {
       palette: { O: '#0f0c14', G: '#ffd166', R: '#ef233c', P: '#5a189a', S: '#90e0ef', W: '#ffffff', D: '#240046' },
+      p2Palette: { G: '#ffd60a', R: '#ff0a54', P: '#7209b7', S: '#00f5d4', D: '#10002b' },
       f0: [
-        '........OGGO..........',
-        '.......OGWGGO.....RR..',
-        '.....OOOGGGGOOO..ORRO.',
-        '....OSSSSSSSSSSO.ORRO.',
-        '...OSSRWOSSORWSSO.OO..',
-        '...OSSSSWWWWSSSSO.O...',
-        '..OOPPPPGGGGPPPPOOOO..',
-        '.OOPPPRRRRRRRRPPPOO...',
-        '.OOPPPGGGGGGGGPPPOO...',
-        '..OODDDDDDDDDDDDOO....',
-        '...ODDDD....DDDDO.....',
-        '...OPPPO....OPPPO.....',
-        '..OOPPPO....OPPPOO....',
-        '..OOOOOO....OOOOOO....'
+        '..........OGGGO...........',
+        '.........OGWWWGO......RRR.',
+        '........OGGGGGGO.....ORWRO',
+        '......OOOGGGGGGGOOO..ORRRO',
+        '.....OSSSSSSSSSSSSSO..OOO.',
+        '....OSSRWOSSSSSORWSSO.OGG.',
+        '....OSSSSSWWWWWWSSSSO..O..',
+        '...OOPPPPPGGGGGGPPPPOOOO..',
+        'WW.OPPPPRRRRRRRRRRPPPOO...',
+        'WW.OPPPPGGGGGGGGGGPPPOO...',
+        'OO..OPPPPRRRRRRRRPPPPOO...',
+        '....OODDDDDGGGGDDDDDOO....',
+        '....OODDDDDDDDDDDDDDOO....',
+        '.....ODDDDD....DDDDDO.....',
+        '.....OPPPPO....OPPPPO.....',
+        '....OOPPPPO....OPPPPOO....',
+        '....OOOOOOO....OOOOOOO....'
       ],
       f1: [
-        '........OGGO.......RR.',
-        '.......OGWGGO.....ORRO',
-        '.....OOOGGGGOOO...ORRO',
-        '....OSSSSSSSSSSO...OO.',
-        '...OSSRWOSSORWSSO..O..',
-        '...OSSSSWWWWSSSSO..O..',
-        '..OOPPPPGGGGPPPPOOOO..',
-        '.OOPPPRRRRRRRRPPPOO...',
-        '..OOPPGGGGGGGGPPPOO...',
-        '...ODDDD....DDDDO.....',
-        '...OPPPO....OPPPO.....',
-        '..OOOOOO....OOOOOO....',
-        '......................',
-        '......................'
+        '..........OGGGO........RRR',
+        '.........OGWWWGO......ORWR',
+        '........OGGGGGGO......ORRR',
+        '......OOOGGGGGGGOOO....OOO',
+        '.....OSSSSSSSSSSSSSO...OGG',
+        '....OSSRWOSSSSSORWSSO...O.',
+        '....OSSSSSWWWWWWSSSSOOOOO.',
+        'WW.OOPPPPPGGGGGGPPPPOO....',
+        'WW.OPPPPRRRRRRRRRRPPPOO...',
+        'OO..OPPPGGGGGGGGGGPPPOO...',
+        '....OODDDDDGGGGDDDDDOO....',
+        '.....ODDDDD....DDDDDO.....',
+        '.....OPPPPO....OPPPPO.....',
+        '....OOOOOOO....OOOOOOO....',
+        '..........................',
+        '..........................',
+        '..........................'
       ]
     },
 
-    // 10. 圣婴大王·红孩儿（冲天双髻、红肚兜、丈八火尖枪、三昧真火轮）
+    // 10. 圣婴大王·红孩儿（冲天烈焰双髻、金锁红绫战甲、丈八火尖枪、脚踏双三昧真火巨轮！）
     red_boy: {
       palette: { O: '#0f0c14', R: '#ef233c', F: '#ff5400', Y: '#ffd166', S: '#ffe5d9', W: '#ffffff', B: '#120d18' },
+      p2Palette: { R: '#ff0a54', F: '#ff4800', Y: '#ffd60a', S: '#fff0f3', B: '#370617' },
       f0: [
-        '..OOBBOO......OOBBOO.F',
-        '.OBBRRBBOOOOOBBRRBBOFY',
-        '..OOBSSSSSSSSSSBBOO.OO',
-        '...OSSRWOSSORWSSO...O.',
-        '...OSSSSSSSSSSSSO...O.',
-        '....OOSSRRRRSSOO..OOO.',
-        '...OOSRRRRRRRRSOOO....',
-        '..OOSRRRYYYYRRRSOO....',
-        '...OOORRRRRRRROOO.....',
-        '....OSSO....OSSO......',
-        '..FFYYOO....OOYYFF....',
-        '.FFYYYYFF..FFYYYYFF...',
-        '..FFFFFF....FFFFFF....'
+        '...FF...........FF.....FF.',
+        '..OOBBOO.......OOBBOO.FYYF',
+        '.OBBRRBBOOOOOOOBBRRBBOFWWF',
+        '..OOBSSSSSSSSSSSSBBOO..OO.',
+        '...OSSRWOOSSSSOORWSSO..OY.',
+        '...OSSSSSSSSSSSSSSSSO..OY.',
+        '..FFOOSSRRRRRRRRSSOO...OY.',
+        '.FFYOOSRRRRYYYYRRRRSOOOOO.',
+        '..FFOOSRRRYYYYYYRRRSOO....',
+        '....OOORRRRRRRRRRRROOO....',
+        '.....OORRRRYYYYRRRROO.....',
+        '.....OSSSO......OSSSO.....',
+        '...FFYYYYOO....OOYYYYFF...',
+        '..FFYYWWYYFF..FFYYWWYYFF..',
+        '..FFYYYYYYFF..FFYYYYYYFF..',
+        '...FFFFFFFF....FFFFFFFF...'
       ],
       f1: [
-        '..OOBBOO......OOBBOOFY',
-        '.OBBRRBBOOOOOBBRRBBOYF',
-        '..OOBSSSSSSSSSSBBOO.OO',
-        '...OSSRWOSSORWSSO...O.',
-        '...OSSSSSSSSSSSSO...O.',
-        '....OOSSRRRRSSOO..OOO.',
-        '...OOSRRRRRRRRSOOO....',
-        '...OOSRRYYYYRRSOO.....',
-        '....OORRRRRRRROO......',
-        '....OSSO....OSSO......',
-        '.YYFFOO......OOFFYY...',
-        '..FFFFFF....FFFFFF....',
-        '......................'
+        '..FF.............FF....FF.',
+        '..OOBBOO.......OOBBOO.FWWF',
+        '.OBBRRBBOOOOOOOBBRRBBOFYYF',
+        '..OOBSSSSSSSSSSSSBBOO..OO.',
+        '...OSSRWOOSSSSOORWSSO..OY.',
+        '...OSSSSSSSSSSSSSSSSO..OY.',
+        '.FFYOOSSRRRRRRRRSSOOOOOOY.',
+        '..FFOOSRRRRYYYYRRRRSOO....',
+        '....OOSRRRYYYYYYRRRSOO....',
+        '.....OORRRRRRRRRRRROO.....',
+        '.....OSSSO......OSSSO.....',
+        '..YYFFYYOO......OOYYFFYY..',
+        '.FFYYWWYYFF....FFYYWWYYFF.',
+        '..FFFFFFFF......FFFFFFFF..',
+        '..........................',
+        '..........................'
       ]
     },
 
-    // 11. 鼍龙怪（黑水河猪婆鳄龙、竹节钢鞭）
+    // 11. 黑水河鼍龙怪（猪婆鳄龙狰狞重首、玄铁水鳞重甲、九节竹节钢鞭、黑水怒涛）
     tuolong_dragon: {
       palette: { O: '#0f0c14', G: '#2d6a4f', L: '#52b788', Y: '#ffd166', R: '#ff0a54', W: '#ffffff', D: '#1b4332' },
+      p2Palette: { G: '#0077b6', L: '#00f5d4', Y: '#ffd60a', R: '#ff0a54', D: '#03045e' },
       f0: [
-        '..YY..........YY...YYY',
-        '..OYOOOOOOOOOOYO...OYO',
-        '.OOGGGGGGGGGGGGOO..OYO',
-        'OGGGLRWGGGGGRWLGGGOOYO',
-        'OGGGGWWWWWWWWGGGGGOOO.',
-        '.OODDDDDYYYYDDDDDOO...',
-        'OODDGGGGLLLLGGGGDDO...',
-        'OODDGGGGYYYYGGGGDDO...',
-        '.OODDDDDDDDDDDDDDOO...',
-        '..OOGGGG....GGGGOO....',
-        '...ODDD......DDDO.....',
-        '..OODDD......DDDOO....',
-        '..OOOOO......OOOOO....'
+        '..YYY............YYY...YYYY',
+        '..OYYOOOOOOOOOOOOYYO...OYWO',
+        '.OOGGGGGGGGGGGGGGGGOO..OYYO',
+        'OGGGGLLLLGGGGLLLLGGGGO.OYWO',
+        'OGGGLRWGGGGGGGGRWLGGGO.OYYO',
+        'OGGGGGWWWWWWWWWWGGGGGO..OO.',
+        '.OOGGGWOOOWWOOOWGGGGOOOOO..',
+        '.OODDDDDDDYYYYDDDDDDDOO....',
+        'OODDGGGGGGLLLLGGGGGGDDOO...',
+        'OODDGGGGYYYYYYYYGGGGDDOO...',
+        'OODDDDDDDDGGGGDDDDDDDDOO...',
+        '.OOGGGGGGGYYYYGGGGGGGOO....',
+        '..OOGGGGGG....GGGGGGOO.....',
+        '...ODDDDDO....ODDDDDO......',
+        '..OODDDDDO....ODDDDDOO.....',
+        '..OOOOOOO......OOOOOOO.....'
       ],
       f1: [
-        '..YY..........YY....YY',
-        '..OYOOOOOOOOOOYO...OYO',
-        '.OOGGGGGGGGGGGGOO..OYO',
-        'OGGGLRWGGGGGRWLGGGOOYO',
-        'OGGGGWWWWWWWWGGGGGOOO.',
-        '.OODDDDDYYYYDDDDDOO...',
-        'OODDGGGGLLLLGGGGDDO...',
-        '.OODDDDDDDDDDDDDDOO...',
-        '..OOGGGG....GGGGOO....',
-        '...ODDD......DDDO.....',
-        '..OOOOO......OOOOO....',
-        '......................',
-        '......................'
+        '..YYY............YYY....YYY',
+        '..OYYOOOOOOOOOOOOYYO...OYWO',
+        '.OOGGGGGGGGGGGGGGGGOO..OYYO',
+        'OGGGGLLLLGGGGLLLLGGGGO.OYWO',
+        'OGGGLRWGGGGGGGGRWLGGGO..OO.',
+        'OGGGGGWWWWWWWWWWGGGGGOOOOO.',
+        '.OODDDDDDDYYYYDDDDDDDOO....',
+        'OODDGGGGGGLLLLGGGGGGDDOO...',
+        'OODDGGGGYYYYYYYYGGGGDDOO...',
+        '.OODDDDDDDGGGGDDDDDDDOO....',
+        '..OOGGGGGG....GGGGGGOO.....',
+        '...ODDDDDO....ODDDDDO......',
+        '..OOOOOOO......OOOOOOO.....',
+        '...........................',
+        '...........................',
+        '...........................'
       ]
     },
 
-    // 12. 车迟国三仙（虎力/鹿力/羊力大仙：高耸法坛宝冠、杏黄八卦鹤氅、五雷宝剑）
+    // 12. 车迟国三仙（虎力/鹿力/羊力：九丈祈雨金冠、八卦杏黄道袍、五雷天心法剑）
     chechi_immortal: {
       palette: { O: '#0f0c14', Y: '#ffb703', G: '#ffd166', B: '#264653', R: '#e63946', W: '#ffffff', C: '#00f5d4' },
+      p2Palette: { Y: '#ff5400', G: '#ffd60a', B: '#240046', R: '#ff0a54', C: '#80ffdb' },
       f0: [
-        '...GG..........GG...CC',
-        '..OGGO..OOOO..OGGO.CWC',
-        '...OOGGGGGGGGGGOO..OO.',
-        '...OOYYYYYYYYYYOO..O..',
-        '..OYYRWOYYYYORWYYO.O..',
-        '..OYYYYWWWWWWYYYYOOOO.',
-        '.OOBBBBBGGGGGBBBBBOO..',
-        'OOBBBYYYRRRRYYYBBBOO..',
-        'OOBBBYYYYYYYYYYBBBOO..',
-        '.OOBBBBBBBBBBBBBBBOO..',
-        '..OOYYYY....YYYYOO....',
-        '...OBBBO....OBBBO.....',
-        '..OOBBBO....OBBBOO....',
-        '..OOOOOO....OOOOOO....'
+        '...GGG............GGG...CC.',
+        '..OGGGO..OOOOOO..OGGGO.CWWC',
+        '...OOGGGGGGGGGGGGGGOO..CWCO',
+        '...OOYYYYYYYYYYYYYYOO...OO.',
+        '..OYYYRWOYYYYYYORWYYYO..OG.',
+        '..OYYYYYYWWWWWWYYYYYYO..OG.',
+        '.OOBBBBBBGGGGGGBBBBBBOOOOG.',
+        'OOBBBBYYYRRRRRRYYYBBBBOO...',
+        'OOBBBBYYRRWWWWWRRYYBBBOO...',
+        'OOBBBBYYYYRRRRYYYYBBBBOO...',
+        '.OOBBBBBBBBBBBBBBBBBBBOO...',
+        '..OOYYYYYYGGGGYYYYYYOO.....',
+        '...OOYYYYY....YYYYYOO......',
+        '....OBBBBO....OBBBBO.......',
+        '...OOBBBBO....OBBBBOO......',
+        '...OOOOOOO....OOOOOOO......'
       ],
       f1: [
-        '...GG..........GG..CC.',
-        '..OGGO..OOOO..OGGOCWCO',
-        '...OOGGGGGGGGGGOO..OO.',
-        '...OOYYYYYYYYYYOO..O..',
-        '..OYYRWOYYYYORWYYO.O..',
-        '..OYYYYWWWWWWYYYYOOOO.',
-        '.OOBBBBBGGGGGBBBBBOO..',
-        'OOBBBYYYRRRRYYYBBBOO..',
-        '.OOBBBBBBBBBBBBBBBOO..',
-        '..OOYYYY....YYYYOO....',
-        '...OBBBO....OBBBO.....',
-        '..OOOOOO....OOOOOO....',
-        '......................',
-        '......................'
+        '...GGG............GGG..CCC.',
+        '..OGGGO..OOOOOO..OGGGOCWWCO',
+        '...OOGGGGGGGGGGGGGGOO..CCO.',
+        '...OOYYYYYYYYYYYYYYOO...OO.',
+        '..OYYYRWOYYYYYYORWYYYO..OG.',
+        '..OYYYYYYWWWWWWYYYYYYOOOOG.',
+        '.OOBBBBBBGGGGGGBBBBBBOO....',
+        'OOBBBBYYYRRRRRRYYYBBBBOO...',
+        'OOBBBBYYRRWWWWWRRYYBBBOO...',
+        '.OOBBBBBBBBBBBBBBBBBBBOO...',
+        '..OOYYYYYY....YYYYYYOO.....',
+        '....OBBBBO....OBBBBO.......',
+        '...OOOOOOO....OOOOOOO......',
+        '...........................',
+        '...........................',
+        '...........................'
       ]
     },
 
-    // 13. 灵感大王·通天河金鱼精（鼓眼金鲤龙冠、赤铜九瓣锤）
+    // 13. 灵感大王·通天金鱼精（莲花池赤金龙鲤巨冠、寒冰护肩、九瓣赤铜双巨锤）
     inspiration_king: {
       palette: { O: '#0f0c14', R: '#f77f00', G: '#fcbf49', W: '#ffffff', C: '#48cae4', D: '#9d0208' },
+      p2Palette: { R: '#ff0a54', G: '#ffd60a', C: '#00f5d4', D: '#370617' },
       f0: [
-        '.....OOGGGGGGOO...GGG.',
-        '...OORRRRRRRRRROOOGWGO',
-        '.OOWWORRRRRRRROWWOGGGO',
-        'OWWOORRRRRRRRRROOWWOO.',
-        '.OORRRRRWWWWWRRRRROO..',
-        '.OOCCCCGGGGGGCCCCOO...',
-        'OOCCRRRRGGGGGRRRRCCOO.',
-        'OOCCRRRRRRRRRRRRRCCOO.',
-        '.OODDDDDDDDDDDDDDDOO..',
-        '..OORRRR....RRRROO....',
-        '...OCCO......OCCO.....',
-        '..OOCCO......OCCOO....',
-        '..OOOOO......OOOOO....'
+        '......OOGGGGGGGGOO....GGGG.',
+        '....OORRRRRRRRRRRROO.OGWWGO',
+        '..OOWWOORRRRRRRROOWWOOGGGGO',
+        '.OWWWOORRRRRRRRRROOWWWOOOO.',
+        '..OORRRRRWWWWWWWRRRRROO.OG.',
+        '.OOCCCCCCGGGGGGCCCCCCOO.OG.',
+        'OOCCCRRRRGGGGGGGRRRRCCOOOO.',
+        'OOCCCRRRRGGGGGGGRRRRCCCOO..',
+        'OOCCCRRRRRRRRRRRRRRRCCCOO..',
+        '.OODDDDDDGGGGGGDDDDDDDOO...',
+        '..OODDDDDDDDDDDDDDDDDOO....',
+        '...OORRRRR....RRRRROO......',
+        '....OCCCO......OCCCO.......',
+        '...OOCCCO......OCCCOO......',
+        '..CCCCCCC......CCCCCCC.....',
+        '...........................'
       ],
       f1: [
-        '.....OOGGGGGGOO....GGG',
-        '...OORRRRRRRRRROO.GWGO',
-        '.OOWWORRRRRRRROWWOGGGO',
-        'OWWOORRRRRRRRRROOWWOO.',
-        '.OORRRRRWWWWWRRRRROO..',
-        '.OOCCCCGGGGGGCCCCOO...',
-        'OOCCRRRRGGGGGRRRRCCOO.',
-        '.OODDDDDDDDDDDDDDDOO..',
-        '..OORRRR....RRRROO....',
-        '...OCCO......OCCO.....',
-        '..OOOOO......OOOOO....',
-        '......................',
-        '......................'
+        '......OOGGGGGGGGOO.....GGGG',
+        '....OORRRRRRRRRRRROO..OGWWG',
+        '..OOWWOORRRRRRRROOWWO.OGGGG',
+        '.OWWWOORRRRRRRRRROOWWW.OOO.',
+        '..OORRRRRWWWWWWWRRRRROO.OG.',
+        '.OOCCCCCCGGGGGGCCCCCCOOOOO.',
+        'OOCCCRRRRGGGGGGGRRRRCCCOO..',
+        'OOCCCRRRRRRRRRRRRRRRCCCOO..',
+        '.OODDDDDDGGGGGGDDDDDDDOO...',
+        '...OORRRRR....RRRRROO......',
+        '....OCCCO......OCCCO.......',
+        '..CCCCCCC......CCCCCCC.....',
+        '...........................',
+        '...........................',
+        '...........................',
+        '...........................'
       ]
     },
 
-    // 14. 独角兕大王·青牛精（冲天白玉巨独角 + 悬浮发光太上金刚琢！）
+    // 14. 独角兕大王·青牛精（擎天白玉犀牛巨角、金兜玄钢重铠、悬浮闪耀太上金刚琢！）
     single_horn_rhino: {
       palette: { O: '#0f0c14', B: '#3d5a80', L: '#98c1d9', W: '#ffffff', G: '#ffd60a', R: '#ff0a54', D: '#293241' },
+      p2Palette: { B: '#1d3557', L: '#00f5d4', G: '#ffd60a', R: '#ff0a54', D: '#0f0c14' },
       f0: [
-        '........OWWO.....GGGG.',
-        '.......OWWWWO...GWWWWG',
-        '.....OOOBBBBOOO.GW..WG',
-        '...OOBBBLLLLBBBO.GGGG.',
-        '..OBBBRWBBBBBRWBBO....',
-        '..OBBBBBLLLLBBBBBO....',
-        '.OODDDDDGGGGDDDDDOO...',
-        'OODDBBBBGGGGGBBBBDDO..',
-        'OODDDDDDDDDDDDDDDDDO..',
-        '.OOBBBBBGGGGGBBBBBOO..',
-        '..ODDDD......DDDDO....',
-        '..OBBBO......OBBBO....',
-        '.OOBBBO......OBBBOO...',
-        '.OOOOOO......OOOOOO...'
+        '..........OWWWO......GGGGGG.',
+        '.........OWWWWWO....GWWWWWWG',
+        '........OWWLLWWWO...GWW..WWG',
+        '......OOOBBBBBBBOOO.GWW..WWG',
+        '....OOBBBBLLLLBBBBBO.GGGGGG.',
+        '...OBBBBBRWBBBBBRWBBBO......',
+        '...OBBBBBBBLLLLBBBBBBBO.....',
+        '..OODDDDDDDGGGGDDDDDDDOO....',
+        '.OODDBBBBBBGGGGGBBBBBBDDO...',
+        'OODDBBBBGGGGGGGGGGGBBBBDDO..',
+        'OODDDDDDDDDGGGGDDDDDDDDDDO..',
+        '.OODDDDDDDDDDDDDDDDDDDDDO...',
+        '..OOBBBBBBBGGGGGBBBBBBBOO...',
+        '...ODDDDDD......DDDDDDO.....',
+        '...ODDDDDO......ODDDDDO.....',
+        '...OBBBBO........OBBBBO.....',
+        '..OOBBBBO........OBBBBOO....',
+        '..OOOOOOO........OOOOOOO....'
       ],
       f1: [
-        '........OWWO....GGGG..',
-        '.......OWWWWO..GWWWWG.',
-        '.....OOOBBBBOOO.GW.WG.',
-        '...OOBBBLLLLBBBO.GGG..',
-        '..OBBBRWBBBBBRWBBO....',
-        '..OBBBBBLLLLBBBBBO....',
-        '.OODDDDDGGGGDDDDDOO...',
-        'OODDBBBBGGGGGBBBBDDO..',
-        '.OODDDDDDDDDDDDDDDO...',
-        '..ODDDD......DDDDO....',
-        '..OBBBO......OBBBO....',
-        '.OOOOOO......OOOOOO...',
-        '......................',
-        '......................'
+        '..........OWWWO.....GGGGGG..',
+        '.........OWWWWWO...GWWWWWWG.',
+        '........OWWLLWWWO..GWW..WWG.',
+        '......OOOBBBBBBBOOO.GGGGGG..',
+        '....OOBBBBLLLLBBBBBO........',
+        '...OBBBBBRWBBBBBRWBBBO......',
+        '...OBBBBBBBLLLLBBBBBBBO.....',
+        '..OODDDDDDDGGGGDDDDDDDOO....',
+        'OODDBBBBBBBGGGGGBBBBBBBDDO..',
+        'OODDBBBBGGGGGGGGGGGBBBBDDO..',
+        '.OODDDDDDDDGGGGDDDDDDDDDO...',
+        '..OOBBBBBBBGGGGGBBBBBBBOO...',
+        '...ODDDDDO......ODDDDDO.....',
+        '..OOBBBBO........OBBBBOO....',
+        '..OOOOOOO........OOOOOOO....',
+        '............................',
+        '............................',
+        '............................'
       ]
     },
 
-    // 15. 琵琶蝎子精（高髻美人、怀抱玉琵琶、身后高高翘起倒马毒桩蝎尾钩！）
+    // 15. 琵琶洞毒敌蝎子精（高悬丈二倒马毒桩巨蝎尾钩、紫晶蝎甲、玉琵琶）
     scorpion_queen: {
       palette: { O: '#0f0c14', P: '#9d4edd', M: '#e0aaff', R: '#ff0a54', G: '#ffd166', S: '#ffe5d9', D: '#3c096c' },
+      p2Palette: { P: '#f72585', M: '#ff8fa3', R: '#ff0a54', G: '#ffd60a', D: '#240046' },
       f0: [
-        'RR.....OOGGOO.........',
-        'ORRO..ODDDDDDO........',
-        '.OO..OSSSSSSSSO..GGG..',
-        '.ODDOSSRWOSSRWSOOGWGO.',
-        'ODDO..OSSSSSSO..OGGGO.',
-        'ODO..OOPPPPPPOO..OOO..',
-        'OO..OOPPMMMMPPOO......',
-        'ODDOOPPPGGGGPPPOO.....',
-        '.OOOOPPPPPPPPPPOO.....',
-        '....OPPP....PPPO......',
-        '...ODDO......ODDO.....',
-        '..OODDO......ODDOO....',
-        '..OOOOO......OOOOO....'
+        '.RRR......OOGGGGOO..........',
+        'ORRRO....ODDDDDDDDO.........',
+        'ORRRO...OOSSSSSSSSOO...GGGG.',
+        '.OO....OSSSSSSSSSSSSO.OGWWGO',
+        '.ODDDO.OSSRWOOSSORWSOOGGGGGO',
+        'ODDDDO..OOSSSSSSSSOO..OGGGO.',
+        'ODDO...OOPPPPPPPPPPOO..OOO..',
+        'ODDO..OOPPPMMMMMMPPPOO......',
+        '.ODDDOOPPPPGGGGGGPPPPOO.....',
+        '..OOOOPPPPPMMMMMMPPPPPOO....',
+        '.....OOPPPPPPPPPPPPPPPOO....',
+        '......OPPPPP....PPPPPO......',
+        '.....OODDDO......ODDDOO.....',
+        '....OODDDDO......ODDDDOO....',
+        '....OOOOOOO......OOOOOOO....',
+        '............................'
       ],
       f1: [
-        '.RR....OOGGOO.........',
-        'ORRO..ODDDDDDO........',
-        'OO...OSSSSSSSSO...GGG.',
-        'ODDO.SSRWOSSRWSO.GWGO.',
-        '.ODDO.OSSSSSSO...GGGO.',
-        '..OO.OOPPPPPPOO...OO..',
-        '....OOPPMMMMPPOO......',
-        '...OOPPPGGGGPPPOO.....',
-        '....OPPPPPPPPPPO......',
-        '...ODDO......ODDO.....',
-        '..OOOOO......OOOOO....',
-        '......................',
-        '......................'
+        '..RRR.....OOGGGGOO..........',
+        '.ORRRO...ODDDDDDDDO.........',
+        '.ORRRO..OOSSSSSSSSOO....GGGG',
+        '..OO...OSSSSSSSSSSSSO..OGWWG',
+        'ODDDO..OSSRWOOSSORWSO..OGGGG',
+        '.ODDDDO.OOSSSSSSSSOO....OOO.',
+        '..ODDO.OOPPPPPPPPPPOO.......',
+        '...OO.OOPPPMMMMMMPPPOO......',
+        '.....OOPPPPGGGGGGPPPPOO.....',
+        '.....OOPPPPPPPPPPPPPPPOO....',
+        '......OPPPPP....PPPPPO......',
+        '.....OODDDO......ODDDOO.....',
+        '....OOOOOOO......OOOOOOO....',
+        '............................',
+        '............................',
+        '............................'
       ]
     },
 
-    // 16. 六耳猕猴（魔化紫金冠、双侧六耳赤芒、暗金邪甲、随心铁杆兵）
+    // 16. 六耳猕猴·假悟空（邪焰紫金魔冠、张扬赤芒六耳、暗紫战甲、随心铁杆神兵）
     six_eared_macaque: {
       palette: { O: '#0f0c14', P: '#7209b7', R: '#ff0a54', G: '#ffd60a', F: '#582f0e', S: '#d4a373', D: '#240046' },
+      p2Palette: { P: '#b5179e', R: '#ff0a54', G: '#ffffff', F: '#370617', D: '#10002b' },
       f0: [
-        '....RO...GG...OR...GGG',
-        '...ORPOOOPPOOOPRO..ORO',
-        '..ROROFFFFFFFFOROR..O.',
-        '.ROROFFSSFFFFSSFFOR.O.',
-        '..OOFFSRWFFFRWSFFOO.O.',
-        '....OFFSSSSSSFFO..OOO.',
-        '..OOPPDDGGGGDDPPOO....',
-        '.OOPPDDPRRRRRDDPPOO...',
-        '..OOPPDDDDDDDDPPOO....',
-        '....OORRRRRRRROO......',
-        '...OOPPGPGGPGPPOO.....',
-        '...ODDO......ODDO.....',
-        '..OODDO......ODDOO....',
-        '..OOOOO......OOOOO....'
+        '...RRO.....GGGG.....ORR..GGG',
+        '..ORRPPOOOOPPPOOOOPPRRO..ORO',
+        '.ROROOFFFFFFFFFFFFFFOOROR.O.',
+        'RORROFFSSSFFFFFFSSSFFORRO.O.',
+        '.ROROFFSRWFFFFFFRWSFFORO..O.',
+        '..OOOFFSSSSSSSSSSSSFFOO..OG.',
+        '...OOPPPDDDGGGGDDDPPPOOOOOG.',
+        '..OOPPPDDPRRRRRRPDDPPPOO....',
+        '.OOPPPPDDPRGGGGPRDDPPPPOO...',
+        '..OOOPPPDDDDDDDDDDPPPOOO....',
+        '.....OORRRRRRRRRRRROO.......',
+        '....OOPPGGPPGGPPGGPPOO......',
+        '....OOPPPP......PPPPOO......',
+        '....ODDDDO......ODDDDO......',
+        '...OODDDDO......ODDDDOO.....',
+        '...OOOOOOO......OOOOOOO.....'
       ],
       f1: [
-        '....RO...GG...OR....GG',
-        '...ORPOOOPPOOOPRO..ORO',
-        '..ROROFFFFFFFFOROR..O.',
-        '.ROROFFSSFFFFSSFFOR.O.',
-        '..OOFFSRWFFFRWSFFOO.O.',
-        '....OFFSSSSSSFFO..OOO.',
-        '..OOPPDDGGGGDDPPOO....',
-        '.OOPPDDPRRRRRDDPPOO...',
-        '...OOPPDDDDDDPPOO.....',
-        '....OOPPGPGGPPOO......',
-        '...ODDO......ODDO.....',
-        '..OOOOO......OOOOO....',
-        '......................',
-        '......................'
+        '..RRO......GGGG......ORR..GG',
+        '.ORRPPOOOOOPPPOOOOOPPRRO.ORO',
+        '.ROROOFFFFFFFFFFFFFFOOROR.O.',
+        'RORROFFSSSFFFFFFSSSFFORRO.O.',
+        '.ROROFFSRWFFFFFFRWSFFORO..O.',
+        '..OOOFFSSSSSSSSSSSSFFOOOOOG.',
+        '...OOPPPDDDGGGGDDDPPPOOO....',
+        '..OOPPPDDPRRRRRRPDDPPPOO....',
+        '..OOOPPPDDDDDDDDDDPPPOOO....',
+        '.....OORRRRRRRRRRRROO.......',
+        '....OOPPGGPPGGPPGGPPOO......',
+        '....ODDDDO......ODDDDO......',
+        '...OOOOOOO......OOOOOOO.....',
+        '............................',
+        '............................',
+        '............................'
       ]
     },
 
-    // 17. 铁扇公主·罗刹女（凤冠霞帔、手持翠绿太阴芭蕉巨扇！）
+    // 17. 铁扇公主·罗刹女（翠云九凤金冠、罗刹绯红战袍、擎天翠绿太阴芭蕉巨扇！）
     iron_fan_princess: {
       palette: { O: '#0f0c14', R: '#d62828', G: '#06d6a0', L: '#80ffdb', Y: '#ffd166', S: '#ffe5d9', D: '#6a040f' },
+      p2Palette: { R: '#ff0a54', G: '#00f5d4', L: '#ffffff', Y: '#ffd60a', D: '#370617' },
       f0: [
-        '.....OOYYYYOO...GGGG..',
-        '....OODDDDDDOO.GLLLLG.',
-        '...OOSSSSSSSSOOGLLLLGO',
-        '...OSSRWOSSRWSOGGGGGGO',
-        '....OOSSSSSSOO..OOOO..',
-        '..OORRRRYYYYRRRROO....',
-        '.OORRRDDDDDDDRRRRO....',
-        '..OORRRRYYYYRRRROO....',
-        '...OORRRRRRRRRROO.....',
-        '....ORRR....RRRO......',
-        '...ODDDO....ODDDO.....',
-        '..OODDDO....ODDDOO....',
-        '..OOOOOO....OOOOOO....'
+        '.....OOYYYYYYYYOO...GGGGGG..',
+        '....OODDDDDDDDDDOO.GLLLLLLG.',
+        '...OOSSSSSSSSSSSSOOGLLGGLLGO',
+        '...OSSRWOOSSSSORWSOGLLGGLLGO',
+        '....OOSSSSSSSSSSOO.GGGGGGGGO',
+        '..OORRRRRYYYYRRRRROO.OOOOO..',
+        '.OORRRRDDDDDDDDRRRRO..OYO...',
+        'OORRRRDDDDYYYYDDDRRROOOYO...',
+        '.OORRRRRYYYYYYYYRRRROO......',
+        '..OORRRRRRRRRRRRRRROO.......',
+        '...OORRRRDDDDDDRRRROO.......',
+        '....ORRRR......RRRRO........',
+        '....ODDDO......ODDDO........',
+        '...OODDDO......ODDDOO.......',
+        '...OOOOOO......OOOOOO.......'
       ],
       f1: [
-        '.....OOYYYYOO....GGGG.',
-        '....OODDDDDDOO..GLLLLG',
-        '...OOSSSSSSSSOO.GLLLLG',
-        '...OSSRWOSSRWSO.GGGGGO',
-        '....OOSSSSSSOO...OOOO.',
-        '..OORRRRYYYYRRRROO....',
-        '.OORRRDDDDDDDRRRRO....',
-        '...OORRRRRRRRRROO.....',
-        '....ORRR....RRRO......',
-        '...ODDDO....ODDDO.....',
-        '..OOOOOO....OOOOOO....',
-        '......................',
-        '......................'
+        '.....OOYYYYYYYYOO....GGGGGG.',
+        '....OODDDDDDDDDDOO..GLLLLLLG',
+        '...OOSSSSSSSSSSSSOO.GLLGGLLG',
+        '...OSSRWOOSSSSORWSO.GLLGGLLG',
+        '....OOSSSSSSSSSSOO..GGGGGGGG',
+        '..OORRRRRYYYYRRRRROO..OOOOO.',
+        '.OORRRRDDDDDDDDRRRRO...OYO..',
+        '.OORRRRRYYYYYYYYRRRROOOOYO..',
+        '..OORRRRRRRRRRRRRRROO.......',
+        '....ORRRR......RRRRO........',
+        '....ODDDO......ODDDO........',
+        '...OOOOOO......OOOOOO.......',
+        '............................',
+        '............................',
+        '............................'
       ]
     },
 
-    // 18. 平天大圣·牛魔王
+    // 18. 平天大圣·大力牛魔王（30x21 巨岳魔尊：弯月擎天双白角、黄金兽吞重铠、混铁巨棍、熔火披风）
     bull_demon_king: {
-      palette: { O: '#0f0c14', W: '#ffd166', R: '#9d0208', D: '#2b0909', G: '#ffba08', F: '#ff4800' },
+      palette: { O: '#0f0c14', W: '#fff3b0', R: '#9d0208', D: '#2b0909', G: '#ffba08', F: '#ff4800' },
+      p2Palette: { W: '#ffffff', R: '#ff0a54', D: '#1a0005', G: '#ffd60a', F: '#ff5400' },
       f0: [
-        'WW................WW...',
-        'WWWOO..........OOWWW...',
-        '.OWWWOOOOOOOOOOWWWO.GGG',
-        '..OODDDDDDDDDDDDOO..GFG',
-        '..ODDDRRRRRRRRDDDO..GGG',
-        '.ODDDRFWRDDDRFWRDDO..O.',
-        '.ODDDRRRRRRRRRRRDDO..O.',
-        'OODGGGGGGGGGGGGGGDOO.O.',
-        'ODRGGGGGGGGGGGGGGRDOOO.',
-        'ODRRRRGGGGGGGGRRRRDO...',
-        'OODDDDDGGGGGGDDDDDOO...',
-        '.OODDDDDDDDDDDDDDOO....',
-        '..ODDDD......DDDDO.....',
-        '..ORRRO......ORRRO.....',
-        '.OORRRO......ORRROO....',
-        '.OOOOOO......OOOOOO....'
+        'WWW....................WWW....',
+        'WWWWOO..............OOWWWW.GGG',
+        '.OWWWWOOOOOOOOOOOOOOWWWWO.GFFG',
+        '..OOWWWDDDDDDDDDDDDWWWO..GFFFG',
+        '...OODDDGGGGGGGGGGDDDOO...GGGO',
+        '..ODDDDRRRRRRRRRRRRDDDDO...OO.',
+        '.ODDDDRFWWRDDDDRFWWRDDDO...OO.',
+        '.ODDDDRRRRRRRRRRRRRRDDDO...OO.',
+        '.OODDDDWWGGGGGGGGWWDDDDO...OO.',
+        'OODGGGGGGGGGGGGGGGGGGGGDOOOOO.',
+        'ODRGGGGGGFFFFFFFFGGGGGGGRDOO..',
+        'ODRRRRGGGGGGGGGGGGGGGRRRRRDO..',
+        'ODRRRRRRGGGGGGGGGGRRRRRRRRDO..',
+        'OODDDDDDDDGGGGGGDDDDDDDDDDOO..',
+        '.OODDDDDDDDDDDDDDDDDDDDDDOO...',
+        '..ODDDDDDD........DDDDDDDO....',
+        '..ODDDDDD..........DDDDDDO....',
+        '..ORRRRRO..........ORRRRRO....',
+        '.OORRRRRO..........ORRRRROO...',
+        '.OOGGGGGO..........OGGGGGOO...',
+        '.OOOOOOOO..........OOOOOOOO...'
       ],
       f1: [
-        'WW................WW...',
-        'WWWOO..........OOWWW...',
-        '.OWWWOOOOOOOOOOWWWO..GG',
-        '..OODDDDDDDDDDDDOO..GFG',
-        '..ODDDRRRRRRRRDDDO..GGG',
-        '.ODDDRFWRDDDRFWRDDO..O.',
-        '.ODDDRRRRRRRRRRRDDO..O.',
-        'OODGGGGGGGGGGGGGGDOO.O.',
-        'ODRGGGGGGGGGGGGGGRDOOO.',
-        '.ODDDDDGGGGGGDDDDDO....',
-        '..ODDDD......DDDDO.....',
-        '..ORRRO......ORRRO.....',
-        '.OOOOOO......OOOOOO....',
-        '.......................',
-        '.......................',
-        '.......................'
+        'WWW....................WWW....',
+        'WWWWOO..............OOWWWW..GG',
+        '.OWWWWOOOOOOOOOOOOOOWWWWO..GFG',
+        '..OOWWWDDDDDDDDDDDDWWWO...GFFG',
+        '...OODDDGGGGGGGGGGDDDOO....GGO',
+        '..ODDDDRRRRRRRRRRRRDDDDO...OO.',
+        '.ODDDDRFWWRDDDDRFWWRDDDO...OO.',
+        '.ODDDDRRRRRRRRRRRRRRDDDO...OO.',
+        'OODGGGGGGGGGGGGGGGGGGGGDOOOOO.',
+        'ODRGGGGGGFFFFFFFFGGGGGGGRDOO..',
+        'ODRRRRGGGGGGGGGGGGGGGRRRRRDO..',
+        'OODDDDDDDDGGGGGGDDDDDDDDDDOO..',
+        '.OODDDDDDDDDDDDDDDDDDDDDDOO...',
+        '..ODDDDDD..........DDDDDDO....',
+        '.OORRRRRO..........ORRRRROO...',
+        '.OOGGGGGO..........OGGGGGOO...',
+        '.OOOOOOOO..........OOOOOOOO...',
+        '..............................',
+        '..............................',
+        '..............................',
+        '..............................'
       ]
     },
 
-    // 19. 九头虫·九头驸马（扇形多首妖禽颈冠、白银战甲、月牙铲）
+    // 19. 九头虫·九头驸马（怒张九首妖冠、血色双鹏翼、碧波银鳞甲、月牙宝铲）
     nine_headed_bug: {
       palette: { O: '#0f0c14', R: '#e63946', C: '#00f5d4', W: '#f8f9fa', M: '#adb5bd', D: '#1d3557', Y: '#ffd166' },
+      p2Palette: { R: '#ff0a54', C: '#80ffdb', W: '#ffffff', M: '#00bbf9', D: '#240046', Y: '#ffd60a' },
       f0: [
-        '.RO..RO..RO..RO..RO.WW',
-        'ORROORROORROORROORROWO',
-        '.OOOOOOOOOOOOOOOOOO.OO',
-        '..OODDDDRRRDDDDDOO..O.',
-        '..ODDDRWDDDDRWDDO...O.',
-        '..OODDDDDDDDDDDOO.OOO.',
-        '.OOWWWWWYYYYWWWWOO....',
-        'OOWWWMMMYYYYMMMWWOO...',
-        '.OOWWWWWWWWWWWWWOO....',
-        '..OODDDDDDDDDDDOO.....',
-        '...ODDD......DDDO.....',
-        '..OORRO......ORROO....',
-        '..OOOOO......OOOOO....'
+        '.RRO..RRO..RRRO..RRO..RRO.WWW',
+        'ORRROORRROORRRROORRROORRROWWO',
+        'ORWROORWROORWWROORWROORWRO.OO',
+        '.OOOOOOOOOOOOOOOOOOOOOOOO..O.',
+        'RR.OODDDDDDRRRDDDDDDOO.RR..O.',
+        'ORRODDBBBRWDDDRWBBBDDORRO..O.',
+        'ORROOODDDDDDDDDDDDDDOOORROOO.',
+        '.OO.OOWWWWWYYYYWWWWWOO.OO....',
+        '....OOWWWMMMYYYYMMMWWWOO.....',
+        '....OOWWWWWYYYYWWWWWWWOO.....',
+        '.....OODDDDDDDDDDDDDDOO......',
+        '.....OODDDDD....DDDDDOO......',
+        '......ODDDDO....ODDDDO.......',
+        '.....OORRRO......ORRROO......',
+        '.....OOOOOO......OOOOOO......'
       ],
       f1: [
-        'RO..RO..RO..RO..RO..WW',
-        'ORROORROORROORROORROWO',
-        '.OOOOOOOOOOOOOOOOOO.OO',
-        '..OODDDDRRRDDDDDOO..O.',
-        '..ODDDRWDDDDRWDDO...O.',
-        '..OODDDDDDDDDDDOO.OOO.',
-        '.OOWWWWWYYYYWWWWOO....',
-        'OOWWWMMMYYYYMMMWWOO...',
-        '..OODDDDDDDDDDDOO.....',
-        '...ODDD......DDDO.....',
-        '..OOOOO......OOOOO....',
-        '......................',
-        '......................'
+        'RRO..RRO..RRRRO..RRO..RRO..WW',
+        'ORRROORRROORRRROORRROORRROWWO',
+        '.OOOOOOOOOOOOOOOOOOOOOOOO..OO',
+        'RROOODDDDDDRRRDDDDDDOOORRO.O.',
+        'ORRODDBBBRWDDDRWBBBDDORRO..O.',
+        '.OOOOODDDDDDDDDDDDDDOOOOOOOO.',
+        '....OOWWWWWYYYYWWWWWOO.......',
+        '....OOWWWMMMYYYYMMMWWWOO.....',
+        '.....OODDDDDDDDDDDDDDOO......',
+        '......ODDDDO....ODDDDO.......',
+        '.....OOOOOO......OOOOOO......',
+        '.............................',
+        '.............................',
+        '.............................',
+        '.............................'
       ]
     },
 
-    // 20. 黄眉大王·小雷音老佛（垂肩长黄眉、伪佛金身、金铙+人种袋+狼牙棒）
+    // 20. 黄眉大王·小雷音老佛（垂肩长黄眉、伪佛金身肉髻、金铙+后天人种袋+短软狼牙棒）
     yellow_brow_king: {
       palette: { O: '#0f0c14', Y: '#ffd60a', G: '#f4a261', S: '#ffe5d9', R: '#d62828', W: '#ffffff', P: '#7209b7' },
+      p2Palette: { Y: '#ffd60a', G: '#ff5400', S: '#ffd166', R: '#ff0a54', P: '#b5179e' },
       f0: [
-        '.....OOOOOOOOOO....YYY',
-        '...OOSSSSSSSSSSOO.OYWO',
-        '..OYYYYSSOSSYYYYO.OYYO',
-        '.OYYYSROSSSSORSYYYO.OO',
-        '.OYYSSSSSSSSSSSSYYO.O.',
-        '..OOSSSSSSSSSSSSOO..O.',
-        '.OORRRRRYYYYRRRRROOOO.',
-        'OORRRYYYYYYYYYYRRRRO..',
-        'OORRRYYPPPPPPYYRRRRO..',
-        '.OORRRRRRRRRRRRRRROO..',
-        '..OYYYY......YYYYOO...',
-        '...ORRO......ORRO.....',
-        '..OORRO......ORROO....',
-        '..OOOOO......OOOOO....'
+        '.......OOOOOOOOOO.....YYYY.',
+        '.....OOYYYYYYYYYYOO..OYWWYO',
+        '....OOSSSSSSSSSSSSOO.OYYYYO',
+        '..OOYYYYYSSOSSYYYYYYO.OYWO.',
+        '.OYYYYYSROSSSSORSYYYYO.OO..',
+        '.OYYYSSSSSSSSSSSSSSYYYO.O..',
+        '.OYY..OOSSSSSSSSOO..YYO.O..',
+        '..OO.OORRRRRYYYYRRRROOOOO..',
+        '.PPPOORRRYYYYYYYYYYRRRRO...',
+        'OPPPOORRRYYPPPPPPYYRRRRO...',
+        '.OO.OORRRRRYYYYYYYYRRRRO...',
+        '....OORRRRRRRRRRRRRRRROO...',
+        '.....OOYYYYYY....YYYYYOO...',
+        '......ORRRRO......ORRRRO...',
+        '.....OORRRRO......ORRRROO..',
+        '.....OOOOOOO......OOOOOOO..'
       ],
       f1: [
-        '.....OOOOOOOOOO...YYY.',
-        '...OOSSSSSSSSSSOOOYWO.',
-        '..OYYYYSSOSSYYYYOOYYO.',
-        '.OYYYSROSSSSORSYYYO.O.',
-        '.OYYSSSSSSSSSSSSYYO.O.',
-        '..OOSSSSSSSSSSSSOOOOO.',
-        '.OORRRRRYYYYRRRRROO...',
-        'OORRRYYPPPPPPYYRRRRO..',
-        '.OORRRRRRRRRRRRRRROO..',
-        '..OYYYY......YYYYOO...',
-        '...ORRO......ORRO.....',
-        '..OOOOO......OOOOO....',
-        '......................',
-        '......................'
+        '.......OOOOOOOOOO......YYYY',
+        '.....OOYYYYYYYYYYOO...OYWWY',
+        '....OOSSSSSSSSSSSSOO..OYYYY',
+        '..OOYYYYYSSOSSYYYYYYO..OO..',
+        '.OYYYYYSROSSSSORSYYYYO..O..',
+        '.OYYYSSSSSSSSSSSSSSYYYO.O..',
+        '..OO.OORRRRRYYYYRRRROOOOO..',
+        'OPPPOORRRYYYYYYYYYYRRRRO...',
+        '.PPPOORRRYYPPPPPPYYRRRRO...',
+        '....OORRRRRRRRRRRRRRRROO...',
+        '.....OOYYYYYY....YYYYYOO...',
+        '......ORRRRO......ORRRRO...',
+        '.....OOOOOOO......OOOOOOO..',
+        '...........................',
+        '...........................',
+        '...........................'
       ]
     },
 
-    // 21. 七绝山红鳞大蟒精（盘山巨蟒、血盆毒牙、双枪舌信）
+    // 21. 七绝山红鳞大蟒（盘山血鳞巨蟒王、灯笼双瞳、分叉毒枪信子、层叠盘山蟒躯）
     red_python_demon: {
       palette: { O: '#0f0c14', R: '#d90429', L: '#ef233c', Y: '#ffd166', W: '#ffffff', D: '#6a040f' },
+      p2Palette: { R: '#ff0a54', L: '#ff4800', Y: '#00f5d4', D: '#2b0909' },
       f0: [
-        '.....OOOOOOOOOO.......',
-        '...OORRRRRRRRRROO.....',
-        '..ORRLLLLLLLLLLRRO....',
-        '.ORRLYWOLLLLORYWLRO...',
-        '.ORRRWWWWWWWWWWWRROYY.',
-        '..OODDDDRRRRDDDDOOY..Y',
-        '...OORRRYYYYRRRROO....',
-        '..OORRRRLLLLRRRRROO...',
-        '.OODDRRRRRRRRRRRDDOO..',
-        'OODDRRRRYYYYRRRRRDDOO.',
-        'OODDDDDDDDDDDDDDDDDOO.',
-        '.OOOOOOOOOOOOOOOOOOO..'
+        '......OOOOOOOOOOOOOO........',
+        '....OORRRRRRRRRRRRRROO......',
+        '...ORRLLLLLLYYYYLLLLLRRO....',
+        '..ORRLLYYWOOLLLLOOYWLLRRO...',
+        '..ORRRRWWWWWWWWWWWWWWRRROYYY',
+        '...OODDDDDDRRRRRRDDDDDOOY..Y',
+        '....OORRRRRYYYYYYRRRRROO...Y',
+        '...OORRRRRLLLLLLLLRRRRROO...',
+        '..OODDRRRRRRYYYYRRRRRRDDOO..',
+        '.OODDRRRRRLLLLLLLLRRRRRDDOO.',
+        'OODDRRRRRRYYYYYYYYRRRRRRDDOO',
+        'OODDDDDDDDDDDDDDDDDDDDDDDDOO',
+        '.OOOOOOOOOOOOOOOOOOOOOOOOOO.'
       ],
       f1: [
-        '.....OOOOOOOOOO.......',
-        '...OORRRRRRRRRROO.....',
-        '..ORRLLLLLLLLLLRRO....',
-        '.ORRLYWOLLLLORYWLROYY.',
-        '.ORRRWWWWWWWWWWWRROY.Y',
-        '..OODDDDRRRRDDDDOO....',
-        '...OORRRYYYYRRRROO....',
-        '.OODDRRRRRRRRRRRDDOO..',
-        'OODDRRRRYYYYRRRRRDDOO.',
-        '.OOOOOOOOOOOOOOOOOOO..',
-        '......................',
-        '......................'
+        '......OOOOOOOOOOOOOO........',
+        '....OORRRRRRRRRRRRRROO......',
+        '...ORRLLLLLLYYYYLLLLLRRO....',
+        '..ORRLLYYWOOLLLLOOYWLLRROYY.',
+        '..ORRRRWWWWWWWWWWWWWWRRROY.Y',
+        '...OODDDDDDRRRRRRDDDDDOO....',
+        '...OORRRRRLLLLLLLLRRRRROO...',
+        '.OODDRRRRRRYYYYRRRRRRDDOO...',
+        'OODDRRRRRLLLLLLLLRRRRRDDOO..',
+        'OODDDDDDDDDDDDDDDDDDDDDDDDOO',
+        '.OOOOOOOOOOOOOOOOOOOOOOOOOO.',
+        '............................',
+        '............................'
       ]
     },
 
-    // 22. 赛太岁·金毛犼（麒麟金鬃、项挂三枚紫阳金铃喷火烟沙！）
+    // 22. 赛太岁·金毛犼（麒麟金鬃、项挂三枚喷火烟沙紫阳金铃、宣花巨斧）
     sai_taisui: {
       palette: { O: '#0f0c14', G: '#ffb703', Y: '#ffd60a', R: '#ff4800', P: '#7209b7', W: '#ffffff', D: '#3c096c' },
+      p2Palette: { G: '#ff5400', Y: '#ffd60a', R: '#ff0a54', P: '#b5179e', D: '#240046' },
       f0: [
-        '..OO..OOOOOOOO..OO.RRR',
-        '.OGGOGGGGGGGGGGOGGORFR',
-        '.OGGGGGGGGGGGGGGGGO.O.',
-        'OGGGRWGGGGGGGGRWGGO.O.',
-        'OGGGGGWWWWWWWWGGGGO.O.',
-        '.OOGGGYOOGGOOYGGGOOOO.',
-        '.OOPPPPPYYYYPPPPPOO...',
-        'OOPPPYYYGGGGYYYPPPOO..',
-        'OOPPPPPPPPPPPPPPPPOO..',
-        '.OOGGGGGYYYYGGGGGOO...',
-        '..ODDDD......DDDDO....',
-        '..OGGGO......OGGGO....',
-        '.OOGGGO......OGGGOO...',
-        '.OOOOOO......OOOOOO...'
+        '..OOO...OOOOOOOOOO...OOO.RRRR',
+        '.OGGGOOGGGGGGGGGGGGOOGGGORWWR',
+        '.OGGGGGGGGGYYYYGGGGGGGGGOORRO',
+        'OGGGGGRWGGGGGGGGGGGRWGGGGO.O.',
+        'OGGGGGGGWWWWWWWWWWGGGGGGGO.O.',
+        '.OOGGGYYOOYYOOYYOOYYGGGGOOOO.',
+        '.OOPPPPPPPYYYYYYPPPPPPPOO....',
+        'OOPPPPYYYGGGGGGGGYYYPPPPOO...',
+        'OOPPPPRRRYYYYYYYYRRRPPPPOO...',
+        '.OOPPPPPPPPPPPPPPPPPPPPOO....',
+        '..OOGGGGGGGYYYYGGGGGGGOO.....',
+        '...ODDDDDD......DDDDDDO......',
+        '...OGGGGGO......OGGGGGO......',
+        '..OOGGGGGO......OGGGGGOO.....',
+        '..OOOOOOOO......OOOOOOOO.....'
       ],
       f1: [
-        '..OO..OOOOOOOO..OO..RR',
-        '.OGGOGGGGGGGGGGOGGO.RF',
-        '.OGGGGGGGGGGGGGGGGO.O.',
-        'OGGGRWGGGGGGGGRWGGO.O.',
-        'OGGGGGWWWWWWWWGGGGO.O.',
-        '.OOGGGYOOGGOOYGGGOOOO.',
-        '.OOPPPPPYYYYPPPPPOO...',
-        'OOPPPYYYGGGGYYYPPPOO..',
-        '.OOPPPPPPPPPPPPPPOO...',
-        '..ODDDD......DDDDO....',
-        '..OGGGO......OGGGO....',
-        '.OOOOOO......OOOOOO...',
-        '......................',
-        '......................'
+        '..OOO...OOOOOOOOOO...OOO..RRR',
+        '.OGGGOOGGGGGGGGGGGGOOGGGO.RWR',
+        '.OGGGGGGGGGYYYYGGGGGGGGGO.ORO',
+        'OGGGGGRWGGGGGGGGGGGRWGGGGO.O.',
+        'OGGGGGGGWWWWWWWWWWGGGGGGGOOO.',
+        '.OOGGGYYOOYYOOYYOOYYGGGGOO...',
+        'OOPPPPYYYGGGGGGGGYYYPPPPOO...',
+        'OOPPPPRRRYYYYYYYYRRRPPPPOO...',
+        '.OOPPPPPPPPPPPPPPPPPPPPOO....',
+        '...ODDDDDD......DDDDDDO......',
+        '..OOGGGGGO......OGGGGGOO.....',
+        '..OOOOOOOO......OOOOOOOO.....',
+        '.............................',
+        '.............................',
+        '.............................'
       ]
     },
 
-    // 23. 盘丝大仙·七情蛛母（八根巨型紫晶蛛矛腿、蛛后银冠）
+    // 23. 盘丝洞七蜘蛛精·七情蛛母（蛛后银冠、八根巨型剃刀紫晶蛛矛腿、吐丝毒囊）
     spider_matriarch: {
       palette: { O: '#0f0c14', P: '#7209b7', M: '#f72585', W: '#f8f9fa', C: '#80ffdb', S: '#ffe5d9', D: '#240046' },
+      p2Palette: { P: '#b5179e', M: '#ff0a54', W: '#ffffff', C: '#00f5d4', D: '#10002b' },
       f0: [
-        '......OOWWWWOO........',
-        '....OOMMMMMMMMOO......',
-        '...OOSSSSSSSSSSOO.....',
-        '...OSSRWOSSORWSSO.....',
-        'OO..OOSSSSSSSSOO..OO..',
-        '.OO.OOPPWWWWPPOO.OO...',
-        'OO.OOPPMMMMMMPPOO..OO.',
-        '..OOPPPDDDDDDPPPOO....',
-        '.OO.OOPPPPPPPPOO.OO...',
-        'OO..OO.OPPPPO.OO..OO..',
-        'O..O...OO..OO...O..O..'
+        '........OOWWWWWWOO..........',
+        '......OOMMMMMMMMMMOO........',
+        '.....OOSSSSSSSSSSSSOO.......',
+        'OO...OSSRWOOSSSOORWSO...OO..',
+        '.OO...OOSSSSSSSSSSOO...OO...',
+        '..OO.OOPPPWWWWWWPPPOO.OO....',
+        'OO.OOOPPPMMMMMMMMPPPOOO..OO.',
+        '.OO..OPPPPDDDDDDPPPPOO..OO..',
+        '...OOOPPPPMMMMMMPPPPOOO.....',
+        '..OO..OOPPPPPPPPPPOO..OO....',
+        '.OO.OO..OOPPPPPPOO..OO.OO...',
+        'OO..O.....OO..OO.....O..OO..',
+        'O.........OO..OO.........O..'
       ],
       f1: [
-        '......OOWWWWOO........',
-        '....OOMMMMMMMMOO......',
-        '...OOSSSSSSSSSSOO.....',
-        '...OSSRWOSSORWSSO.....',
-        '.OO.OOSSSSSSSSOO.OO...',
-        'OO..OOPPWWWWPPOO..OO..',
-        '.OOOOPPMMMMMMPPOOOO...',
-        '..OOPPPDDDDDDPPPOO....',
-        'OO..OOPPPPPPPPOO..OO..',
-        'O..OO..OPPPPO..OO..O..',
-        '..O....OO..OO....O....'
+        '........OOWWWWWWOO..........',
+        '......OOMMMMMMMMMMOO........',
+        'OO...OOSSSSSSSSSSSSOO...OO..',
+        '.OO..OSSRWOOSSSOORWSO..OO...',
+        '..OO..OOSSSSSSSSSSOO..OO....',
+        'OO..OOOPPPWWWWWWPPPOOO..OO..',
+        '.OO..OPPPMMMMMMMMPPPOO..OO..',
+        '...OOOPPPPDDDDDDPPPPOOO.....',
+        '..OO..OOPPPPPPPPPPOO..OO....',
+        '.OO..OO.OOPPPPPPOO.OO..OO...',
+        'OO..O.....OO..OO.....O..OO..',
+        '..........OO..OO............',
+        '............................'
       ]
     },
 
-    // 24. 百眼魔君·多目蜈蚣精（蜈蚣双触须、肋下千眼金光阵！）
+    // 24. 百眼魔君·多目蜈蚣精（蜈蚣赤钳毒冠、两肋大张千眼金光阵、百节重剑）
     hundred_eyed_lord: {
       palette: { O: '#0f0c14', R: '#9d0208', G: '#ffd60a', Y: '#ffba08', D: '#2b0909', W: '#ffffff', P: '#5a189a' },
+      p2Palette: { R: '#ff0a54', G: '#ffffff', Y: '#ffd60a', D: '#1a0005', P: '#b5179e' },
       f0: [
-        '.RR..............RR.WW',
-        '..RRO..OOOOOO..ORR.OWO',
-        '...OOODDDDDDDDOOO..OO.',
-        '...ODDDRWDDDRWDDO..O..',
-        '...ODDDDDDDDDDDDO..O..',
-        '..OOGGGGGGGGGGGGOOOOO.',
-        '.OOGYGYGYGYGYGYGYGOO..',
-        '.OOGWGYGWGYGWGYGWGOO..',
-        '.OOGYGYGYGYGYGYGYGOO..',
-        '..OOPPPPRRRRPPPPOO....',
-        '...ODDDRRRRRRDDDO.....',
-        '..OODDD......DDDOO....',
-        '..OOOOO......OOOOO....'
+        '.RRR................RRR..WWW',
+        '..RRRO..OOOOOOOO..ORRRO..OWO',
+        '...OOOODDDDDDDDDDOOOO....OO.',
+        '....ODDDDRWDDDDRWDDDO....OY.',
+        '....ODDDDDDDDDDDDDDDO....OY.',
+        '..OOGGGGGGGGGGGGGGGGGOOOOOY.',
+        '.OOGWGYGWGYGWGYGWGYGWGOOO...',
+        'OOGYGWGYGWGYGWGYGWGYGYGOO...',
+        'OOGWGYGWGYGWGYGWGYGWGYGOO...',
+        '.OOGGGGGGGGGGGGGGGGGGGOO....',
+        '..OOPPPPPPRRRRRRPPPPPOO.....',
+        '...ODDDDDDRRRRRRDDDDDO......',
+        '...ODDDDD........DDDDO......',
+        '..OODDDDO........ODDDDO.....',
+        '..OOOOOOO........OOOOOO.....'
       ],
       f1: [
-        '..RR............RR..WW',
-        '...RRO.OOOOOO.ORR..OWO',
-        '...OOODDDDDDDDOOO..OO.',
-        '...ODDDRWDDDRWDDO..O..',
-        '...ODDDDDDDDDDDDO..O..',
-        '..OOGGGGGGGGGGGGOOOOO.',
-        '.OOGWGYGWGYGWGYGWGOO..',
-        '.OOGYGYGYGYGYGYGYGOO..',
-        '..OOPPPPRRRRPPPPOO....',
-        '...ODDDRRRRRRDDDO.....',
-        '..OOOOO......OOOOO....',
-        '......................',
-        '......................'
+        '..RRR..............RRR...WWW',
+        '...RRRO.OOOOOOOO.ORRRO...OWO',
+        '...OOOODDDDDDDDDDOOOO....OO.',
+        '....ODDDDRWDDDDRWDDDO....OY.',
+        '..OOGGGGGGGGGGGGGGGGGOOOOOY.',
+        'OOGYGWGYGWGYGWGYGWGYGYGOO...',
+        'OOGWGYGWGYGWGYGWGYGWGYGOO...',
+        '.OOGYGWGYGWGYGWGYGWGYGOO....',
+        '..OOPPPPPPRRRRRRPPPPPOO.....',
+        '...ODDDDDDRRRRRRDDDDDO......',
+        '..OODDDDO........ODDDDO.....',
+        '..OOOOOOO........OOOOOO.....',
+        '............................',
+        '............................',
+        '............................'
       ]
     },
 
-    // 25. 狮驼岭·白象魔王（卷曲雪白长象鼻、双长象牙、银甲长枪）
+    // 25. 狮驼岭·青狮白象王（擎天雪白卷云巨象鼻、丈二双白象牙、狮驼重装战铠、卷云神枪）
     white_elephant_king: {
       palette: { O: '#0f0c14', W: '#f8f9fa', L: '#ced4da', G: '#ffd166', B: '#4ea8de', R: '#ff0a54', D: '#1d3557' },
+      p2Palette: { W: '#ffffff', L: '#90e0ef', G: '#ffd60a', B: '#00f5d4', R: '#ff0a54', D: '#03045e' },
       f0: [
-        '..OOOOO......OOOOO.GGG',
-        '.OWWWWWO....OWWWWWOOGO',
-        'OWWLLLLOOOOOOLLLLWWO.O',
-        'OWWLWWWRWWWWWRWWLWWO.O',
-        '.OOWWWWWLLLLWWWWWO..O.',
-        '..OOYYWWLLLLWWYYOOOOO.',
-        '..OOBBBBLLLLBBBBOO....',
-        '.OOBBBGGLLLLGGBBBOO...',
-        '..OOBBBBBLLLBBBBOO....',
-        '...OODDDDLLLDDDOO.....',
-        '....OWWW....WWWO......',
-        '...OODDO....ODDOO.....',
-        '...OOOOO....OOOOO.....'
+        '..OOOOOO........OOOOOO..GGGG',
+        '.OWWWWWWO......OWWWWWWO.OGWO',
+        'OWWWLLLLOOOOOOOOLLLLWWWO.GGO',
+        'OWWWLWWWWRWWWWWRWWWWLWWO..O.',
+        'OWWWLLLLWWWWWWWWLLLLWWWO..O.',
+        '.OOWWWGGWWLLLLWWGGWWWOO...O.',
+        '.OOGGGWWWWWLLLLWWWWGGGOOOOO.',
+        '..OOBBBBBBBLLLLBBBBBBBOO....',
+        '.OOBBBBGGGGLLLLGGGGBBBBOO...',
+        'OOBBBBBGGGGLLLLGGGGBBBBBBOO.',
+        '.OOBBBBBBBBBLLLBBBBBBBBBOO..',
+        '..OODDDDDDDDLLLDDDDDDDDOO...',
+        '...OODDDDDDDDDDDDDDDDDOO....',
+        '....OWWWWW......WWWWWO......',
+        '....ODDDDO......ODDDDO......',
+        '...OODDDDO......ODDDDOO.....',
+        '...OOOOOOO......OOOOOOO.....'
       ],
       f1: [
-        '..OOOOO......OOOOO..GG',
-        '.OWWWWWO....OWWWWWOOGO',
-        'OWWLLLLOOOOOOLLLLWWO.O',
-        'OWWLWWWRWWWWWRWWLWWO.O',
-        '.OOWWWWWLLLLWWWWWO..O.',
-        '..OOYYWWLLLLWWYYOOOOO.',
-        '..OOBBBBLLLLBBBBOO....',
-        '.OOBBBGGLLLLGGBBBOO...',
-        '...OODDDDLLDDDOO......',
-        '....OWWW....WWWO......',
-        '...OOOOO....OOOOO.....',
-        '......................',
-        '......................'
+        '..OOOOOO........OOOOOO...GGG',
+        '.OWWWWWWO......OWWWWWWO..OGW',
+        'OWWWLLLLOOOOOOOOLLLLWWWO..OO',
+        'OWWWLWWWWRWWWWWRWWWWLWWO..O.',
+        '.OOWWWGGWWLLLLWWGGWWWOO...O.',
+        '.OOGGGWWWWWLLLLWWWWGGGOOOOO.',
+        '.OOBBBBGGGGLLLLGGGGBBBBOO...',
+        'OOBBBBBGGGGLLLLGGGGBBBBBBOO.',
+        '..OODDDDDDDDLLLDDDDDDDDOO...',
+        '....OWWWWW......WWWWWO......',
+        '...OODDDDO......ODDDDOO.....',
+        '...OOOOOOO......OOOOOOO.....',
+        '............................',
+        '............................',
+        '............................',
+        '............................',
+        '............................'
       ]
     },
 
-    // 26. 狮驼国·金翅大鹏雕（璀璨双展黄金鹏翼、鹰钩金喙、方天画戟）
+    // 26. 云程万里·金翅大鹏雕（遮天黄金巨鹏双翼、金钩神喙、阴阳二气瓶、方天画戟）
     golden_wing_peng: {
       palette: { O: '#0f0c14', G: '#ffd60a', Y: '#f48c06', R: '#d90429', W: '#ffffff', D: '#22223b' },
+      p2Palette: { G: '#ffffff', Y: '#ffd60a', R: '#ff0a54', D: '#10002b' },
       f0: [
-        'GG......OOOOOO......GG',
-        'GGYO..OOGGGGGGOO..OYGG',
-        'OGGYOOGGGGGGGGGGOOYGGO',
-        'OGGGYOGGRWGGWRGGOYGGGO',
-        '.OGGGYGGGGWWGGGGYGGGO.',
-        '..OOGGYRRRRRRRRYGGOO..',
-        '...OODDDGGGGGGDDDOO...',
-        '....OODDGGGGGGDDOO....',
-        '....OODDRRRRRRDDOO....',
-        '.....OYY......YYO.....',
-        '....OOGG......GGOO....',
-        '....OOOO......OOOO....'
+        'GGG........OOOOOOOO........GGG',
+        'GGGYO....OOGGGGGGGGOO....OYGGG',
+        'OGGGYO..OGGGGGGGGGGGGO..OYGGGO',
+        'OGGGGYOOGGGGRWGGWRGGGGOOYGGGGO',
+        '.OGGGGYGGGGGGWWWWGGGGGGYGGGGO.',
+        '..OGGGYYGGGRRRRRRRRGGGYYGGGO..',
+        '...OOGGYYDDRRRRRRRRDDYYGGOO...',
+        '....OOODDDDGGGGGGGGDDDDOOO....',
+        '.....OODDDDGGGGGGGGDDDDOO.....',
+        '.....OODDDDRRRRRRRRDDDDOO.....',
+        '......OOYYYY......YYYYOO......',
+        '.......OYYYO......OYYYO.......',
+        '......OOGGGO......OGGGOO......',
+        '......OOOOOO......OOOOOO......'
       ],
       f1: [
-        '........OOOOOO........',
-        'GG....OOGGGGGGOO....GG',
-        'GGYYOOGGGGGGGGGGOOYYGG',
-        'OGGGYOGGRWGGWRGGOYGGGO',
-        '.OOYYGGGGWWWWGGGGYYOO.',
-        '...OOGYRRRRRRRRYGOO...',
-        '....OODDGGGGGGDDOO....',
-        '....OODDRRRRRRDDOO....',
-        '.....OYY......YYO.....',
-        '....OOOO......OOOO....',
-        '......................',
-        '......................'
+        '...........OOOOOOOO...........',
+        'GGG......OOGGGGGGGGOO......GGG',
+        'GGGYYO..OGGGGGGGGGGGGO..OYYGGG',
+        'OGGGGYOOGGGGRWGGWRGGGGOOYGGGGO',
+        '.OOYYYYGGGGGGWWWWGGGGGGYYYYOO.',
+        '...OOGGYYDDRRRRRRRRDDYYGGOO...',
+        '....OOODDDDGGGGGGGGDDDDOOO....',
+        '.....OODDDDRRRRRRRRDDDDOO.....',
+        '......OOYYYY......YYYYOO......',
+        '......OOGGGO......OGGGOO......',
+        '......OOOOOO......OOOOOO......',
+        '..............................',
+        '..............................',
+        '..............................'
       ]
     },
 
-    // 27. 九灵元圣·九头狮子祖翁（环绕九颗金青圣狮首、太乙紫金袍）
+    // 27. 九灵元圣·九头狮祖（环绕周天九颗金青太乙圣狮首、万妖祖翁帝袍）
     nine_spirit_saint: {
       palette: { O: '#0f0c14', G: '#ffd166', C: '#00f5d4', P: '#5a189a', B: '#3c096c', W: '#ffffff', Y: '#f4a261' },
+      p2Palette: { G: '#ffd60a', C: '#80ffdb', P: '#7209b7', B: '#10002b', Y: '#ff9f1c' },
       f0: [
-        '..GG..GG..GG..GG..GG..',
-        '.OGGOOGGOOGGOOGGOOGGO.',
-        'OGCGOGCGOGGGGOGCGOGCGO',
-        '.OOOOOOOOOOOOOOOOOOOO.',
-        '..OOYYYYGGGGGGYYYYOO..',
-        '..OYYCWYYYYYYYYWCYYO..',
-        '...OOYYYYWWWWYYYYOO...',
-        '..OOPPPPPGGGGPPPPPOO..',
-        '.OOPPPCCCCCCCCCCPPPOO.',
-        '..OOPPPPPGGGGPPPPPOO..',
-        '...OOBBBBBBBBBBBBOO...',
-        '....OYYO......OYYO....',
-        '...OOGGO......OGGOO...',
-        '...OOOOO......OOOOO...'
+        '..GGG..GGG..GGGG..GGG..GGG..',
+        '.OGGGOOGGGOOGGGGOOGGGOOGGGO.',
+        'OGCWCGOGCWCGOGWWGOGCWCGOGCWC',
+        'OGGGGGOGGGGGOGGGGOGGGGGOGGGG',
+        '.OOOOOOOOOOOOOOOOOOOOOOOOOO.',
+        '..OOYYYYYYGGGGGGGGYYYYYYOO..',
+        '..OYYYCWYYYYYYYYYYYYWCYYYO..',
+        '..OYYYYYYWWWWWWWWWWYYYYYYO..',
+        '.OOPPPPPPPGGGGGGGGPPPPPPPOO.',
+        'OOPPPPCCCCCCCCCCCCCCCCPPPPOO',
+        'OOPPPPCCCCGGGGGGGGCCCCPPPPOO',
+        '.OOPPPPPPPGGGGGGGGPPPPPPPOO.',
+        '..OOBBBBBBBBBBBBBBBBBBBBOO..',
+        '...OOYYYYY........YYYYYOO...',
+        '....OYYYYO........OYYYYO....',
+        '...OOGGGGO........OGGGGOO...',
+        '...OOOOOOO........OOOOOOO...'
       ],
       f1: [
-        '.GG..GG..GGGG..GG..GG.',
-        'OGGOOGGOOGGGGOOGGOOGGO',
-        '.OGCGOGCGOGGOGCGOGCGO.',
-        '..OOOOOOOOOOOOOOOOOO..',
-        '..OOYYYYGGGGGGYYYYOO..',
-        '..OYYCWYYYYYYYYWCYYO..',
-        '...OOYYYYWWWWYYYYOO...',
-        '..OOPPPPPGGGGPPPPPOO..',
-        '.OOPPPCCCCCCCCCCPPPOO.',
-        '...OOBBBBBBBBBBBBOO...',
-        '....OYYO......OYYO....',
-        '...OOOOO......OOOOO...',
-        '......................',
-        '......................'
+        '.GGG..GGG...GGGG...GGG..GGG.',
+        'OGGGOOGGGO.OGGGGO.OGGGOOGGGO',
+        'OGCWCGOGCWGOGWWGOGWCGOGCWCGO',
+        '.OOOOOOOOOOOOOOOOOOOOOOOOOO.',
+        '..OOYYYYYYGGGGGGGGYYYYYYOO..',
+        '..OYYYCWYYYYYYYYYYYYWCYYYO..',
+        '.OOPPPPPPPGGGGGGGGPPPPPPPOO.',
+        'OOPPPPCCCCCCCCCCCCCCCCPPPPOO',
+        '.OOPPPPPPPGGGGGGGGPPPPPPPOO.',
+        '..OOBBBBBBBBBBBBBBBBBBBBOO..',
+        '....OYYYYO........OYYYYO....',
+        '...OOOOOOO........OOOOOOO...',
+        '............................',
+        '............................',
+        '............................',
+        '............................',
+        '............................'
       ]
     },
 
-    // 28. 天竺玉兔精（修长雪白兔耳、广寒宝冠、捣药玉杵）
+    // 28. 广寒捣药·天竺玉兔精（修长雪白兔耳、天竺孔雀金冠、霓裳羽衣、捣药玄玉杵）
     jade_rabbit: {
       palette: { O: '#0f0c14', W: '#ffffff', P: '#ff8fa3', M: '#ff4d6d', G: '#ffd166', C: '#80ffdb', D: '#5a189a' },
+      p2Palette: { W: '#fff0f3', P: '#ff4d6d', M: '#ff0a54', G: '#ffd60a', C: '#00f5d4', D: '#240046' },
       f0: [
-        '....OWWO......OWWO....',
-        '....OWPO......OPWO....',
-        '....OWPOOOOOOOOPWO.CCC',
-        '....OWWWGGGGGGWWWO.CWC',
-        '...OWWWMWWWWWMWWWWO.O.',
-        '....OOWWWWWWWWWWOO..O.',
-        '...OOPPPPGGGGPPPPOOOO.',
-        '..OOPPPMMMMMMMMPPPOO..',
-        '...OOPPPPWWWWPPPPOO...',
-        '....OODDDDDDDDDDOO....',
-        '.....OWWO....OWWO.....',
-        '....OOWWO....OWWOO....',
-        '....OOOOO....OOOOO....'
+        '.....OWWWO........OWWWO.....',
+        '.....OWPWO........OWPWO.....',
+        '.....OWPWOOOOOOOOOOPWPO..CCC',
+        '.....OWWWWGGGGGGGGWWWWO.CWWC',
+        '....OWWWWMWWWWWWWMWWWWO.CWCO',
+        '....OWWWWWWWWWWWWWWWWWO..OO.',
+        '.....OOWWWWWWWWWWWWWOO...OG.',
+        '...OOPPPPPGGGGGGGGPPPPOOOOG.',
+        '..OOPPPPMMMMMMMMMMMMPPPPOO..',
+        '..OOPPPPWWWWGGGGWWWWPPPPOO..',
+        '...OOODDDDDDDDDDDDDDDDOOO...',
+        '.....OOPPPP......PPPPOO.....',
+        '......OWWWO......OWWWO......',
+        '.....OOWWWO......OWWWOO.....',
+        '.....OOOOOO......OOOOOO.....'
       ],
       f1: [
-        '....OWWO......OWWO....',
-        '....OWPO......OPWO..CC',
-        '....OWPOOOOOOOOPWO.CWC',
-        '....OWWWGGGGGGWWWO..O.',
-        '...OWWWMWWWWWMWWWWO.O.',
-        '....OOWWWWWWWWWWOOOOO.',
-        '...OOPPPPGGGGPPPPOO...',
-        '..OOPPPMMMMMMMMPPPOO..',
-        '....OODDDDDDDDDDOO....',
-        '.....OWWO....OWWO.....',
-        '....OOOOO....OOOOO....',
-        '......................',
-        '......................'
+        '....OWWWO..........OWWWO....',
+        '....OWPWO..........OWPWO..CC',
+        '.....OWPWOOOOOOOOOOPWPO..CWC',
+        '.....OWWWWGGGGGGGGWWWWO..OO.',
+        '....OWWWWMWWWWWWWMWWWWO..OG.',
+        '.....OOWWWWWWWWWWWWWOOOOOOG.',
+        '...OOPPPPPGGGGGGGGPPPPOO....',
+        '..OOPPPPMMMMMMMMMMMMPPPPOO..',
+        '...OOODDDDDDDDDDDDDDDDOOO...',
+        '......OWWWO......OWWWO......',
+        '.....OOOOOO......OOOOOO.....',
+        '............................',
+        '............................',
+        '............................',
+        '............................'
       ]
     },
 
-    // 29. 通天河千年老鼋（第八十一难镇守巨兽：苍青八卦巨龟甲、白须龙首、翻江波涛）
+    // 29. 通天河·千年翻江老鼋（第八十一难镇守巨兽：山岳级九宫八卦龟甲、苍龙老鼋首、翻江海啸）
     ancient_turtle: {
       palette: { O: '#0f0c14', G: '#2d6a4f', L: '#52b788', Y: '#ffd166', C: '#48cae4', W: '#ffffff', D: '#1b4332' },
+      p2Palette: { G: '#0077b6', L: '#00f5d4', Y: '#ffd60a', C: '#90e0ef', D: '#03045e' },
       f0: [
-        '.........OOOOOOOO.....',
-        '.......OOGGGGGGGGOO...',
-        '..OOOOOOGGLLLLLLGGOOO.',
-        '.OGGGGGYYYYGGGGGCWGGGO',
-        'OGGLLLLGGGGLLLLGWWWWGO',
-        'OGGGGGYYYYGGGGGGGGGGOO',
-        'OODDDDDGGGGDDDDDDDOO..',
-        '.OOGGGG....GGGGGOO....',
-        'CCCCWWCCCCCCWWCCCCCCCC',
-        '.CCCCCCCCCCCCCCCCCCCC.'
+        '........OOOOOOOOOOOOOO........',
+        '......OOGGGGGGGGGGGGGGOO......',
+        '....OOGGGGYYYYYYYYGGGGGOO.....',
+        '..OOGGGLLLLGGGGGGLLLLGGGOOOOO.',
+        '.OGGGGGYYYYGGGGGGYYYYGGGCWGGGO',
+        'OGGLLLLGGGGYYYYYYGGGGLLGWWWWGO',
+        'OGGGGGGYYYYGGGGGGYYYYGGGGGGGOO',
+        'OODDDDDDDDDGGGGGGDDDDDDDDDDOO.',
+        '.OODDDDDDDDDDDDDDDDDDDDDDOO...',
+        '..OOGGGGGG........GGGGGGOO....',
+        '.OOCCGGGG..........GGGGCCOO...',
+        'CCCCWWWWCCCCCCCCCCCCWWWWCCCCCC',
+        '.CCCCCCCCCCCCCCCCCCCCCCCCCCCC.',
+        '..CCCCWWWWCCCCCCCCWWWWCCCCCC..'
       ],
       f1: [
-        '.........OOOOOOOO.....',
-        '.......OOGGGGGGGGOO...',
-        '..OOOOOOGGLLLLLLGGOOO.',
-        '.OGGGGGYYYYGGGGGCWGGGO',
-        'OGGLLLLGGGGLLLLGWWWWGO',
-        'OGGGGGYYYYGGGGGGGGGGOO',
-        'OODDDDDGGGGDDDDDDDOO..',
-        '..OGGGG....GGGGOO.....',
-        'WWCCCCCCWWCCCCCCWWCCCC',
-        '.CCCCCCCCCCCCCCCCCCCC.'
+        '........OOOOOOOOOOOOOO........',
+        '......OOGGGGGGGGGGGGGGOO......',
+        '....OOGGGGYYYYYYYYGGGGGOO.....',
+        '..OOGGGLLLLGGGGGGLLLLGGGOOOOO.',
+        '.OGGGGGYYYYGGGGGGYYYYGGGCWGGGO',
+        'OGGLLLLGGGGYYYYYYGGGGLLGWWWWGO',
+        'OODDDDDDDDDGGGGGGDDDDDDDDDDOO.',
+        '..OOGGGGGG........GGGGGGOO....',
+        'WWWWCCCCCCCCWWWWCCCCCCCCWWWWCC',
+        '.CCCCCCCCCCCCCCCCCCCCCCCCCCCC.',
+        '..CCCCCCCCCCCCCCCCCCCCCCCCCC..',
+        '..............................',
+        '..............................',
+        '..............................'
+      ]
+    },
+
+    // 30. 乌鸡国·青毛狮子王（新增独立母版：怒张青金狮鬃、篡位帝冕、冷艳锯两刃巨刀）
+    azure_lion_king: {
+      palette: { O: '#0f0c14', T: '#00b4d8', C: '#90e0ef', Y: '#ffd166', R: '#ff0a54', D: '#1d3557', W: '#ffffff' },
+      p2Palette: { T: '#00f5d4', C: '#ffffff', Y: '#ffd60a', R: '#ff0a54', D: '#240046' },
+      f0: [
+        '....OOYYYYYYYYYYYYOO....WWWW',
+        '..OOTTTTTTTTTTTTTTTTOO..OWWO',
+        '.OOTTCCCCTTTTTTCCCCTTOO.OWWO',
+        'OOTTTTRWTTTTTTTTTRWTTTTO.OO.',
+        'OTTTTTTTWWWWWWWWTTTTTTTO.OY.',
+        'OTTTTTTWOOOWWOOOWTTTTTTO.OY.',
+        '.OOTTTTTTTTTTTTTTTTTTTOOOOY.',
+        '.OODDDDDDYYYYYYDDDDDDDOOO...',
+        'OODDTTTTTYYYYYYTTTTTTDDDO...',
+        'OODDTTTYYYYRRYYYYTTTTDDDO...',
+        '.OODDDDDDDDDDDDDDDDDDDDO....',
+        '..OOTTTTTTYYYYTTTTTTTOO.....',
+        '...OTTTTT......TTTTTO.......',
+        '...ODDDDO......ODDDDO.......',
+        '..OODDDDO......ODDDDOO......',
+        '..OOOOOOO......OOOOOOO......'
+      ],
+      f1: [
+        '....OOYYYYYYYYYYYYOO.....WWW',
+        '..OOTTTTTTTTTTTTTTTTOO...OWW',
+        '.OOTTCCCCTTTTTTCCCCTTOO..OWO',
+        'OOTTTTRWTTTTTTTTTRWTTTTO..O.',
+        'OTTTTTTTWWWWWWWWTTTTTTTO.OY.',
+        '.OOTTTTTTTTTTTTTTTTTTTOOOOY.',
+        '.OODDDDDDYYYYYYDDDDDDDOOO...',
+        'OODDTTTTTYYYYYYTTTTTTDDDO...',
+        '.OODDDDDDDDDDDDDDDDDDDDO....',
+        '...OTTTTT......TTTTTO.......',
+        '..OODDDDO......ODDDDOO......',
+        '..OOOOOOO......OOOOOOO......',
+        '............................',
+        '............................',
+        '............................',
+        '............................'
+      ]
+    },
+
+    // 31. 比丘国·白鹿国丈（新增独立母版：九叉珊瑚白玉巨鹿角、邪紫寿仙袍、蟠桃龙头寿杖）
+    white_deer_sage: {
+      palette: { O: '#0f0c14', W: '#ffffff', C: '#90e0ef', B: '#5a189a', G: '#ffd166', R: '#f72585', S: '#ffe5d9' },
+      p2Palette: { W: '#e0fbfc', C: '#00f5d4', B: '#240046', G: '#ffd60a', R: '#ff0a54' },
+      f0: [
+        'WW..WW..............WW..WW..',
+        '.WWWWOO...OOOOOO...OOWWWW.RR',
+        '..OWWWWOOGGGGGGGGOOWWWWO.RWR',
+        '....OOSSSSSSSSSSSSSSOO...ORO',
+        '....OSSROOSSSSSSOORSSO....O.',
+        '.....OOSSSSWWWWSSSSOO.....O.',
+        '...OOBBBBBGGGGGGGBBBBBOOOOO.',
+        '..OOBBBCCCCRRRRCCCCBBBBOO...',
+        '.OOBBBBCCCCRRRRCCCCBBBBBOO..',
+        '..OOBBBBBCCCCCCCCBBBBBBOO...',
+        '...OOBBBBBBBBBBBBBBBBBOO....',
+        '....OOWWWWW....WWWWWOO......',
+        '....OOBBBO......OBBBOO......',
+        '...OOOOOOO......OOOOOOO.....'
+      ],
+      f1: [
+        'WW..WW..............WW..WW..',
+        '.WWWWOO...OOOOOO...OOWWWW..R',
+        '..OWWWWOOGGGGGGGGOOWWWWO.RWR',
+        '....OOSSSSSSSSSSSSSSOO....O.',
+        '....OSSROOSSSSSSOORSSO....O.',
+        '...OOBBBBBGGGGGGGBBBBBOOOOO.',
+        '..OOBBBCCCCRRRRCCCCBBBBOO...',
+        '..OOBBBBBCCCCCCCCBBBBBBOO...',
+        '...OOBBBBBBBBBBBBBBBBBOO....',
+        '....OOBBBO......OBBBOO......',
+        '...OOOOOOO......OOOOOOO.....',
+        '............................',
+        '............................',
+        '............................'
+      ]
+    },
+
+    // 32. 金鼻白毛老鼠精·地涌夫人（新增独立母版：白玉圆鼠耳凤冠、金鼻赤瞳、双股寒光宝剑）
+    golden_mouse_queen: {
+      palette: { O: '#0f0c14', W: '#f8f9fa', P: '#ffd60a', M: '#f72585', G: '#ffd166', C: '#00f5d4', D: '#3c096c' },
+      p2Palette: { W: '#ffffff', P: '#ff9f1c', M: '#ff0a54', G: '#ffd60a', C: '#80ffdb', D: '#10002b' },
+      f0: [
+        '..OOOOO..........OOOOO..CC.',
+        '.OWWWWWO..OGGGO.OWWWWWO.CWC',
+        '.OWWMMWWOOOGGGOOOWWMMWWO.CO',
+        '..OOWWWWWWWWWWWWWWWWWOO..O.',
+        'CC.OWWWMWWPPPPWWMWWWWO...O.',
+        'CWC.OOWWWWWPPWWWWWWOO..OOO.',
+        '.OO..OOPPPPGGGGPPPPOO......',
+        '....OOPPPMMMMMMMMPPPOO.....',
+        '...OOPPPPMMWWWWMMPPPPOO....',
+        '....OODDDDDDDDDDDDDDOO.....',
+        '.....OOMMMM....MMMMOO......',
+        '......ODDO......ODDO.......',
+        '.....OODDO......ODDOO......',
+        '.....OOOOO......OOOOO......'
+      ],
+      f1: [
+        '..OOOOO..........OOOOO...CC',
+        '.OWWWWWO..OGGGO.OWWWWWO.CWC',
+        '.OWWMMWWOOOGGGOOOWWMMWWO.OO',
+        'CC.OWWWWWWWWWWWWWWWWWOO..O.',
+        'CWC.OWWMWWPPPPWWMWWWWO.OOO.',
+        '.OO..OOPPPPGGGGPPPPOO......',
+        '....OOPPPMMMMMMMMPPPOO.....',
+        '....OODDDDDDDDDDDDDDOO.....',
+        '.....OOMMMM....MMMMOO......',
+        '.....OODDO......ODDOO......',
+        '.....OOOOO......OOOOO......',
+        '...........................',
+        '...........................',
+        '...........................'
+      ]
+    },
+
+    // 33. 南山大王·艾叶花豹精（新增独立母版：艾叶金钱豹纹狂首、梅花幻影战披、点钢铁杵）
+    leopard_king: {
+      palette: { O: '#0f0c14', T: '#ffba08', D: '#22223b', C: '#00f5d4', R: '#ff0a54', W: '#ffffff', M: '#adb5bd' },
+      p2Palette: { T: '#ffd60a', D: '#10002b', C: '#80ffdb', R: '#ff0a54', M: '#ffffff' },
+      f0: [
+        '...OOO............OOO..MMMM',
+        '..OTTTTOOOOOOOOOOTTTTO.MWWM',
+        '..OTDTTTDTTTTTTDTTTDTO..MMO',
+        '.OTTTTTRWTTTTTTRWTTTTTO..O.',
+        '.OTTTTTTWWWWWWWWTTTTTTO..O.',
+        '..OOTTDTTTTTTTTTTDTTOOOOOO.',
+        '.OOCCCCDDDDDDDDDDCCCCOO....',
+        'OOCCCDDDTTTDDTTTDDDCCCOO...',
+        '.OODDDDDTTTTTTTTDDDDDDO....',
+        '..OOTTDTTTDDDDTTTDTTOO.....',
+        '...OTTTTT......TTTTTO......',
+        '...ODDDDO......ODDDDO......',
+        '..OODDDDO......ODDDDOO.....',
+        '..OOOOOOO......OOOOOOO.....'
+      ],
+      f1: [
+        '...OOO............OOO...MMM',
+        '..OTTTTOOOOOOOOOOTTTTO..MWM',
+        '..OTDTTTDTTTTTTDTTTDTO...MO',
+        '.OTTTTTRWTTTTTTRWTTTTTO..O.',
+        '..OOTTDTTTTTTTTTTDTTOOOOOO.',
+        '.OOCCCCDDDDDDDDDDCCCCOO....',
+        'OOCCCDDDTTTDDTTTDDDCCCOO...',
+        '..OOTTDTTTDDDDTTTDTTOO.....',
+        '...OTTTTT......TTTTTO......',
+        '..OODDDDO......ODDDDOO.....',
+        '..OOOOOOO......OOOOOOO.....',
+        '...........................',
+        '...........................',
+        '...........................'
+      ]
+    },
+
+    // 34. 玄英洞·辟寒辟暑辟尘三犀王（新增独立母版：三棱玄冰擎天犀角、寒晶重甲、宣花冰巨斧）
+    frost_rhino_lord: {
+      palette: { O: '#0f0c14', B: '#0077b6', L: '#90e0ef', C: '#00f5d4', W: '#ffffff', D: '#03045e', R: '#ff0a54' },
+      p2Palette: { B: '#03045e', L: '#caf0f8', C: '#80ffdb', W: '#ffffff', D: '#10002b', R: '#ffd60a' },
+      f0: [
+        '.....CC...OWWWO...CC..CCCC.',
+        '....OCWO.OWWWWWO.OWCO.CWWWC',
+        '.....OOOBBBBBBBBBOOO..CWWWC',
+        '...OOBBBBLLLLLLBBBBBO..OOO.',
+        '..OBBBBBRWBBBBBRWBBBBO..O..',
+        '..OBBBBBBBLLLLBBBBBBBO..O..',
+        '.OODDDDDDDCCCCDDDDDDDOOOO..',
+        'OODDBBBBBBCCCCCBBBBBBBDDO..',
+        'OODDBBBBCCCCCCCCBBBBBBBDDO.',
+        '.OODDDDDDDDDDDDDDDDDDDDDO..',
+        '..OOBBBBBBBCCCCBBBBBBBOO...',
+        '...ODDDDDO......ODDDDDO....',
+        '...OBBBBO........OBBBBO....',
+        '..OOBBBBO........OBBBBOO...',
+        '..OOOOOOO........OOOOOOO...'
+      ],
+      f1: [
+        '.....CC...OWWWO...CC...CCCC',
+        '....OCWO.OWWWWWO.OWCO..CWWW',
+        '.....OOOBBBBBBBBBOOO...OOOO',
+        '...OOBBBBLLLLLLBBBBBO...O..',
+        '..OBBBBBRWBBBBBRWBBBBO..O..',
+        '.OODDDDDDDCCCCDDDDDDDOOOO..',
+        'OODDBBBBBBCCCCCBBBBBBBDDO..',
+        '.OODDDDDDDDDDDDDDDDDDDDDO..',
+        '..OOBBBBBBBCCCCBBBBBBBOO...',
+        '...OBBBBO........OBBBBO....',
+        '..OOOOOOO........OOOOOOO...',
+        '...........................',
+        '...........................',
+        '...........................',
+        '...........................'
       ]
     }
   };
@@ -12065,13 +12490,68 @@
     return ALL_ARCHETYPES[archetypeId] || MOB_ARCHETYPES.wolf_scout;
   }
 
+  /**
+   * 为 Boss 自动派生【蓄力扬兵帧 (windup)】与【破军挥击帧 (attack)】，让动作模组具备真实像素姿态变化！
+   */
+  function makeWindupRows(rows) {
+    const gw = rows.reduce((m, r) => Math.max(m, r.length), 0);
+    const halfH = Math.floor(rows.length * 0.58);
+    const out = [];
+    for (let y = 0; y < rows.length; y++) {
+      const padded = rows[y].padEnd(gw, '.');
+      if (y < halfH) {
+        out.push('.' + padded.slice(0, Math.max(1, gw - 1)));
+      } else {
+        out.push(padded);
+      }
+    }
+    return out;
+  }
+
+  function makeAttackRows(rows) {
+    const gw = rows.reduce((m, r) => Math.max(m, r.length), 0);
+    const halfH = Math.floor(rows.length * 0.62);
+    const out = [];
+    for (let y = 0; y < rows.length; y++) {
+      const padded = rows[y].padEnd(gw, '.');
+      if (y < halfH) {
+        out.push(padded.slice(1) + '.');
+      } else {
+        out.push('.' + padded.slice(0, Math.max(1, gw - 1)));
+      }
+    }
+    return out;
+  }
+
+  function makeAwakenedPalette(basePal, customP2) {
+    const p2 = Object.assign({}, basePal, customP2 || {});
+    if (!customP2) {
+      if (p2.R) p2.R = '#ff0a54';
+      if (p2.G) p2.G = '#ffd60a';
+      if (p2.Y) p2.Y = '#ffd60a';
+    }
+    return p2;
+  }
+
   function bakeArchetypeEntry(bakeGridFn, archetypeId, paletteOverride, scale) {
     const base = getArchetype(archetypeId);
+    const isBossArch = !!BOSS_ARCHETYPES[archetypeId];
     const pal = paletteOverride ? Object.assign({}, base.palette, paletteOverride) : base.palette;
-    const sc = scale || (BOSS_ARCHETYPES[archetypeId] ? 2.8 : 2.0);
+    const sc = scale || (isBossArch ? 3.15 : 2.0);
+    const f1Rows = base.f1 || base.f0;
+    const windupRows = base.windup || makeWindupRows(base.f0);
+    const attackRows = base.attack || makeAttackRows(f1Rows);
+    const p2Pal = makeAwakenedPalette(pal, base.p2Palette);
+
     return {
       f0: bakeGridFn(base.f0, pal, sc, false),
-      f1: bakeGridFn(base.f1 || base.f0, pal, sc, false),
+      f1: bakeGridFn(f1Rows, pal, sc, false),
+      windup: bakeGridFn(windupRows, pal, sc, false),
+      attack: bakeGridFn(attackRows, pal, sc, false),
+      p2_f0: bakeGridFn(base.f0, p2Pal, sc, false),
+      p2_f1: bakeGridFn(f1Rows, p2Pal, sc, false),
+      p2_windup: bakeGridFn(windupRows, p2Pal, sc, false),
+      p2_attack: bakeGridFn(attackRows, p2Pal, sc, false),
       flash: bakeGridFn(base.f0, pal, sc, true),
       hiRes: bakeGridFn(base.f0, pal, 3.0, false)
     };
@@ -15167,11 +15647,16 @@
   }
 
   // ==================== 5. 五大主角高辨识度头面五官与鬓发胡须精雕 ====================
-  function drawHeroHeadAndFace(mc, heroId, build, pose) {
+  function drawHeroHeadAndFace(mc, heroId, build, pose, helmId) {
     const hcx = Math.round(build.cx + pose.leanX * 0.8);
     const hcy = Math.round(build.headCy + pose.headDy);
     const rx = build.headRx;
     const ry = build.headRy;
+    const isHeadbandOnly =
+      !helmId ||
+      helmId === 'bronze_band' ||
+      helmId === 'crimson_hero_band' ||
+      helmId === 'asura_mask';
 
     if (heroId === 'bailongma') {
       mc.beginLayer();
@@ -15181,10 +15666,12 @@
       mc.outlineLayer('#110b18', '#22172e', false);
     } else if (heroId === 'wujing') {
       mc.beginLayer();
-      mc.trapezoid(hcy - 16, hcy - 4, hcx - 11, hcx + 7, hcx - 9, hcx + 8, makeToneShader('#1b263b', 0.28, 0.35));
-      mc.line(hcx - 9, hcy - 14, hcx - 12, hcy - 19, '#1b263b', 1);
-      mc.line(hcx - 3, hcy - 15, hcx - 4, hcy - 20, '#2b3a55', 1);
-      mc.line(hcx + 3, hcy - 14, hcx + 5, hcy - 19, '#1b263b', 1);
+      mc.trapezoid(isHeadbandOnly ? hcy - 15 : hcy - 10, hcy - 4, hcx - 10, hcx + 7, hcx - 9, hcx + 8, makeToneShader('#1b263b', 0.28, 0.35));
+      if (isHeadbandOnly) {
+        mc.line(hcx - 9, hcy - 14, hcx - 12, hcy - 19, '#1b263b', 1);
+        mc.line(hcx - 3, hcy - 15, hcx - 4, hcy - 20, '#2b3a55', 1);
+        mc.line(hcx + 3, hcy - 14, hcx + 5, hcy - 19, '#1b263b', 1);
+      }
       mc.outlineLayer('#0d0914', '#1d1528', false);
     }
 
@@ -15516,7 +16003,7 @@
     drawWaistAccessory(mc, heroId, cx, build.waistW, hipY, accId);
 
     // 4. 头面五官与冠冕
-    drawHeroHeadAndFace(mc, heroId, build, pose);
+    drawHeroHeadAndFace(mc, heroId, build, pose, helmId);
     drawHeadgear(mc, heroId, build, pose, helmId);
 
     // 5. 护肩与近端屈肘手臂
@@ -17775,18 +18262,37 @@
       };
     });
 
+    const COLOSSUS_ARCHS = {
+      bull_demon_king: 3.4,
+      white_elephant_king: 3.35,
+      nine_spirit_saint: 3.35,
+      ancient_turtle: 3.45,
+      single_horn_rhino: 3.35,
+      frost_rhino_lord: 3.35,
+      tuolong_dragon: 3.3,
+      red_python_demon: 3.4,
+      azure_lion_king: 3.3
+    };
+
     Object.keys(BOSS_GRIDS).forEach((id) => {
-      const def = BOSS_GRIDS[id];
-      const arch = Monsters81Sprites && Monsters81Sprites.BOSS_ARCHETYPES && Monsters81Sprites.BOSS_ARCHETYPES[id];
-      const f1Grid = (arch && arch.f1) || def.f1 || def.f0;
-      _cache.bosses[id] = {
-        f0: bakeGrid(def.f0, def.palette, 3, false),
-        f1: bakeGrid(f1Grid, def.palette, 3, false),
-        flash: bakeGrid(def.f0, def.palette, 3, true)
-      };
+      if (Monsters81Sprites && Monsters81Sprites.BOSS_ARCHETYPES && Monsters81Sprites.BOSS_ARCHETYPES[id]) {
+        _cache.bosses[id] = Monsters81Sprites.bakeArchetypeEntry(
+          bakeGrid,
+          id,
+          null,
+          COLOSSUS_ARCHS[id] || 3.2
+        );
+      } else {
+        const def = BOSS_GRIDS[id];
+        _cache.bosses[id] = {
+          f0: bakeGrid(def.f0, def.palette, 3.2, false),
+          f1: bakeGrid(def.f1 || def.f0, def.palette, 3.2, false),
+          flash: bakeGrid(def.f0, def.palette, 3.2, true)
+        };
+      }
     });
 
-    // 烘焙九九八十一难全部 55 套妖魔母版与 81 难专属配色精灵（小妖 + 劫难头目 + 守关妖王 + 高清图鉴帧）
+    // 烘焙九九八十一难全部妖魔母版与 81 难专属配色精灵（含 Boss 四态动作帧 + 二阶段狂暴真身帧）
     _cache.monstersHiRes = {};
     if (Monsters81Sprites) {
       Object.keys(Monsters81Sprites.MOB_ARCHETYPES).forEach((archId) => {
@@ -17796,31 +18302,39 @@
         }
       });
       Object.keys(Monsters81Sprites.BOSS_ARCHETYPES).forEach((archId) => {
-        const baked = Monsters81Sprites.bakeArchetypeEntry(bakeGrid, archId, null, 2.8);
-        if (!_cache.bosses[archId]) {
-          _cache.bosses[archId] = baked;
-        }
+        const bossSc = COLOSSUS_ARCHS[archId] || 3.18;
+        const baked = Monsters81Sprites.bakeArchetypeEntry(bakeGrid, archId, null, bossSc);
+        _cache.bosses[archId] = baked;
         if (!_cache.enemies[archId]) {
-          _cache.enemies[archId] = Monsters81Sprites.bakeArchetypeEntry(bakeGrid, archId, null, 2.2);
+          _cache.enemies[archId] = Monsters81Sprites.bakeArchetypeEntry(bakeGrid, archId, null, 2.25);
         }
       });
       if (Tribulations81 && Array.isArray(Tribulations81.TRIBULATIONS_81)) {
         Tribulations81.TRIBULATIONS_81.forEach((trib) => {
-          const worldScale = trib.rank === 'boss' ? 2.85 : trib.rank === 'elite' ? 2.25 : 2.0;
-          const bakedWorld = Monsters81Sprites.bakeArchetypeEntry(bakeGrid, trib.archetype, trib.palette, worldScale);
-          _cache.enemies[trib.id] = bakedWorld;
-          _cache.bosses[trib.id] =
+          const bossScale =
             trib.rank === 'boss'
-              ? bakedWorld
-              : Monsters81Sprites.bakeArchetypeEntry(bakeGrid, trib.archetype, trib.palette, 2.75);
+              ? COLOSSUS_ARCHS[trib.archetype] || 3.18
+              : trib.rank === 'elite'
+                ? 3.35
+                : 3.45;
+          const enemyScale = trib.rank === 'boss' ? 2.4 : trib.rank === 'elite' ? 2.25 : 2.0;
+          _cache.enemies[trib.id] = Monsters81Sprites.bakeArchetypeEntry(
+            bakeGrid,
+            trib.archetype,
+            trib.palette,
+            enemyScale
+          );
+          _cache.bosses[trib.id] = Monsters81Sprites.bakeArchetypeEntry(
+            bakeGrid,
+            trib.archetype,
+            trib.palette,
+            bossScale
+          );
+          const archDef = Monsters81Sprites.getArchetype(trib.archetype);
+          const mergedPal = Object.assign({}, archDef.palette, trib.palette || {});
           _cache.monstersHiRes[trib.id] = {
-            f0: bakedWorld.hiRes,
-            f1: bakeGrid(
-              Monsters81Sprites.getArchetype(trib.archetype).f1 || Monsters81Sprites.getArchetype(trib.archetype).f0,
-              Object.assign({}, Monsters81Sprites.getArchetype(trib.archetype).palette, trib.palette || {}),
-              3.0,
-              false
-            )
+            f0: _cache.bosses[trib.id].hiRes,
+            f1: bakeGrid(archDef.f1 || archDef.f0, mergedPal, 3.0, false)
           };
         });
       }
@@ -28407,10 +28921,11 @@
         ctx.imageSmoothingEnabled = false;
         const baseW = heroSpr._logicalW || heroSpr.width;
         const baseH = heroSpr._logicalH || heroSpr.height;
-        const sc = 1.52;
+        const sc = 1.48;
         const dw = Math.round(baseW * sc);
         const dh = Math.round(baseH * sc);
-        ctx.drawImage(heroSpr, Math.round(avX + avS / 2 - dw / 2 - 2), Math.round(avY - 1), dw, dh);
+        const anchorX = heroSpr._logicalW ? 23 * sc : dw / 2;
+        ctx.drawImage(heroSpr, Math.round(avX + avS / 2 - anchorX), Math.round(avY - 4), dw, dh);
         ctx.restore();
       }
 
@@ -36873,7 +37388,8 @@
         const curSpec = this.currentAttackSpec;
         const elapsed = this.attackDuration - this.attackTimer;
         const hitList = curSpec.hitTimes || [curSpec.hitTime];
-        const cancelAt = curSpec.cancelTime || this.attackDuration * 0.68;
+        const durScale = this.attackDuration / Math.max(0.01, curSpec.duration || this.attackDuration);
+        const cancelAt = (curSpec.cancelTime || (curSpec.duration || this.attackDuration) * 0.68) * durScale;
         if (this.attackSubHitIdx >= hitList.length && elapsed >= cancelAt) {
           this.attackTimer = 0;
         }
@@ -36940,6 +37456,14 @@
       if (this.dead || this.isGroundSmashing) return;
       if (this.skillCdTimer > 0) {
         return origTryCastSkill.call(this, worldCtx);
+      }
+
+      // 极速连按「J -> J -> U」搓招优化：若下一段普攻已在预输入队列中，先瞬时结算进位再读取对应段数的派生技！
+      if (this.inputBuffer && this.inputBuffer.act === 'attack' && this.attackTimer > 0 && this.attackTimer < 0.12) {
+        const bufDir = this.inputBuffer.moveDir;
+        this.inputBuffer = null;
+        this.attackTimer = 0;
+        this.tryPrimaryAttack(bufDir);
       }
 
       const deriv = this.getAvailableDerivation();
